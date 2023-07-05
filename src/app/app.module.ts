@@ -10,6 +10,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ButtonModule } from 'primeng/button';
 import { HomeComponent } from './home/home.component';
+import { SplitterModule } from 'primeng/splitter';
 
 @NgModule({
   declarations: [AppComponent, NavBarComponent, HomeComponent],
@@ -21,6 +22,7 @@ import { HomeComponent } from './home/home.component';
     MdbCollapseModule,
     BrowserAnimationsModule,
     ButtonModule,
+    SplitterModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

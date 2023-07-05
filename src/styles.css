@@ -24,3 +24,15 @@ body {
   --color-primary: #1d2f40;
   --color-secondary: #0a91ab;
 }
+
+.navbar-container {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  box-shadow: 0 5px 20px #282828;
+  z-index: 99999;
+}
