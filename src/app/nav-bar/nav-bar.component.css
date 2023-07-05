@@ -1,0 +1,165 @@
+.navbar-container {
+  display: block;
+}
+
+.top-nav-bar {
+  display: flex;
+  width: 100vw;
+  margin: 0 100px;
+  justify-content: space-between;
+  /* align-items: center; */
+  /* background-color: var(--color-primary);
+  color: white; */
+  padding: 0.5rem;
+}
+
+.contact-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 1rem;
+  text-decoration: none;
+}
+
+.top-nav-bar-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 3rem;
+  text-decoration: none;
+  cursor: default;
+}
+
+.nav-icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 1rem;
+  font-size: 2rem;
+  color: var(--color-secondary);
+}
+
+.nav-text {
+  font-size: 1.5rem;
+  color: var(--color-secondary);
+}
+.socialmedia-icon {
+  display: flex;
+  margin-left: 0;
+  font-size: 1.5rem;
+  color: var(--color-secondary);
+}
+
+.nav-icon-whatsapp {
+  margin-left: 1rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .top-nav-bar {
+    margin: 0 auto;
+  }
+  .nav-icons {
+    font-size: 1rem;
+  }
+  .nav-text {
+    font-size: 1rem;
+  }
+}
+
+/* Navbar below */
+.navBar-main {
+  padding: 0.5rem;
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.navbar-logo {
+  margin-left: 10rem;
+}
+
+.nav-list-items {
+  margin-left: 3rem;
+  color: white;
+  font-size: 1.5rem;
+  justify-content: center;
+}
+
+.nav-list-items-container {
+  width: 25vw;
+  justify-content: center;
+  margin-left: 15rem;
+}
+
+.dropdown-item:hover {
+  background-color: white;
+  color: var(--color-secondary);
+}
+.nav-list-items:hover {
+  color: var(--color-secondary);
+}
+.btn-outline {
+  border: 2px solid var(--color-secondary);
+  background-color: transparent;
+  padding: 0.5rem;
+  margin-left: 2rem;
+  border-radius: 0.5rem;
+  margin-right: 10rem;
+  color: white;
+}
+
+.btn-outline:hover {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+.togle-button {
+  border: 0;
+  outline: none;
+}
+
+.togle-button:focus {
+  border: 0;
+  box-shadow: none;
+}
+
+.togle-button-icon {
+  color: white;
+  font-size: 2rem;
+  padding: 2rem;
+  text-align: center;
+  border: 0;
+  outline: 0;
+}
+
+.togle-button-icon:hover {
+  color: var(--color-secondary);
+}
+
+.Login-icon {
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  border: 0;
+  outline: 0;
+}
+
+.Login-icon:hover {
+  color: var(--color-secondary);
+}
+
+.login-icon-dropdown::after {
+  content: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .nav-list-items-container {
+    display: none;
+    margin-left: 5rem;
+  }
+  .navbar-logo {
+    margin-left: 0;
+  }
+  .btn-outline {
+    margin-right: 0;
+  }
+}
