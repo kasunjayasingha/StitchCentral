@@ -1,5 +1,17 @@
 .navbar-container {
   display: block;
+  top: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.navBar-top {
+  margin-top: 0;
+  top: 0;
+  background-color: var(--color-primary);
+  color: white;
+  padding: 0.5rem;
+  border-bottom: 3px dotted var(--color-secondary);
 }
 
 .top-nav-bar {
@@ -25,7 +37,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-left: 3rem;
+  margin-right: 3rem;
   text-decoration: none;
   cursor: default;
 }
@@ -35,13 +47,13 @@
   justify-content: space-between;
   align-items: center;
   margin-right: 1rem;
-  font-size: 2rem;
-  color: var(--color-secondary);
+  font-size: 1.5rem;
+  color: white;
 }
 
 .nav-text {
-  font-size: 1.5rem;
-  color: var(--color-secondary);
+  font-size: 1.2rem;
+  color: white;
 }
 .socialmedia-icon {
   display: flex;
@@ -52,6 +64,11 @@
 
 .nav-icon-whatsapp {
   margin-left: 1rem;
+}
+
+.nav-icon-facebook:hover,
+.nav-icon-whatsapp:hover {
+  color: var(--color-secondary);
 }
 
 @media screen and (max-width: 1024px) {

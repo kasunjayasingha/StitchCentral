@@ -9,9 +9,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ButtonModule } from 'primeng/button';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
-  declarations: [AppComponent, NavBarComponent],
+  declarations: [AppComponent, NavBarComponent, HomeComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
