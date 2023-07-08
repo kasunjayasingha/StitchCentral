@@ -64,15 +64,16 @@
   color: var(--color-secondary);
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 768px) {
   .top-nav-bar {
-    margin: 0 auto;
+    margin: 0 2rem;
   }
+
   .nav-icons {
     font-size: 1rem;
   }
   .nav-text {
-    font-size: 1rem;
+    font-size: 0.7rem;
   }
 }
 
@@ -161,7 +162,7 @@
   content: none;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 768px) {
   .nav-list-items-container {
     display: none;
     margin-left: 5rem;

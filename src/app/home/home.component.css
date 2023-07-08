@@ -1,5 +1,6 @@
 .img-container {
   margin-left: 0;
+  margin-right: 0;
   height: 75vh;
 }
 
@@ -54,7 +55,7 @@
 
 .btn-outline::before {
   transform: scaleX(0);
-  transform-origin: bottom right;
+  transform-origin: top right;
 }
 
 .btn-outline:hover::before {
@@ -132,7 +133,7 @@
   }
 
   .grid--1x2 {
-    grid-template-columns: 25% 75%;
+    grid-template-columns: 25% 100fr;
     column-gap: 0.5rem;
     position: relative;
     top: -3rem;
@@ -158,4 +159,153 @@
   margin-top: 1rem;
   color: white;
   text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* home about section */
+.home-about {
+  padding-bottom: 2rem;
+}
+
+.home-about-container {
+  display: grid;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.home-about-img {
+  height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center;
+  padding-bottom: 1rem;
+}
+
+.home-about-details h2 {
+  font-size: 1.5rem;
+  color: var(--color-secondary);
+  padding-bottom: 1rem;
+}
+
+.home-about-details h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.home-about-details p {
+  margin: 1.5rem 0;
+  /* width: 700px; */
+}
+.vision-mission ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.vision-mission {
+  display: grid;
+}
+
+.vision {
+  border-right: none;
+}
+
+/* .vision-mission ul li:nth-of-type(1) */
+
+.vision-mission table td {
+  vertical-align: top;
+  padding-right: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.vision-mission-icon {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--color-secondary);
+}
+
+.vision-mission-points {
+  font-size: 1.3rem;
+  color: darkgray;
+}
+
+.home-about-button {
+  background-color: var(--color-secondary);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 0;
+  color: white;
+  font-size: 1.5rem;
+  justify-content: center;
+  text-emphasis: bold;
+}
+
+.home-about .btn-outline::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  inset: 0 0 0 0;
+  background: #037a92;
+  z-index: -1;
+  transition: transform 0.3s ease;
+}
+
+.home-about .btn-outline::before {
+  transform: scaleY(0);
+  transform-origin: top right;
+}
+
+.home-about .btn-outline:hover::before {
+  transform: scaleY(1);
+  transform-origin: bottom left;
+}
+
+@media screen and (min-width: 768px) {
+  .home-about-container {
+    margin-left: 10rem;
+    margin-right: 10rem;
+    grid-template-columns: 50% 50%;
+    column-gap: 2rem;
+  }
+
+  .vision-mission {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+  }
+
+  .home-about-img {
+    padding-bottom: 0;
+  }
+
+  .vision {
+    border-right: 1px solid var(--color-secondary);
+  }
+  .mission {
+    margin-left: 1rem;
+  }
+}
+
+/* home services section */
+#home-services {
+  background-image: url(/assets/imgs/back_02.jpg);
+  width: 100%;
+  height: 50vh;
+  background-size: cover;
+  background-position: top 70px center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.shirt {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  background-color: #037a92;
 }
