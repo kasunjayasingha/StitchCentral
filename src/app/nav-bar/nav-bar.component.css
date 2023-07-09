@@ -10,7 +10,7 @@
 .top-nav-bar {
   display: flex;
   width: 100vw;
-  margin: 0 100px;
+  margin: 0 2rem;
   justify-content: space-between;
   /* align-items: center; */
   /* background-color: var(--color-primary);
@@ -66,7 +66,7 @@
 
 @media screen and (min-width: 768px) {
   .top-nav-bar {
-    margin: 0 2rem;
+    margin: 0 10rem;
   }
 
   .nav-icons {
@@ -85,7 +85,7 @@
 }
 
 .navbar-logo {
-  margin-left: 10rem;
+  margin-left: 2rem;
 }
 
 .nav-list-items {
@@ -167,10 +167,11 @@
     display: none;
     margin-left: 5rem;
   }
-  .navbar-logo {
-    margin-left: 0;
+  .navbar-brand {
+    margin-left: 9rem;
   }
+
   .btn-outline {
-    margin-right: 0;
+    margin-right: 10rem;
   }
 }

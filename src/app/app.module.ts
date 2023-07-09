@@ -12,6 +12,8 @@ import { ButtonModule } from 'primeng/button';
 import { HomeComponent } from './home/home.component';
 import { SplitterModule } from 'primeng/splitter';
 
+import { MatIconModule } from '@angular/material/icon';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [AppComponent, NavBarComponent, HomeComponent],
   imports: [
@@ -23,6 +25,8 @@ import { SplitterModule } from 'primeng/splitter';
     BrowserAnimationsModule,
     ButtonModule,
     SplitterModule,
+    MatIconModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

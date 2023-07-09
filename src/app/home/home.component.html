@@ -5,7 +5,7 @@
       alt="Stitch Central Logo"
       class="home-img"
     />
-    <div class="home-details">
+    <div class="home-details" data-aos="fade-right" data-aos-duration="2000">
       <h4>GARMEN TEXTILE INDUSTRY</h4>
       <h1>You Can Never Go Wrong</h1>
       <h1>With Our Quality</h1>
@@ -13,7 +13,7 @@
     </div>
   </div>
 </div>
-<div class="grid grid--1x3">
+<div class="grid grid--1x3" data-aos="fade-up" data-aos-duration="2500">
   <div class="home-callouts">
     <div class="grid-callouts grid--1x2">
       <div>
@@ -49,7 +49,12 @@
 <!-- Home About section -->
 <div class="home-about">
   <div class="home-about-container">
-    <div class="home-about-img">
+    <div
+      class="home-about-img"
+      data-aos="fade-right"
+      data-aos-duration="1500"
+      data-aos-easing="ease-in-sine"
+    >
       <img
         src="assets/imgs/GARMENT_01.jpg"
         alt="Stitch Central Logo"
@@ -57,8 +62,12 @@
       />
     </div>
     <div class="home-about-details">
-      <h2>ABOUT GARMEN</h2>
-      <h1>You Can Find All Kinds of Fabric Here</h1>
+      <h2 data-aos="fade-up" data-aos-easing="linear" data-aos-duration="2000">
+        ABOUT GARMEN
+      </h2>
+      <h1 data-aos="fade-up" data-aos-easing="linear" data-aos-duration="2000">
+        You Can Find All Kinds of Fabric Here
+      </h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
         voluptatum, quibusdam, voluptate, quia quod voluptas quos exercitationem
@@ -66,7 +75,12 @@
         voluptate, quia quod voluptas quos exercitationem quas voluptatibus
         quidem doloribus.
       </p>
-      <div class="vision-mission">
+      <div
+        class="vision-mission"
+        data-aos="zoom-in-up"
+        data-aos-easing="linear"
+        data-aos-duration="2000"
+      >
         <div class="vision">
           <h3>Our Vision</h3>
           <ul>
@@ -258,16 +272,156 @@
 <div id="home-services">
   <div class="home-services-container">
     <div class="home-services-header">
-      <div>
-        <fa-icon [icon]="faHouseCircleCheck" class="callouts-icons"></fa-icon>
-        <svg>
-          <use xlink:href="assets/imgs/image2vector.svg"></use>
-        </svg>
-      </div>
-      <div>
-        <h1>Our Services</h1>
+      <h2 data-aos="fade-up" data-aos-duration="3000">Our Services</h2>
+      <h1 data-aos="zoom-in">Textile is What We Do</h1>
+    </div>
+    <div class="home-services-body">
+      <div class="services">
+        <div class="service" data-aos="fade-right" data-aos-duration="3000">
+          <div class="service-icon">
+            <img
+              src="assets/imgs/dye.png"
+              alt=""
+              max-width="100%"
+              height="100%"
+            />
+          </div>
+          <div class="service-title">
+            <h3>Fabric Dyeing</h3>
+          </div>
+          <div class="service-description">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+              voluptatum, quibusdam, voluptate, quia quod voluptas quos
+              exercitationem quas voluptatibus quidem doloribus.
+            </p>
+            <a href=""
+              >READ MORE
+              <fa-icon [icon]="faArrowRight" class="arrow-right"></fa-icon>
+            </a>
+          </div>
+        </div>
+        <div class="service" data-aos="fade-up" data-aos-duration="3000">
+          <div class="service-icon">
+            <img
+              src="assets/imgs/cloth.png"
+              alt=""
+              max-width="100%"
+              height="100%"
+            />
+          </div>
+          <div class="service-title">
+            <h3>Satin Weaving</h3>
+          </div>
+          <div class="service-description">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+              voluptatum, quibusdam, voluptate, quia quod voluptas quos
+              exercitationem quas voluptatibus quidem doloribus.
+            </p>
+            <a href=""
+              >READ MORE
+              <fa-icon [icon]="faArrowRight" class="arrow-right"></fa-icon>
+            </a>
+          </div>
+        </div>
+        <div class="service" data-aos="fade-left" data-aos-duration="3000">
+          <div class="service-icon">
+            <img
+              src="assets/imgs/fabric.png"
+              alt=""
+              max-width="100%"
+              height="100%"
+            />
+          </div>
+          <div class="service-title">
+            <h3>Fabric Printing</h3>
+          </div>
+          <div class="service-description">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+              voluptatum, quibusdam, voluptate, quia quod voluptas quos
+              exercitationem quas voluptatibus quidem doloribus.
+            </p>
+            <a href=""
+              >READ MORE
+              <fa-icon [icon]="faArrowRight" class="arrow-right"></fa-icon>
+            </a>
+          </div>
+        </div>
+        <div class="service" data-aos="fade-right" data-aos-duration="3000">
+          <div class="service-icon">
+            <img
+              src="assets/imgs/sewing_machine.png"
+              alt=""
+              max-width="100%"
+              height="100%"
+            />
+          </div>
+          <div class="service-title">
+            <h3>Garment Stitching</h3>
+          </div>
+          <div class="service-description">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+              voluptatum, quibusdam, voluptate, quia quod voluptas quos
+              exercitationem quas voluptatibus quidem doloribus.
+            </p>
+            <a href=""
+              >READ MORE
+              <fa-icon [icon]="faArrowRight" class="arrow-right"></fa-icon>
+            </a>
+          </div>
+        </div>
+        <div class="service" data-aos="fade-up" data-aos-duration="3000">
+          <div class="service-icon">
+            <img
+              src="assets/imgs/weaving.png"
+              alt=""
+              max-width="100%"
+              height="100%"
+            />
+          </div>
+          <div class="service-title">
+            <h3>Linen Weaving</h3>
+          </div>
+          <div class="service-description">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+              voluptatum, quibusdam, voluptate, quia quod voluptas quos
+              exercitationem quas voluptatibus quidem doloribus.
+            </p>
+            <a href=""
+              >READ MORE
+              <fa-icon [icon]="faArrowRight" class="arrow-right"></fa-icon>
+            </a>
+          </div>
+        </div>
+        <div class="service" data-aos="fade-left" data-aos-duration="3000">
+          <div class="service-icon">
+            <img
+              src="assets/imgs/tshirt.png"
+              alt=""
+              max-width="100%"
+              height="100%"
+            />
+          </div>
+          <div class="service-title">
+            <h3>Custom Apparel</h3>
+          </div>
+          <div class="service-description">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+              voluptatum, quibusdam, voluptate, quia quod voluptas quos
+              exercitationem quas voluptatibus quidem doloribus.
+            </p>
+            <a href=""
+              >READ MORE
+              <fa-icon [icon]="faArrowRight" class="arrow-right"></fa-icon>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="home-services-body"></div>
   </div>
 </div>

@@ -36,3 +36,12 @@ body {
   box-shadow: 0 5px 20px #282828;
   z-index: 99999;
 }
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
