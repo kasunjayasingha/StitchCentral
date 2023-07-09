@@ -345,9 +345,18 @@
 }
 
 .service-icon {
+  overflow: hidden;
   width: 5rem;
   height: 5rem;
   margin-bottom: 1rem;
+}
+
+.service-icon img {
+  transition: scale 400ms;
+}
+
+.service-icon:hover img {
+  scale: 110%;
 }
 
 .service-description p {
@@ -361,6 +370,9 @@
   color: var(--color-secondary);
 }
 
+.service-description a:hover {
+  text-decoration: underline;
+}
 @media screen and (min-width: 768px) {
   #home-services {
     background-position: top 0 center;
