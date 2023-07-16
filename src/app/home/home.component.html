@@ -1,8 +1,14 @@
 <div class="home-container">
   <div class="img-container">
     <img
-      src="assets/imgs/GARMENT_01.jpg"
-      alt="Stitch Central Logo"
+      src="assets/imgs/GARMENT_01_1400.jpg"
+      alt="Stitch Central Home Image"
+      srcset="
+        assets/imgs/GARMENT_01_1400.jpg 1400w,
+        assets/imgs/GARMENT_01_1189.jpg 1189w,
+        assets/imgs/GARMENT_01_790.jpg   790w,
+        assets/imgs/GARMENT_01_200.jpg   200w
+      "
       class="home-img"
     />
     <div class="home-details" data-aos="fade-right" data-aos-duration="2000">
@@ -45,383 +51,466 @@
     </div>
   </div>
 </div>
-
-<!-- Home About section -->
-<div class="home-about">
-  <div class="home-about-container">
-    <div
-      class="home-about-img"
-      data-aos="fade-right"
-      data-aos-duration="1500"
-      data-aos-easing="ease-in-sine"
-    >
-      <img
-        src="assets/imgs/GARMENT_01.jpg"
-        alt="Stitch Central Logo"
-        class="home-about-img"
-      />
-    </div>
-    <div class="home-about-details">
-      <h2 data-aos="fade-up" data-aos-easing="linear" data-aos-duration="2000">
-        ABOUT GARMEN
-      </h2>
-      <h1 data-aos="fade-up" data-aos-easing="linear" data-aos-duration="2000">
-        You Can Find All Kinds of Fabric Here
-      </h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-        voluptatum, quibusdam, voluptate, quia quod voluptas quos exercitationem
-        quas voluptatibus quidem doloribus. Quisquam voluptatum, quibusdam,
-        voluptate, quia quod voluptas quos exercitationem quas voluptatibus
-        quidem doloribus.
-      </p>
+<div id="home-back">
+  <!-- Home About section -->
+  <div class="home-about">
+    <div class="home-about-container">
       <div
-        class="vision-mission"
-        data-aos="zoom-in-up"
-        data-aos-easing="linear"
-        data-aos-duration="2000"
+        class="home-about-img"
+        data-aos="fade-right"
+        data-aos-duration="2500"
+        data-aos-easing="ease-in-sine"
       >
-        <div class="vision">
-          <h3>Our Vision</h3>
-          <ul>
-            <li>
-              <table>
-                <tr>
-                  <td>
-                    <fa-icon
-                      [icon]="faCircleCheck"
-                      class="vision-mission-icon"
-                    ></fa-icon>
-                  </td>
-                  <td>
-                    <span class="vision-mission-points"
-                      >Integer consectetur tincidunt.</span
-                    >
-                  </td>
-                </tr>
-              </table>
-            </li>
-            <li>
-              <table>
-                <tr>
-                  <td>
-                    <fa-icon
-                      [icon]="faCircleCheck"
-                      class="vision-mission-icon"
-                    ></fa-icon>
-                  </td>
-                  <td>
-                    <span class="vision-mission-points"
-                      >Integer consectetur tincidunt.</span
-                    >
-                  </td>
-                </tr>
-              </table>
-            </li>
-            <li>
-              <table>
-                <tr>
-                  <td>
-                    <fa-icon
-                      [icon]="faCircleCheck"
-                      class="vision-mission-icon"
-                    ></fa-icon>
-                  </td>
-                  <td>
-                    <span class="vision-mission-points"
-                      >Integer consectetur tincidunt.</span
-                    >
-                  </td>
-                </tr>
-              </table>
-            </li>
-            <li>
-              <table>
-                <tr>
-                  <td>
-                    <fa-icon
-                      [icon]="faCircleCheck"
-                      class="vision-mission-icon"
-                    ></fa-icon>
-                  </td>
-                  <td>
-                    <span class="vision-mission-points"
-                      >Integer consectetur tincidunt.</span
-                    >
-                  </td>
-                </tr>
-              </table>
-            </li>
-            <li>
-              <table>
-                <tr>
-                  <td>
-                    <fa-icon
-                      [icon]="faCircleCheck"
-                      class="vision-mission-icon"
-                    ></fa-icon>
-                  </td>
-                  <td>
-                    <span class="vision-mission-points"
-                      >Integer consectetur tincidunt.</span
-                    >
-                  </td>
-                </tr>
-              </table>
-            </li>
-          </ul>
+        <img
+          src="assets/imgs/GARMENT_01.jpg"
+          alt="Stitch Central Logo"
+          class="home-about-img"
+        />
+      </div>
+      <div class="home-about-details">
+        <h2
+          data-aos="fade-up"
+          data-aos-easing="linear"
+          data-aos-duration="2000"
+        >
+          ABOUT GARMEN
+        </h2>
+        <h1
+          data-aos="fade-up"
+          data-aos-easing="linear"
+          data-aos-duration="2000"
+        >
+          You Can Find All Kinds of Fabric Here
+        </h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+          voluptatum, quibusdam, voluptate, quia quod voluptas quos
+          exercitationem quas voluptatibus quidem doloribus. Quisquam
+          voluptatum, quibusdam, voluptate, quia quod voluptas quos
+          exercitationem quas voluptatibus quidem doloribus.
+        </p>
+        <div
+          class="vision-mission"
+          data-aos="flip-down"
+          data-aos-easing="linear"
+          data-aos-duration="2000"
+        >
+          <div class="vision">
+            <h3>Our Vision</h3>
+            <ul>
+              <li>
+                <table>
+                  <tr>
+                    <td>
+                      <fa-icon
+                        [icon]="faCircleCheck"
+                        class="vision-mission-icon"
+                      ></fa-icon>
+                    </td>
+                    <td>
+                      <span class="vision-mission-points"
+                        >Integer consectetur tincidunt.</span
+                      >
+                    </td>
+                  </tr>
+                </table>
+              </li>
+              <li>
+                <table>
+                  <tr>
+                    <td>
+                      <fa-icon
+                        [icon]="faCircleCheck"
+                        class="vision-mission-icon"
+                      ></fa-icon>
+                    </td>
+                    <td>
+                      <span class="vision-mission-points"
+                        >Integer consectetur tincidunt.</span
+                      >
+                    </td>
+                  </tr>
+                </table>
+              </li>
+              <li>
+                <table>
+                  <tr>
+                    <td>
+                      <fa-icon
+                        [icon]="faCircleCheck"
+                        class="vision-mission-icon"
+                      ></fa-icon>
+                    </td>
+                    <td>
+                      <span class="vision-mission-points"
+                        >Integer consectetur tincidunt.</span
+                      >
+                    </td>
+                  </tr>
+                </table>
+              </li>
+              <li>
+                <table>
+                  <tr>
+                    <td>
+                      <fa-icon
+                        [icon]="faCircleCheck"
+                        class="vision-mission-icon"
+                      ></fa-icon>
+                    </td>
+                    <td>
+                      <span class="vision-mission-points"
+                        >Integer consectetur tincidunt.</span
+                      >
+                    </td>
+                  </tr>
+                </table>
+              </li>
+              <li>
+                <table>
+                  <tr>
+                    <td>
+                      <fa-icon
+                        [icon]="faCircleCheck"
+                        class="vision-mission-icon"
+                      ></fa-icon>
+                    </td>
+                    <td>
+                      <span class="vision-mission-points"
+                        >Integer consectetur tincidunt.</span
+                      >
+                    </td>
+                  </tr>
+                </table>
+              </li>
+            </ul>
+          </div>
+          <div class="mission">
+            <h3>Our Mission</h3>
+            <ul>
+              <li>
+                <table>
+                  <tr>
+                    <td>
+                      <fa-icon
+                        [icon]="faCircleCheck"
+                        class="vision-mission-icon"
+                      ></fa-icon>
+                    </td>
+                    <td>
+                      <span class="vision-mission-points"
+                        >Integer consectetur tincidunt.</span
+                      >
+                    </td>
+                  </tr>
+                </table>
+              </li>
+              <li>
+                <table>
+                  <tr>
+                    <td>
+                      <fa-icon
+                        [icon]="faCircleCheck"
+                        class="vision-mission-icon"
+                      ></fa-icon>
+                    </td>
+                    <td>
+                      <span class="vision-mission-points"
+                        >Integer consectetur tincidunt.</span
+                      >
+                    </td>
+                  </tr>
+                </table>
+              </li>
+              <li>
+                <table>
+                  <tr>
+                    <td>
+                      <fa-icon
+                        [icon]="faCircleCheck"
+                        class="vision-mission-icon"
+                      ></fa-icon>
+                    </td>
+                    <td>
+                      <span class="vision-mission-points"
+                        >Integer consectetur tincidunt.</span
+                      >
+                    </td>
+                  </tr>
+                </table>
+              </li>
+              <li>
+                <table>
+                  <tr>
+                    <td>
+                      <fa-icon
+                        [icon]="faCircleCheck"
+                        class="vision-mission-icon"
+                      ></fa-icon>
+                    </td>
+                    <td>
+                      <span class="vision-mission-points"
+                        >Integer consectetur tincidunt.</span
+                      >
+                    </td>
+                  </tr>
+                </table>
+              </li>
+              <li>
+                <table>
+                  <tr>
+                    <td>
+                      <fa-icon
+                        [icon]="faCircleCheck"
+                        class="vision-mission-icon"
+                      ></fa-icon>
+                    </td>
+                    <td>
+                      <span class="vision-mission-points"
+                        >Integer consectetur tincidunt.</span
+                      >
+                    </td>
+                  </tr>
+                </table>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="mission">
-          <h3>Our Mission</h3>
-          <ul>
-            <li>
-              <table>
-                <tr>
-                  <td>
-                    <fa-icon
-                      [icon]="faCircleCheck"
-                      class="vision-mission-icon"
-                    ></fa-icon>
-                  </td>
-                  <td>
-                    <span class="vision-mission-points"
-                      >Integer consectetur tincidunt.</span
-                    >
-                  </td>
-                </tr>
-              </table>
-            </li>
-            <li>
-              <table>
-                <tr>
-                  <td>
-                    <fa-icon
-                      [icon]="faCircleCheck"
-                      class="vision-mission-icon"
-                    ></fa-icon>
-                  </td>
-                  <td>
-                    <span class="vision-mission-points"
-                      >Integer consectetur tincidunt.</span
-                    >
-                  </td>
-                </tr>
-              </table>
-            </li>
-            <li>
-              <table>
-                <tr>
-                  <td>
-                    <fa-icon
-                      [icon]="faCircleCheck"
-                      class="vision-mission-icon"
-                    ></fa-icon>
-                  </td>
-                  <td>
-                    <span class="vision-mission-points"
-                      >Integer consectetur tincidunt.</span
-                    >
-                  </td>
-                </tr>
-              </table>
-            </li>
-            <li>
-              <table>
-                <tr>
-                  <td>
-                    <fa-icon
-                      [icon]="faCircleCheck"
-                      class="vision-mission-icon"
-                    ></fa-icon>
-                  </td>
-                  <td>
-                    <span class="vision-mission-points"
-                      >Integer consectetur tincidunt.</span
-                    >
-                  </td>
-                </tr>
-              </table>
-            </li>
-            <li>
-              <table>
-                <tr>
-                  <td>
-                    <fa-icon
-                      [icon]="faCircleCheck"
-                      class="vision-mission-icon"
-                    ></fa-icon>
-                  </td>
-                  <td>
-                    <span class="vision-mission-points"
-                      >Integer consectetur tincidunt.</span
-                    >
-                  </td>
-                </tr>
-              </table>
-            </li>
-          </ul>
+        <button class="btn-outline home-about-button">More About Us</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Home Services section -->
+
+  <div id="home-services">
+    <div class="home-services-container">
+      <div class="home-services-header">
+        <h2 data-aos="fade-up" data-aos-duration="3000">Our Services</h2>
+        <h1 data-aos="zoom-in">Textile is What We Do</h1>
+      </div>
+      <div class="home-services-body">
+        <div class="services">
+          <div class="service" data-aos="fade-right" data-aos-duration="3000">
+            <div class="service-icon">
+              <img
+                src="assets/imgs/dye.png"
+                alt=""
+                max-width="100%"
+                height="100%"
+              />
+            </div>
+            <div class="service-title">
+              <h3>Fabric Dyeing</h3>
+            </div>
+            <div class="service-description">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Quisquam voluptatum, quibusdam, voluptate, quia quod voluptas
+                quos exercitationem quas voluptatibus quidem doloribus.
+              </p>
+              <a href=""
+                >READ MORE
+                <fa-icon [icon]="faArrowRight" class="arrow-right"></fa-icon>
+              </a>
+            </div>
+          </div>
+          <div class="service" data-aos="fade-up" data-aos-duration="3000">
+            <div class="service-icon">
+              <img
+                src="assets/imgs/cloth.png"
+                alt=""
+                max-width="100%"
+                height="100%"
+              />
+            </div>
+            <div class="service-title">
+              <h3>Satin Weaving</h3>
+            </div>
+            <div class="service-description">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Quisquam voluptatum, quibusdam, voluptate, quia quod voluptas
+                quos exercitationem quas voluptatibus quidem doloribus.
+              </p>
+              <a href=""
+                >READ MORE
+                <fa-icon [icon]="faArrowRight" class="arrow-right"></fa-icon>
+              </a>
+            </div>
+          </div>
+          <div class="service" data-aos="fade-left" data-aos-duration="3000">
+            <div class="service-icon">
+              <img
+                src="assets/imgs/fabric.png"
+                alt=""
+                max-width="100%"
+                height="100%"
+              />
+            </div>
+            <div class="service-title">
+              <h3>Fabric Printing</h3>
+            </div>
+            <div class="service-description">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Quisquam voluptatum, quibusdam, voluptate, quia quod voluptas
+                quos exercitationem quas voluptatibus quidem doloribus.
+              </p>
+              <a href=""
+                >READ MORE
+                <fa-icon [icon]="faArrowRight" class="arrow-right"></fa-icon>
+              </a>
+            </div>
+          </div>
+          <div class="service" data-aos="fade-right" data-aos-duration="3000">
+            <div class="service-icon">
+              <img
+                src="assets/imgs/sewing_machine.png"
+                alt=""
+                max-width="100%"
+                height="100%"
+              />
+            </div>
+            <div class="service-title">
+              <h3>Garment Stitching</h3>
+            </div>
+            <div class="service-description">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Quisquam voluptatum, quibusdam, voluptate, quia quod voluptas
+                quos exercitationem quas voluptatibus quidem doloribus.
+              </p>
+              <a href=""
+                >READ MORE
+                <fa-icon [icon]="faArrowRight" class="arrow-right"></fa-icon>
+              </a>
+            </div>
+          </div>
+          <div class="service" data-aos="fade-up" data-aos-duration="3000">
+            <div class="service-icon">
+              <img
+                src="assets/imgs/weaving.png"
+                alt=""
+                max-width="100%"
+                height="100%"
+              />
+            </div>
+            <div class="service-title">
+              <h3>Linen Weaving</h3>
+            </div>
+            <div class="service-description">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Quisquam voluptatum, quibusdam, voluptate, quia quod voluptas
+                quos exercitationem quas voluptatibus quidem doloribus.
+              </p>
+              <a href=""
+                >READ MORE
+                <fa-icon [icon]="faArrowRight" class="arrow-right"></fa-icon>
+              </a>
+            </div>
+          </div>
+          <div class="service" data-aos="fade-left" data-aos-duration="3000">
+            <div class="service-icon">
+              <img
+                src="assets/imgs/tshirt.png"
+                alt=""
+                max-width="100%"
+                height="100%"
+              />
+            </div>
+            <div class="service-title">
+              <h3>Custom Apparel</h3>
+            </div>
+            <div class="service-description">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Quisquam voluptatum, quibusdam, voluptate, quia quod voluptas
+                quos exercitationem quas voluptatibus quidem doloribus.
+              </p>
+              <a href=""
+                >READ MORE
+                <fa-icon [icon]="faArrowRight" class="arrow-right"></fa-icon>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
-      <button class="btn-outline home-about-button">More About Us</button>
+    </div>
+  </div>
+
+  <!-- <ngb-carousel *ngIf="images">
+    <ng-template ngbSlide *ngFor="let image of images">
+      <div class="picsum-img-wrapper">
+        <img [src]="image" alt="Random slide" />
+      </div>
+      <div class="carousel-caption">
+        <h3>No mouse navigation</h3>
+        <p>This carousel hides navigation arrows and indicators.</p>
+      </div>
+    </ng-template>
+  </ngb-carousel> -->
+
+  <!-- WHY CHOOSE GARMENT -->
+  <div class="home-why-choose-us">
+    <div class="home-why-choose-us-body">
+      <div class="home-why-choose-us-body-content">
+        <h2
+          data-aos="fade-up"
+          data-aos-easing="linear"
+          data-aos-duration="2000"
+        >
+          Why Choose Us
+        </h2>
+        <h1 data-aos="zoom-in">
+          Lowest Price Guaranteed, Quality Never Compromised
+        </h1>
+        <div class="home-why-choose-us-body-content-item">
+          <div class="home-why-choose-us-body-content-item-icon">
+            <fa-icon [icon]="faArrowRight" class="arrow-right"></fa-icon>
+          </div>
+          <div class="home-why-choose-us-body-content-item-title">
+            <h3>Quality</h3>
+          </div>
+          <div class="home-why-choose-us-body-content-item-description">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+              voluptatum, quibusdam, voluptate, quia quod voluptas quos
+              exercitationem quas voluptatibus quidem doloribus.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="home-why-choose-us-body-img"
+        data-aos="fade-left"
+        data-aos-duration="2500"
+        data-aos-easing="ease-in-sine"
+      >
+        <img
+          src="assets/imgs/GARMENT_01.jpg"
+          alt="Stitch Central Logo"
+          class="home-about-img"
+        />
+      </div>
     </div>
   </div>
 </div>
 
-<!-- Home Services section -->
+<!-- Home contact us -->
 
-<div id="home-services">
-  <div class="home-services-container">
-    <div class="home-services-header">
-      <h2 data-aos="fade-up" data-aos-duration="3000">Our Services</h2>
-      <h1 data-aos="zoom-in">Textile is What We Do</h1>
-    </div>
-    <div class="home-services-body">
-      <div class="services">
-        <div class="service" data-aos="fade-right" data-aos-duration="3000">
-          <div class="service-icon">
-            <img
-              src="assets/imgs/dye.png"
-              alt=""
-              max-width="100%"
-              height="100%"
-            />
-          </div>
-          <div class="service-title">
-            <h3>Fabric Dyeing</h3>
-          </div>
-          <div class="service-description">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-              voluptatum, quibusdam, voluptate, quia quod voluptas quos
-              exercitationem quas voluptatibus quidem doloribus.
-            </p>
-            <a href=""
-              >READ MORE
-              <fa-icon [icon]="faArrowRight" class="arrow-right"></fa-icon>
-            </a>
-          </div>
-        </div>
-        <div class="service" data-aos="fade-up" data-aos-duration="3000">
-          <div class="service-icon">
-            <img
-              src="assets/imgs/cloth.png"
-              alt=""
-              max-width="100%"
-              height="100%"
-            />
-          </div>
-          <div class="service-title">
-            <h3>Satin Weaving</h3>
-          </div>
-          <div class="service-description">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-              voluptatum, quibusdam, voluptate, quia quod voluptas quos
-              exercitationem quas voluptatibus quidem doloribus.
-            </p>
-            <a href=""
-              >READ MORE
-              <fa-icon [icon]="faArrowRight" class="arrow-right"></fa-icon>
-            </a>
-          </div>
-        </div>
-        <div class="service" data-aos="fade-left" data-aos-duration="3000">
-          <div class="service-icon">
-            <img
-              src="assets/imgs/fabric.png"
-              alt=""
-              max-width="100%"
-              height="100%"
-            />
-          </div>
-          <div class="service-title">
-            <h3>Fabric Printing</h3>
-          </div>
-          <div class="service-description">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-              voluptatum, quibusdam, voluptate, quia quod voluptas quos
-              exercitationem quas voluptatibus quidem doloribus.
-            </p>
-            <a href=""
-              >READ MORE
-              <fa-icon [icon]="faArrowRight" class="arrow-right"></fa-icon>
-            </a>
-          </div>
-        </div>
-        <div class="service" data-aos="fade-right" data-aos-duration="3000">
-          <div class="service-icon">
-            <img
-              src="assets/imgs/sewing_machine.png"
-              alt=""
-              max-width="100%"
-              height="100%"
-            />
-          </div>
-          <div class="service-title">
-            <h3>Garment Stitching</h3>
-          </div>
-          <div class="service-description">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-              voluptatum, quibusdam, voluptate, quia quod voluptas quos
-              exercitationem quas voluptatibus quidem doloribus.
-            </p>
-            <a href=""
-              >READ MORE
-              <fa-icon [icon]="faArrowRight" class="arrow-right"></fa-icon>
-            </a>
-          </div>
-        </div>
-        <div class="service" data-aos="fade-up" data-aos-duration="3000">
-          <div class="service-icon">
-            <img
-              src="assets/imgs/weaving.png"
-              alt=""
-              max-width="100%"
-              height="100%"
-            />
-          </div>
-          <div class="service-title">
-            <h3>Linen Weaving</h3>
-          </div>
-          <div class="service-description">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-              voluptatum, quibusdam, voluptate, quia quod voluptas quos
-              exercitationem quas voluptatibus quidem doloribus.
-            </p>
-            <a href=""
-              >READ MORE
-              <fa-icon [icon]="faArrowRight" class="arrow-right"></fa-icon>
-            </a>
-          </div>
-        </div>
-        <div class="service" data-aos="fade-left" data-aos-duration="3000">
-          <div class="service-icon">
-            <img
-              src="assets/imgs/tshirt.png"
-              alt=""
-              max-width="100%"
-              height="100%"
-            />
-          </div>
-          <div class="service-title">
-            <h3>Custom Apparel</h3>
-          </div>
-          <div class="service-description">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-              voluptatum, quibusdam, voluptate, quia quod voluptas quos
-              exercitationem quas voluptatibus quidem doloribus.
-            </p>
-            <a href=""
-              >READ MORE
-              <fa-icon [icon]="faArrowRight" class="arrow-right"></fa-icon>
-            </a>
-          </div>
-        </div>
-      </div>
+<div id="home-contact-us">
+  <div class="home-contact-us-container">
+    <div class="home-contact-us-body">
+      <h1>Consult With Us The Suitable Material for Your Project</h1>
+      <p>
+        Nulla in nibh at leo faucibus molestie eget nec velit. Phasellus vel
+        felis vel orci iaculis tempor tristique sagittis urna. Phasellus ac ante
+        in lacus tempor egestas.
+      </p>
+      <button class="btn-outline home-contact-us-button">CONTACT US</button>
     </div>
   </div>
 </div>

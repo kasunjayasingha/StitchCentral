@@ -11,6 +11,11 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ButtonModule } from 'primeng/button';
 import { HomeComponent } from './home/home.component';
 import { SplitterModule } from 'primeng/splitter';
+import {
+  NgbCarouselConfig,
+  NgbCarouselModule,
+} from '@ng-bootstrap/ng-bootstrap';
+import { NgFor, NgIf } from '@angular/common';
 
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
@@ -27,8 +32,11 @@ import { HttpClientModule } from '@angular/common/http';
     SplitterModule,
     MatIconModule,
     HttpClientModule,
+    NgbCarouselModule,
+    NgFor,
+    NgIf,
   ],
-  providers: [],
+  providers: [NgbCarouselConfig],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

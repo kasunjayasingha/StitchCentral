@@ -5,7 +5,7 @@
 }
 
 .home-container {
-  margin-top: 10rem;
+  /* margin-top: 10rem; */
 }
 
 .home-img {
@@ -13,6 +13,11 @@
   width: 100%;
   object-fit: cover;
   object-position: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.home-img:hover {
+  filter: brightness(60%);
 }
 
 .home-details {
@@ -162,6 +167,7 @@
 }
 
 /* home about section */
+
 .home-about {
   padding-bottom: 2rem;
 }
@@ -170,6 +176,12 @@
   display: grid;
   margin-left: 2rem;
   margin-right: 2rem;
+  border: 1px solid hsla(0, 0%, 9%, 0.04);
+  border-radius: 1.6rem;
+  box-shadow: 0 2px 8px -2px hsla(0, 0%, 9%, 0.08),
+    0 8px 12px -2px hsla(0, 0%, 9%, 0.16);
+  padding: 2rem;
+  background-color: white;
 }
 
 .home-about-img {
@@ -181,14 +193,16 @@
 }
 
 .home-about-details h2,
-.home-services-header h2 {
+.home-services-header h2,
+.home-why-choose-us-body-content h2 {
   font-size: 1.5rem;
   color: var(--color-secondary);
   padding-bottom: 1rem;
 }
 
 .home-about-details h1,
-.home-services-header h1 {
+.home-services-header h1,
+.home-why-choose-us-body-content h1 {
   font-size: 3rem;
   font-weight: bold;
 }
@@ -196,6 +210,7 @@
 .home-about-details p {
   font-size: 1.2rem;
   margin: 1.5rem 0;
+  padding-right: 4rem;
   /* width: 700px; */
 }
 .vision-mission ul {
@@ -291,7 +306,8 @@
 }
 
 /* home services section */
-#home-services {
+#home-back {
+  /* margin-top: 10rem; */
   background-image: url(/assets/imgs/back_02.jpg);
   width: 100%;
   height: auto;
@@ -324,6 +340,7 @@
 
 .home-services-header h1 {
   font-size: 2rem;
+  text-align: center;
 }
 
 .home-services-body {
@@ -386,5 +403,138 @@
     grid-template-columns: 1fr 1fr 1fr;
     gap: 2rem;
     margin: 0 10rem;
+  }
+}
+
+/* WHY CHOOSE GARMENT */
+
+.home-why-choose-us {
+  margin-top: 10rem;
+  padding-bottom: 2rem;
+}
+
+.home-why-choose-us-body {
+  display: grid;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  background-color: white;
+  border: 1px solid hsla(0, 0%, 9%, 0.04);
+  border-radius: 1.6rem;
+  box-shadow: 0 2px 8px -2px hsla(0, 0%, 9%, 0.08),
+    0 8px 12px -2px hsla(0, 0%, 9%, 0.16);
+  padding: 2rem;
+}
+
+.home-why-choose-us-body-img {
+  height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center;
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.home-about-details h1,
+.home-services-header h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.home-about-details p {
+  font-size: 1.2rem;
+  margin: 1.5rem 0;
+  /* width: 700px; */
+}
+
+@media screen and (min-width: 768px) {
+  .home-why-choose-us-body {
+    margin-left: 10rem;
+    margin-right: 10rem;
+    grid-template-columns: 50% 50%;
+    column-gap: 2rem;
+  }
+
+  .home-why-choose-us-body-img {
+    padding-right: 2rem;
+  }
+}
+
+/* home contact us section */
+#home-contact-us {
+  margin-top: 10rem;
+  background-image: url(/assets/imgs/contact.jpg);
+  height: auto;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.home-contact-us-container {
+  margin: 10rem 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.home-contact-us-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  width: 100%;
+  margin: 0 2rem;
+  padding: 0;
+}
+
+.home-contact-us-body h1 {
+  text-align: center;
+  color: white;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.home-contact-us-body p {
+  width: 70%;
+  text-align: center;
+  color: lightgray;
+  font-size: 1.5rem;
+}
+
+.home-contact-us-button {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  border: 2px solid var(--color-secondary);
+  border-radius: 5px;
+  background-color: transparent;
+  color: var(--color-secondary);
+  font-size: 2rem;
+  transition: background-color 400ms;
+}
+
+.home-contact-us-button:hover {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+@media screen and (min-width: 768px) {
+  .home-contact-us-body {
+    margin: 0 10rem;
+  }
+
+  .home-contact-us-body h1 {
+    font-size: 4rem;
+  }
+
+  .home-contact-us-body p {
+    width: 50%;
+    font-size: 2rem;
   }
 }
