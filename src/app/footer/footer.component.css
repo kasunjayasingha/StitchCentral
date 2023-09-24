@@ -1,0 +1,92 @@
+.footer-main-container {
+  background-color: #1d2f40;
+  color: #fff;
+  padding: 3rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  flex-wrap: wrap;
+  padding: 0 20px;
+  border: 1px solid red;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  flex-wrap: wrap;
+  padding: 0 20px;
+  border: 1px solid green;
+}
+
+.fontColor {
+  color: #ffffff99;
+}
+
+.footer-logo {
+  margin-bottom: 2rem;
+}
+
+.footer-contact {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-bar-items {
+  display: block;
+}
+
+.footer-bar-items .footer-icons {
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 1rem;
+  font-size: 1.5rem;
+  color: #ffffff99;
+}
+
+.footer-contact a {
+  text-decoration: none;
+  color: #ffffff99;
+}
+.footer-icons {
+  /* display: flex; */
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 1rem;
+  font-size: 2rem;
+  color: #ffffff99;
+}
+
+.footer-icon-facebook:hover,
+.footer-icon-whatsapp:hover,
+.footer-icon-faPhone:hover,
+.footer-icon-faEnvelope:hover,
+.footer-icon-faMap:hover {
+  color: var(--color-secondary);
+}
+
+.btn-outline {
+  border: 2px solid var(--color-secondary);
+  background-color: transparent;
+  padding: 0.5rem;
+  /* margin-left: 2rem; */
+  border-radius: 0.5rem;
+  margin-right: 10rem;
+  color: white;
+}
+
+.btn-outline:hover {
+  background-color: var(--color-secondary);
+  color: white;
+}
