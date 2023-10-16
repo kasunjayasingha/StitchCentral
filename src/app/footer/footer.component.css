@@ -55,10 +55,11 @@
   color: #ffffff99;
 }
 
-.footer-contact a {
+.footer-bar-items {
   text-decoration: none;
-  color: #ffffff99;
+  color: #ffffff;
 }
+
 .footer-icons {
   /* display: flex; */
   justify-content: space-between;
