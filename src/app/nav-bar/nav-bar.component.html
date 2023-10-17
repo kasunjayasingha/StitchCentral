@@ -1,39 +1,34 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-container mb-5">
+<nav
+  class="navbar navbar-expand-lg navbar-light bg-light navbar-container mb-5"
+>
   <div class="container-fluid navBar-top">
     <div class="top-nav-bar">
       <div class="contact-details">
-        <a class="top-nav-bar-items" href="#"
-        >
+        <a class="top-nav-bar-items" href="#">
           <fa-icon [icon]="faPhone" class="nav-icons"></fa-icon>
           <span class="nav-text">+94-766988963</span>
         </a>
-        <a class="top-nav-bar-items" href="#"
-        >
+        <a class="top-nav-bar-items" href="#">
           <fa-icon [icon]="faEnvelope" class="nav-icons"></fa-icon>
           <span class="nav-text">kasunharitha55@gmail.com</span>
         </a>
-        <a class="top-nav-bar-items" href="#"
-        >
+        <a class="top-nav-bar-items" href="#">
           <fa-icon [icon]="faLocationDot" class="nav-icons"></fa-icon>
           <span class="nav-text">Galle, Srilanka</span>
         </a>
       </div>
       <div class="socialmedia-icon">
-        <a class="socialmedia-icon-items" href="#"
-        >
+        <a class="socialmedia-icon-items" href="#">
           <fa-icon
             [icon]="faFacebook"
             class="nav-icons nav-icon-facebook"
-          ></fa-icon
-          >
+          ></fa-icon>
         </a>
-        <a class="socialmedia-icon-items" href="#"
-        >
+        <a class="socialmedia-icon-items" href="#">
           <fa-icon
             [icon]="faWhatsapp"
             class="nav-icons nav-icon-whatsapp"
-          ></fa-icon
-          >
+          ></fa-icon>
         </a>
       </div>
     </div>
@@ -44,13 +39,13 @@
         alt=""
         class="img-fluid"
         src="assets/imgs/LogoIcon.png"
-        width="50px"/>
+        width="50px" />
       <img
         alt="StitchCentral"
         class="img-fluid"
         src="assets/imgs/Logo.png"
         width="200px"
-      /></a>
+    /></a>
     <button
       (click)="togglerSecondExample.toggle()"
       aria-controls="navbarTogglerDemo02"
@@ -69,9 +64,7 @@
     >
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link nav-list-items" routerLink="/about-us"
-          >About Us</a
-          >
+          <a class="nav-link nav-list-items" routerLink="/about-us">About Us</a>
         </li>
         <li class="nav-item dropdown" ngbDropdown>
           <a
@@ -86,12 +79,12 @@
           <ul class="dropdown-menu nav-list-items" ngbDropdownMenu>
             <li>
               <a class="dropdown-item" routerLink="/Our-Services"
-              >Our Services</a
+                >Our Services</a
               >
             </li>
             <li>
               <a class="dropdown-item" routerLink="Service-Detail"
-              >Service Detail</a
+                >Service Detail</a
               >
             </li>
           </ul>
@@ -109,19 +102,19 @@
           <ul class="dropdown-menu nav-list-items" ngbDropdownMenu>
             <li>
               <a class="dropdown-item" routerLink="/Our-Projects"
-              >Our Projects</a
+                >Our Projects</a
               >
             </li>
             <li>
               <a class="dropdown-item" routerLink="Project-Details"
-              >Project-Details</a
+                >Project-Details</a
               >
             </li>
           </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link nav-list-items" routerLink="/contact-us"
-          >Contact Us</a
+            >Contact Us</a
           >
         </li>
       </ul>
@@ -146,7 +139,9 @@
           </ul>
         </li>
       </ul>
-      <button class="btn-outline nav-list-items">Make Order</button>
+      <button class="btn-outline nav-list-items">
+        <a routerLink="/make-order">Make Order </a>
+      </button>
     </div>
   </div>
 </nav>
