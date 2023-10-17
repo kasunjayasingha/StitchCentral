@@ -7,7 +7,7 @@ import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'footer',
+  selector: 'footer-component',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css'],
 })

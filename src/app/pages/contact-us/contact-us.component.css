@@ -1,0 +1,33 @@
+.page-header {
+  background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url(/assets/imgs/contactus.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+.display-2 {
+  color: #fff;
+  font-size: 8rem;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 0;
+}
+
+.contact-detail::before {
+  position: absolute;
+  content: "";
+  height: 50%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(rgb(210, 243, 235, 1), rgba(230, 250, 245, .3)), url(/assets/imgs/contact_back.jpg) center center no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  z-index: -1;
+}
+
+.contact-map {
+  background: var(--color-secondary);
+}
+
+.contact-form {
+  background: var(--color-secondary);
+}

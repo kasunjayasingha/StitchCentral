@@ -1,135 +1,142 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-container">
+<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-container mb-5">
   <div class="container-fluid navBar-top">
     <div class="top-nav-bar">
       <div class="contact-details">
         <a class="top-nav-bar-items" href="#"
-          ><fa-icon [icon]="faPhone" class="nav-icons"></fa-icon>
+        >
+          <fa-icon [icon]="faPhone" class="nav-icons"></fa-icon>
           <span class="nav-text">+94-766988963</span>
         </a>
         <a class="top-nav-bar-items" href="#"
-          ><fa-icon [icon]="faEnvelope" class="nav-icons"></fa-icon>
+        >
+          <fa-icon [icon]="faEnvelope" class="nav-icons"></fa-icon>
           <span class="nav-text">kasunharitha55@gmail.com</span>
         </a>
         <a class="top-nav-bar-items" href="#"
-          ><fa-icon [icon]="faLocationDot" class="nav-icons"></fa-icon>
+        >
+          <fa-icon [icon]="faLocationDot" class="nav-icons"></fa-icon>
           <span class="nav-text">Galle, Srilanka</span>
         </a>
       </div>
       <div class="socialmedia-icon">
-        <a href="#" class="socialmedia-icon-items"
-          ><fa-icon
+        <a class="socialmedia-icon-items" href="#"
+        >
+          <fa-icon
             [icon]="faFacebook"
             class="nav-icons nav-icon-facebook"
           ></fa-icon
-        ></a>
-        <a href="#" class="socialmedia-icon-items"
-          ><fa-icon
+          >
+        </a>
+        <a class="socialmedia-icon-items" href="#"
+        >
+          <fa-icon
             [icon]="faWhatsapp"
             class="nav-icons nav-icon-whatsapp"
           ></fa-icon
-        ></a>
+          >
+        </a>
       </div>
     </div>
   </div>
   <div class="container-fluid navBar-main">
-    <a class="navbar-brand navbar-logo" routerLink="/">
+    <a class="navbar-brand navbar-logo" routerLink="">
       <img
-        src="assets/imgs/LogoIcon.png"
         alt=""
-        width="50px"
-        class="img-fluid" />
+        class="img-fluid"
+        src="assets/imgs/LogoIcon.png"
+        width="50px"/>
       <img
-        src="assets/imgs/Logo.png"
         alt="StitchCentral"
         class="img-fluid"
+        src="assets/imgs/Logo.png"
         width="200px"
-    /></a>
+      /></a>
     <button
-      class="navbar-toggler togle-button"
-      type="button"
       (click)="togglerSecondExample.toggle()"
       aria-controls="navbarTogglerDemo02"
       aria-expanded="false"
       aria-label="Toggle navigation"
+      class="navbar-toggler togle-button"
+      type="button"
     >
       <fa-icon [icon]="faBars" class="togle-button-icon"></fa-icon>
     </button>
     <div
+      #togglerSecondExample="mdbCollapse"
       class="collapse navbar-collapse"
       id="navbarTogglerDemo02"
       mdbCollapse
-      #togglerSecondExample="mdbCollapse"
     >
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link nav-list-items" routerLink="/shoping-cart"
-            >About Us</a
+          <a class="nav-link nav-list-items" routerLink="/about-us"
+          >About Us</a
           >
         </li>
-        <li ngbDropdown class="nav-item dropdown">
+        <li class="nav-item dropdown" ngbDropdown>
           <a
-            ngbDropdownToggle
-            class="nav-link dropdown-toggle nav-list-items"
-            role="button"
-            data-bs-toggle="dropdown"
             aria-expanded="false"
+            class="nav-link dropdown-toggle nav-list-items"
+            data-bs-toggle="dropdown"
+            ngbDropdownToggle
+            role="button"
           >
             Services
           </a>
-          <ul ngbDropdownMenu class="dropdown-menu nav-list-items">
+          <ul class="dropdown-menu nav-list-items" ngbDropdownMenu>
             <li>
               <a class="dropdown-item" routerLink="/Our-Services"
-                >Our Services</a
+              >Our Services</a
               >
             </li>
             <li>
               <a class="dropdown-item" routerLink="Service-Detail"
-                >Service Detail</a
+              >Service Detail</a
               >
             </li>
           </ul>
         </li>
-        <li ngbDropdown class="nav-item dropdown">
+        <li class="nav-item dropdown" ngbDropdown>
           <a
-            ngbDropdownToggle
-            class="nav-link dropdown-toggle nav-list-items"
-            role="button"
-            data-bs-toggle="dropdown"
             aria-expanded="false"
+            class="nav-link dropdown-toggle nav-list-items"
+            data-bs-toggle="dropdown"
+            ngbDropdownToggle
+            role="button"
           >
             Projects
           </a>
-          <ul ngbDropdownMenu class="dropdown-menu nav-list-items">
+          <ul class="dropdown-menu nav-list-items" ngbDropdownMenu>
             <li>
               <a class="dropdown-item" routerLink="/Our-Projects"
-                >Our Projects</a
+              >Our Projects</a
               >
             </li>
             <li>
               <a class="dropdown-item" routerLink="Project-Details"
-                >Project-Details</a
+              >Project-Details</a
               >
             </li>
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link nav-list-items" routerLink="/Contact-Us"
-            >Contact Us</a
+          <a class="nav-link nav-list-items" routerLink="/contact-us"
+          >Contact Us</a
           >
         </li>
       </ul>
       <ul class="navbar-nav mb-2 mb-lg-0">
-        <li ngbDropdown class="nav-item dropdown">
+        <li class="nav-item dropdown" ngbDropdown>
           <a
-            ngbDropdownToggle
-            class="nav-link dropdown-toggle nav-list-items login-icon-dropdown"
-            role="button"
-            data-bs-toggle="dropdown"
             aria-expanded="false"
+            class="nav-link dropdown-toggle nav-list-items login-icon-dropdown"
+            data-bs-toggle="dropdown"
+            ngbDropdownToggle
+            role="button"
           >
             <fa-icon [icon]="faUser" class="Login-icon"></fa-icon>
           </a>
-          <ul ngbDropdownMenu class="dropdown-menu nav-list-items">
+          <ul class="dropdown-menu nav-list-items" ngbDropdownMenu>
             <li>
               <a class="dropdown-item" routerLink="/Our-Projects">My Profile</a>
             </li>
