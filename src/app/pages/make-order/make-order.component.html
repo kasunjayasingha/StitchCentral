@@ -1,21 +1,59 @@
-<div class="container mt-5">
-  <div class="row justify-content-center">
-    <div class="col-12 col-md-6">
-      <div class="bg-pink rounded-xl p-4">
-        <div class="form-group mb-4">
-          <label for="username" class="font-weight-bold text-stone-400 mb-2">Username</label>
-          <input type="text" class="form-control bg-stone-400" id="username">
-        </div>
-        <div class="form-group mb-4">
-          <label for="password" class="font-weight-bold text-stone-400 mb-2">Password</label>
-          <input type="password" class="form-control bg-stone-400" id="password">
-        </div>
-        <div class="form-group mb-4">
-          <label for="confirmPassword" class="font-weight-bold text-stone-400 mb-2">Confirm Password</label>
-          <input type="password" class="form-control bg-stone-400" id="confirmPassword">
-        </div>
-        <button type="button" class="btn btn-primary btn-block bg-zinc-600">Submit</button>
+<div class="container-fluid page-header py-5">
+  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+  <div class="container text-center py-5">
+    <h1 class="display-2 text-white mb-4 animated slideInDown">Make Order</h1>
+  </div>
+  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+</div>
+<div class="col-12 order-form-outer">
+  <div class="col-6 mx-auto contact-form">
+    <form class="order-form">
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Email address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="exampleFormControlInput1"
+          placeholder="name@example.com"
+        />
       </div>
-    </div>
+      <div class="form-group">
+        <label for="exampleFormControlInpu2">Name</label>
+        <input
+          type="name"
+          class="form-control"
+          id="exampleFormControlInput1"
+          placeholder=" Enter name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Address</label>
+        <textarea
+          class="form-control"
+          id="exampleFormControlTextarea1"
+          rows="2"
+        ></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Example textarea</label>
+        <textarea
+          class="form-control"
+          id="exampleFormControlTextarea1"
+          rows="3"
+        ></textarea>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlFile1">Example file input</label>
+        <input
+          type="file"
+          class="form-control-file"
+          id="exampleFormControlFile1"
+        />
+      </div>
+      <button type="button" class="btn btn-primary btn-block bg-zinc-600">
+        Submit
+      </button>
+    </form>
   </div>
 </div>

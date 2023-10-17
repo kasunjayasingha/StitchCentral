@@ -23,8 +23,9 @@ import { FooterComponent } from './footer/footer.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { MakeOrderComponent } from './pages/make-order/make-order.component';
+import { ClientLoginComponent } from './pages/client-login/client-login.component';
 @NgModule({
-  declarations: [AppComponent, NavBarComponent, HomeComponent, FooterComponent, AboutUsComponent, ContactUsComponent, MakeOrderComponent],
+  declarations: [AppComponent, NavBarComponent, HomeComponent, FooterComponent, AboutUsComponent, ContactUsComponent, MakeOrderComponent, ClientLoginComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
