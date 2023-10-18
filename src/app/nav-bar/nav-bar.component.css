@@ -180,3 +180,8 @@
     margin-right: 10rem;
   }
 }
+
+nav button a {
+  color: white;
+  text-decoration: none;
+}
