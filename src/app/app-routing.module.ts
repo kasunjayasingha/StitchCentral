@@ -5,6 +5,7 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { MakeOrderComponent } from './pages/make-order/make-order.component';
 import { ClientLoginComponent } from './pages/client-login/client-login.component';
+import { ProjectsComponent } from './pages/projects/projects.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'contact-us', component: ContactUsComponent },
   { path: 'make-order', component: MakeOrderComponent },
   { path: 'client-login', component: ClientLoginComponent },
+  { path: 'projects', component: ProjectsComponent},
 ];
 
 @NgModule({
