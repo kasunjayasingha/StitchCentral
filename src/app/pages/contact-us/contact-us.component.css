@@ -1,5 +1,6 @@
 .page-header {
-  background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url(/assets/imgs/contactus.jpg) center center no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(/assets/imgs/contactus.jpg) center center no-repeat;
   background-size: cover;
 }
 
@@ -14,14 +15,28 @@
 .contact-detail::before {
   position: absolute;
   content: "";
-  height: 50%;
+  height: 100%;
   width: 100%;
   top: 0;
   left: 0;
-  background: linear-gradient(rgb(210, 243, 235, 1), rgba(230, 250, 245, .3)), url(/assets/imgs/contact_back.jpg) center center no-repeat;
+  background: linear-gradient(rgb(29, 47, 64), rgba(29, 47, 64, 0.3)),
+    url(/assets/imgs/contact_back.jpg) center center no-repeat;
   background-size: cover;
   border-radius: 10px;
   z-index: -1;
+}
+.form-control {
+  border: 3px solid #0a91ab;
+  border-width: 0 rem;
+}
+
+.button {
+  color: #0a91ab;
+}
+
+.div {
+  display: flex;
+  flex-direction: column;
 }
 
 .contact-map {
