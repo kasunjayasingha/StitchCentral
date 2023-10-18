@@ -20,8 +20,12 @@ import { NgFor, NgIf } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { ContactUsComponent } from './pages/contact-us/contact-us.component';
+import { MakeOrderComponent } from './pages/make-order/make-order.component';
+import { ClientLoginComponent } from './pages/client-login/client-login.component';
 @NgModule({
-  declarations: [AppComponent, NavBarComponent, HomeComponent, FooterComponent],
+  declarations: [AppComponent, NavBarComponent, HomeComponent, FooterComponent, AboutUsComponent, ContactUsComponent, MakeOrderComponent, ClientLoginComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
