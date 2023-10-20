@@ -15,7 +15,8 @@
                     Show your school spirit with custom-designed university t-shirts that celebrate your alma mater
                 </p>
                 <div class="readMore">
-                  <a href=""
+                  <a [routerLink]="'/university-t-shirts'">
+                  
                   >READ MORE
                     <fa-icon [icon]="faArrowRight" class="arrow-right"></fa-icon>
                   </a>
@@ -85,7 +86,7 @@
                     From Team Jerseys, Workout Gear, to Caps, We Offer High-Quality Sports Apparel That Can Be Personalized to Your Preferences.
                 </p>
                 <div class="readMore">
-                  <a href=""
+                  <a routerLink="/university-t-shirts"
                   >READ MORE
                     <fa-icon [icon]="faArrowRight" class="arrow-right"></fa-icon>
                   </a>
@@ -115,4 +116,4 @@
       </div>
     </div>
   </div>
-  
+  <router-outlet></router-outlet>
