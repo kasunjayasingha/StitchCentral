@@ -6,6 +6,7 @@ import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { MakeOrderComponent } from './pages/make-order/make-order.component';
 import { ClientLoginComponent } from './pages/client-login/client-login.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
+import { UniversityTShirtsComponent } from './pages/university-t-shirts/university-t-shirts.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -13,7 +14,9 @@ const routes: Routes = [
   { path: 'contact-us', component: ContactUsComponent },
   { path: 'make-order', component: MakeOrderComponent },
   { path: 'client-login', component: ClientLoginComponent },
-  { path: 'projects', component: ProjectsComponent},
+  { path: 'projects', component: ProjectsComponent, children: [
+    {path: 'university', component: UniversityTShirtsComponent}
+  ]},
 ];
 
 @NgModule({
