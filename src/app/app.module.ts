@@ -26,6 +26,7 @@ import { MakeOrderComponent } from './pages/make-order/make-order.component';
 import { ClientLoginComponent } from './pages/client-login/client-login.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { UniversityTShirtsComponent } from './pages/university-t-shirts/university-t-shirts.component';
+
 @NgModule({
   declarations: [AppComponent, NavBarComponent, HomeComponent, FooterComponent, AboutUsComponent, ContactUsComponent, MakeOrderComponent, ClientLoginComponent, ProjectsComponent, UniversityTShirtsComponent],
   imports: [

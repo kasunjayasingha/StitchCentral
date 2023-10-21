@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css?family=Muli');
 
 /*reset*/
@@ -214,7 +213,7 @@ ul li {
   display: flex;
   align-items: center;
   background-color: #ff6d39;
-  margin-left: 93px;
+  margin-left: -230px;
   border-radius: 0% 50% 50% 0%;
   position: absolute;
   z-index: 5;
