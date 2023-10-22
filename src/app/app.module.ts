@@ -26,9 +26,12 @@ import { MakeOrderComponent } from './pages/make-order/make-order.component';
 import { ClientLoginComponent } from './pages/client-login/client-login.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { UniversityTShirtsComponent } from './pages/university-t-shirts/university-t-shirts.component';
+import { ProfileViewComponent } from './pages/profile-view/profile-view.component';
+import { EditprofileComponent } from './pages/editprofile/editprofile.component';
+
 
 @NgModule({
-  declarations: [AppComponent, NavBarComponent, HomeComponent, FooterComponent, AboutUsComponent, ContactUsComponent, MakeOrderComponent, ClientLoginComponent, ProjectsComponent, UniversityTShirtsComponent],
+  declarations: [AppComponent, NavBarComponent, HomeComponent, FooterComponent, AboutUsComponent, ContactUsComponent, MakeOrderComponent, ClientLoginComponent, ProjectsComponent, UniversityTShirtsComponent,ProfileViewComponent, EditprofileComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
