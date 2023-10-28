@@ -1,0 +1,72 @@
+/* How we work */
+
+.home-work {
+  padding-bottom: 2rem;
+}
+
+.home-work-container {
+  display: grid;
+  margin-left: 2rem;
+  margin-right: 2rem;
+
+  /* border-radius: 1.6rem;
+  box-shadow: 0 2px 8px -2px hsla(0, 0%, 9%, 0.08),
+    0 8px 12px -2px hsla(0, 0%, 9%, 0.16); */
+  padding: 2rem;
+  /* background-color: white; */
+}
+
+.home-work-icon-container {
+  /* display: grid; */
+  /* justify-content: center; */
+  margin-top: 5rem;
+}
+.home-work-icon-description {
+  margin-top: 2rem;
+}
+.home-work-icon {
+  overflow: hidden;
+  width: 100%;
+  padding: 2rem;
+  border: 1px solid var(--color-secondary);
+  border-radius: 1rem;
+}
+.home-work-icon img {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  transition: scale 400ms;
+}
+
+@media screen and (min-width: 768px) {
+  .home-work-container {
+    flex-direction: row-reverse;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    grid-template-columns: 60% 40%;
+    column-gap: 5rem;
+  }
+
+  .home-work-icon-container {
+    flex-direction: row;
+    grid-template-columns: 20% 80%;
+    column-gap: 2rem;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 2rem;
+  }
+
+  .home-work-icon {
+    overflow: hidden;
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .home-work-icon,
+  .home-work-icon-description {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}

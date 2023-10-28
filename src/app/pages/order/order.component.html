@@ -2,12 +2,19 @@
 <div class="container-fluid page-header py-5">
   <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
   <div class="container text-center py-5">
-    <h1 class="display-2 text-white mb-4 animated slideInDown">Contact Us</h1>
+    <h1 class="display-2 text-white mb-4 animated slideInDown">
+      Consult with us the suitable Production
+    </h1>
   </div>
+  <button
+    class="order-button"
+    type="contactOrder"
+    class="btn btn-primary btn-block mb-4"
+  >
+    Contact For Order
+  </button>
   <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 </div>
-<!-- Page Header End -->
-<!-- Contact Start -->
 <div class="container-fluid py-5 mt-5">
   <div class="container py-5">
     <div
@@ -15,11 +22,10 @@
       data-wow-delay=".3s"
       style="max-width: 600px"
     >
-      <h5 class="text-primary">Reach US</h5>
-      <h1 class="mb-2">Contact StitchCentral</h1>
+      <h1 class="mb-2">Make Order</h1>
       <!--Line danna oni design ek-->
     </div>
-    <div class="contact-detail position-relative p-5">
+    <div class="order-detail position-relative p-5">
       <div class="row g-5 mb-5 justify-content-center">
         <h2 class="mb-3">01. Your Information</h2>
         <form>
@@ -47,6 +53,10 @@
             <input type="email" id="form3Example3" class="form-control" />
           </div>
 
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form3Example3">Address</label>
+            <input type="email" id="form3Example3" class="form-control" />
+          </div>
           <!--Country and teephone number-->
           <div class="row mb-4">
             <div class="col">
@@ -66,62 +76,37 @@
           </div>
           <!--need t change hr color-->
           <hr />
-          <h2 class="mb-3">01. Company Information</h2>
 
-          <!-- 2 column grid layout with text inputs  -->
-          <div class="row mb-4">
-            <div class="col">
-              <div class="form-outline">
-                <label class="form-label" for="form3Example1"
-                  >Designation</label
-                >
-                <input type="text" id="form3Example1" class="form-control" />
-              </div>
-            </div>
-            <div class="col">
-              <div class="form-outline">
-                <label class="form-label" for="form3Example2"
-                  >Company Name</label
-                >
-                <input type="text" id="form3Example2" class="form-control" />
-              </div>
-            </div>
-          </div>
-          <div class="row mb-4">
-            <div class="col">
-              <div class="form-outline">
-                <label class="form-label" for="form3Example1"
-                  >Organization Type</label
-                >
-                <input type="text" id="form3Example1" class="form-control" />
-              </div>
-            </div>
-          </div>
-          <hr />
           <!--Inquiry-->
 
-          <h2 class="mb-3">03. Inquiry</h2>
           <div class="form-outline mb-4">
-            <label class="form-label" for="form6Example3">Type</label>
+            <label class="form-label" for="form6Example3">Order Type</label>
             <input type="text" id="form6Example3" class="form-control" />
           </div>
+          <!-- Date time danna code ekk -->
           <div class="form-outline mb-4">
-            <label class="form-label" for="form6Example3"
-              >Product Category *</label
-            >
+            <label class="form-label" for="form6Example3">Date & Time </label>
             <input type="text" id="form6Example3" class="form-control" />
           </div>
 
           <!-- Message input -->
-          <div class="form-outline mb-4">
-            <label class="form-label" for="form6Example7">Inquiry</label>
+
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Description</label>
             <textarea
               class="form-control"
-              id="form6Example7"
-              rows="4"
+              id="exampleFormControlTextarea1"
+              rows="3"
             ></textarea>
           </div>
-
+          <div class="form-group">
+            <label for="exampleFormControlFile1">Example file input</label>
+            <input
+              type="file"
+              class="form-control-file"
+              id="exampleFormControlFile1"
+            />
+          </div>
           <!-- Submit button -->
           <button
             class="button"

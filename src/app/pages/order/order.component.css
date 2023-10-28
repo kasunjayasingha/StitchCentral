@@ -1,6 +1,6 @@
 .page-header {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url(/assets/imgs/contactus.jpg) center center no-repeat;
+    url(/assets/imgs/order.jpg) center center no-repeat;
   background-size: cover;
 }
 
@@ -12,7 +12,7 @@
   margin-top: 0;
 }
 
-.contact-detail::before {
+.order-detail::before {
   position: absolute;
   content: "";
   height: 100%;
@@ -27,10 +27,6 @@
 }
 .mb-3 {
   color: #fff;
-}
-.form-control {
-  border: 3px solid #0a91ab;
-  border-width: 0 rem;
 }
 .form-label {
   color: #fff;
@@ -47,4 +43,10 @@
 
 .contact-form {
   background: var(--color-secondary);
+}
+.form-group {
+  color: #fff;
+}
+.order-button {
+  text-align: center;
 }
