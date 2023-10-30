@@ -47,6 +47,9 @@
 .form-group {
   color: #fff;
 }
-.order-button {
-  text-align: center;
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
 }

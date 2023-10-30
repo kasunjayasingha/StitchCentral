@@ -26,8 +26,10 @@ import { MakeOrderComponent } from './pages/make-order/make-order.component';
 import { ClientLoginComponent } from './pages/client-login/client-login.component';
 import { OrderComponent } from './pages/order/order.component';
 import { ServicesComponent } from './services/services.component';
+import { ServicesFabricComponent } from './services-fabric/services-fabric.component';
+import { ServiceWeavingComponent } from './service-weaving/service-weaving.component';
 @NgModule({
-  declarations: [AppComponent, NavBarComponent, HomeComponent, FooterComponent, AboutUsComponent, ContactUsComponent, MakeOrderComponent, ClientLoginComponent, OrderComponent, ServicesComponent],
+  declarations: [AppComponent, NavBarComponent, HomeComponent, FooterComponent, AboutUsComponent, ContactUsComponent, MakeOrderComponent, ClientLoginComponent, OrderComponent, ServicesComponent, ServicesFabricComponent, ServiceWeavingComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

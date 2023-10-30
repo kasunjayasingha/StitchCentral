@@ -7,6 +7,7 @@ import { MakeOrderComponent } from './pages/make-order/make-order.component';
 import { ClientLoginComponent } from './pages/client-login/client-login.component';
 import { OrderComponent } from './pages/order/order.component';
 import { ServicesComponent } from './services/services.component';
+import { ServicesFabricComponent } from './services-fabric/services-fabric.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'make-order', component: MakeOrderComponent },
   { path: 'client-login', component: ClientLoginComponent },
   { path: 'order', component: OrderComponent },
-  { path: 'services', component:ServicesComponent},
+  { path: 'services', component: ServicesComponent },
+  { path: 'services-fabric', component: ServicesFabricComponent },
 ];
 
 @NgModule({
