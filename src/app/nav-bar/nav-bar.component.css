@@ -48,6 +48,7 @@
   font-size: 1.2rem;
   color: white;
 }
+
 .socialmedia-icon {
   display: flex;
   margin-left: 0;
@@ -72,6 +73,7 @@
   .nav-icons {
     font-size: 1.5rem;
   }
+
   .nav-text {
     font-size: 1rem;
   }
@@ -105,9 +107,11 @@
   background-color: white;
   color: var(--color-secondary);
 }
+
 .nav-list-items:hover {
   color: var(--color-secondary);
 }
+
 .btn-outline {
   border: 2px solid var(--color-secondary);
   background-color: transparent;
@@ -167,6 +171,7 @@
     display: none;
     margin-left: 5rem;
   }
+
   .navbar-brand {
     margin-left: 9rem;
   }

@@ -18,9 +18,10 @@ html {
 
 body {
   position: relative;
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-family);
   /* font-family: "Roboto", sans-serif; */
 }
+
 :root {
   --color-primary: #1d2f40;
   --color-secondary: #0a91ab;
@@ -42,7 +43,12 @@ html,
 body {
   height: 100%;
 }
+
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.custom-message {
+  z-index: 100000;
 }
