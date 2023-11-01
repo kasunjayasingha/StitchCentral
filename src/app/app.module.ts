@@ -25,11 +25,17 @@ import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { MakeOrderComponent } from './pages/make-order/make-order.component';
 import { ClientLoginComponent } from './pages/client-login/client-login.component';
 import { OrderComponent } from './pages/order/order.component';
-import { ServicesComponent } from './services/services.component';
-import { ServicesFabricComponent } from './services-fabric/services-fabric.component';
-import { ServiceWeavingComponent } from './service-weaving/service-weaving.component';
+import { ServicesComponent } from './pages/services/services.component';
+import { ServicesFabricComponent } from './pages/services-fabric/services-fabric.component';
+import { ServiceWeavingComponent } from './pages/service-weaving/service-weaving.component';
+import { ProjectsComponent } from './pages/projects/projects.component';
+import { UniversityTShirtsComponent } from './pages/university-t-shirts/university-t-shirts.component';
+import { ProfileViewComponent } from './pages/profile-view/profile-view.component';
+import { EditprofileComponent } from './pages/editprofile/editprofile.component';
+
+
 @NgModule({
-  declarations: [AppComponent, NavBarComponent, HomeComponent, FooterComponent, AboutUsComponent, ContactUsComponent, MakeOrderComponent, ClientLoginComponent, OrderComponent, ServicesComponent, ServicesFabricComponent, ServiceWeavingComponent],
+  declarations: [AppComponent, NavBarComponent, HomeComponent, FooterComponent, AboutUsComponent, ContactUsComponent, MakeOrderComponent, ClientLoginComponent, ProjectsComponent, UniversityTShirtsComponent,ProfileViewComponent, EditprofileComponent, OrderComponent, ServicesComponent, ServicesFabricComponent, ServiceWeavingComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
