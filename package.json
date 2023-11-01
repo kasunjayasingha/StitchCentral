@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --port 4201",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -31,7 +31,8 @@
     "bootstrap": "^5.2.3",
     "mdb-angular-ui-kit": "^5.0.0",
     "mdb-ui-kit": "^6.4.0",
-    "primeng": "^16.0.2",
+    "primeicons": "^6.0.1",
+    "primeng": "^16.6.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
