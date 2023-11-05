@@ -1,4 +1,4 @@
- {
+{
   "name": "stitch-central",
   "version": "0.0.0",
   "scripts": {
@@ -27,6 +27,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@ng-bootstrap/ng-bootstrap": "^15.0.1",
     "@popperjs/core": "^2.11.6",
+    "@sweetalert2/ngx-sweetalert2": "^12.2.0",
     "aos": "^3.0.0-beta.6",
     "bootstrap": "^5.2.3",
     "mdb-angular-ui-kit": "^5.0.0",
@@ -34,6 +35,7 @@
     "primeicons": "^6.0.1",
     "primeng": "^16.6.0",
     "rxjs": "~7.8.0",
+    "sweetalert2": "^11.9.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
   },

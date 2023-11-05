@@ -1,6 +1,6 @@
 .page-header {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url(/assets/imgs/order.jpg) center center no-repeat;
+  url(/assets/imgs/order.jpg) center center no-repeat;
   background-size: cover;
 }
 
@@ -25,15 +25,19 @@
   border-radius: 10px;
   z-index: -1;
 }
+
 .mb-3 {
   color: #fff;
 }
+
 .form-label {
   color: #fff;
 }
 
 .button {
   color: #0a91ab;
+  height: 50px;
+  width: 50px;
 }
 
 .div {
@@ -44,9 +48,11 @@
 .contact-form {
   background: var(--color-secondary);
 }
+
 .form-group {
   color: #fff;
 }
+
 .center-container {
   display: flex;
   justify-content: center;

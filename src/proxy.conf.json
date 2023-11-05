@@ -8,5 +8,10 @@
     "target": "http://localhost:7251",
     "secure": false,
     "changeOrigin": true
+  },
+  "/api/v1/auth/*": {
+    "target": "http://localhost:7251",
+    "secure": false,
+    "changeOrigin": true
   }
 }

@@ -1,59 +1,130 @@
-<div class="container-fluid page-header py-5">
-  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-  <div class="container text-center py-5">
-    <h1 class="display-2 text-white mb-4 animated slideInDown" routerLink="/order">Make Order</h1>
-  </div>
-  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-</div>
-<div class="col-12 order-form-outer">
-  <div class="col-6 mx-auto contact-form">
-    <form class="order-form">
-      <div class="form-group">
-        <label for="exampleFormControlInput1">Email address</label>
-        <input
-          type="email"
-          class="form-control"
-          id="exampleFormControlInput1"
-          placeholder="name@example.com"
-        />
-      </div>
-      <div class="form-group">
-        <label for="exampleFormControlInpu2">Name</label>
-        <input
-          type="name"
-          class="form-control"
-          id="exampleFormControlInput1"
-          placeholder=" Enter name"
-        />
-      </div>
-      <div class="form-group">
-        <label for="exampleFormControlTextarea1">Address</label>
-        <textarea
-          class="form-control"
-          id="exampleFormControlTextarea1"
-          rows="2"
-        ></textarea>
-      </div>
+<!--<div class="container-fluid page-header py-5">-->
+<!--  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />-->
+<!--  <div class="container text-center py-5">-->
+<!--    <h1 class="display-2 text-white mb-4 animated slideInDown" routerLink="/order">Make Order</h1>-->
+<!--  </div>-->
+<!--  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />-->
+<!--</div>-->
+<!--<div class="col-12 order-form-outer">-->
+<!--  <div class="col-6 mx-auto contact-form">-->
+<!--    <form class="order-form">-->
+<!--      <div class="form-group">-->
+<!--        <label for="exampleFormControlInput1">Email address</label>-->
+<!--        <input-->
+<!--          type="email"-->
+<!--          class="form-control"-->
+<!--          id="exampleFormControlInput1"-->
+<!--          placeholder="name@example.com"-->
+<!--        />-->
+<!--      </div>-->
+<!--      <div class="form-group">-->
+<!--        <label for="exampleFormControlInpu2">Name</label>-->
+<!--        <input-->
+<!--          type="name"-->
+<!--          class="form-control"-->
+<!--          id="exampleFormControlInput1"-->
+<!--          placeholder=" Enter name"-->
+<!--        />-->
+<!--      </div>-->
+<!--      <div class="form-group">-->
+<!--        <label for="exampleFormControlTextarea1">Address</label>-->
+<!--        <textarea-->
+<!--          class="form-control"-->
+<!--          id="exampleFormControlTextarea1"-->
+<!--          rows="2"-->
+<!--        ></textarea>-->
+<!--      </div>-->
 
-      <div class="form-group">
-        <label for="exampleFormControlTextarea1">Example textarea</label>
-        <textarea
-          class="form-control"
-          id="exampleFormControlTextarea1"
-          rows="3"
-        ></textarea>
+<!--      <div class="form-group">-->
+<!--        <label for="exampleFormControlTextarea1">Example textarea</label>-->
+<!--        <textarea-->
+<!--          class="form-control"-->
+<!--          id="exampleFormControlTextarea1"-->
+<!--          rows="3"-->
+<!--        ></textarea>-->
+<!--      </div>-->
+<!--      <div class="form-group">-->
+<!--        <label for="exampleFormControlFile1">Example file input</label>-->
+<!--        <input-->
+<!--          type="file"-->
+<!--          class="form-control-file"-->
+<!--          id="exampleFormControlFile1"-->
+<!--        />-->
+<!--      </div>-->
+<!--      <button type="button" class="btn btn-primary btn-block bg-zinc-600">-->
+<!--        Submit-->
+<!--      </button>-->
+<!--    </form>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!-- Page Header Start -->
+<div class="container-fluid page-header py-5">
+  <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+  <div class="container text-center py-5">
+    <h1 class="display-2 text-white mb-4 animated slideInDown">
+      Consult with us the suitable Production
+    </h1>
+  </div>
+
+  <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+</div>
+<div class="container-fluid py-5 mt-5">
+  <div class="container py-5">
+    <div
+      class="text-center mx-auto pb-5 wow fadeIn"
+      data-wow-delay=".3s"
+      style="max-width: 600px"
+    >
+      <h1 class="mb-2">Make Appoinment</h1>
+      <!--Line danna oni design ek-->
+    </div>
+    <div class="order-detail position-relative p-5">
+      <div class="row g-5 mb-5 justify-content-center">
+        <h2 class="mb-3">02. Appoinment Information</h2>
+        <form>
+
+          <!--Inquiry-->
+
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form6Example3">Appoinment Type</label>
+            <input class="form-control" id="form6Example3" type="text"/>
+          </div>
+          <!-- Date time danna code ekk -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form6Example3">Appoinment Date </label>
+            <input class="form-control" id="form6Example3" type="text"/>
+          </div>
+
+          <!-- Message input -->
+
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Description</label>
+            <textarea
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="3"
+            ></textarea>
+          </div>
+          <div class="form-group mb-3">
+            <label for="exampleFormControlFile1">Example file input</label>
+            <input
+              class="form-control-file"
+              id="exampleFormControlFile1"
+              type="file"
+            />
+          </div>
+          <!-- Submit button -->
+          <button
+            class="button"
+            class="btn btn-primary btn-block mb-4"
+            type="submit"
+          >
+            Submit
+          </button>
+        </form>
       </div>
-      <div class="form-group">
-        <label for="exampleFormControlFile1">Example file input</label>
-        <input
-          type="file"
-          class="form-control-file"
-          id="exampleFormControlFile1"
-        />
-      </div>
-      <button type="button" class="btn btn-primary btn-block bg-zinc-600">
-        Submit
-      </button>
-    </form>
+    </div>
   </div>
 </div>
+

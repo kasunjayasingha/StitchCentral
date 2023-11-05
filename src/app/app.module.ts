@@ -13,6 +13,7 @@ import {NavBarComponent} from './nav-bar/nav-bar.component';
 import {ButtonModule} from 'primeng/button';
 import {HomeComponent} from './home/home.component';
 import {SplitterModule} from 'primeng/splitter';
+
 import {
   NgbCarouselConfig,
   NgbCarouselModule,
@@ -21,23 +22,27 @@ import {NgFor, NgIf} from '@angular/common';
 
 import {MatIconModule} from '@angular/material/icon';
 import {HttpClientModule} from '@angular/common/http';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {SweetAlert2Module} from '@sweetalert2/ngx-sweetalert2';
+
 import {FooterComponent} from './footer/footer.component';
 import {AboutUsComponent} from './pages/about-us/about-us.component';
 import {ContactUsComponent} from './pages/contact-us/contact-us.component';
 import {MakeOrderComponent} from './pages/make-order/make-order.component';
 import {ClientLoginComponent} from './pages/client-login/client-login.component';
-import { OrderComponent } from './pages/order/order.component';
-import { ServicesComponent } from './pages/services/services.component';
-import { ServicesFabricComponent } from './pages/services-fabric/services-fabric.component';
-import { ServiceWeavingComponent } from './pages/service-weaving/service-weaving.component';
-import { ProjectsComponent } from './pages/projects/projects.component';
-import { UniversityTShirtsComponent } from './pages/university-t-shirts/university-t-shirts.component';
-import { ProfileViewComponent } from './pages/profile-view/profile-view.component';
-import { EditprofileComponent } from './pages/editprofile/editprofile.component';
+import {OrderComponent} from './pages/order/order.component';
+import {ServicesComponent} from './pages/services/services.component';
+import {ServicesFabricComponent} from './pages/services-fabric/services-fabric.component';
+import {ServiceWeavingComponent} from './pages/service-weaving/service-weaving.component';
+import {ProjectsComponent} from './pages/projects/projects.component';
+import {UniversityTShirtsComponent} from './pages/university-t-shirts/university-t-shirts.component';
+import {ProfileViewComponent} from './pages/profile-view/profile-view.component';
+import {EditprofileComponent} from './pages/editprofile/editprofile.component';
+import {SignUpComponent} from './pages/sign-up/sign-up.component';
 
 
 @NgModule({
-  declarations: [AppComponent, NavBarComponent, HomeComponent, FooterComponent, AboutUsComponent, ContactUsComponent, MakeOrderComponent, ClientLoginComponent, ProjectsComponent, UniversityTShirtsComponent,ProfileViewComponent, EditprofileComponent, OrderComponent, ServicesComponent, ServicesFabricComponent, ServiceWeavingComponent],
+  declarations: [AppComponent, NavBarComponent, HomeComponent, FooterComponent, AboutUsComponent, ContactUsComponent, MakeOrderComponent, ClientLoginComponent, ProjectsComponent, UniversityTShirtsComponent, ProfileViewComponent, EditprofileComponent, OrderComponent, ServicesComponent, ServicesFabricComponent, ServiceWeavingComponent, SignUpComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -53,6 +58,9 @@ import { EditprofileComponent } from './pages/editprofile/editprofile.component'
     NgFor,
     NgIf,
     ToastModule,
+    FormsModule,
+    ReactiveFormsModule,
+    SweetAlert2Module.forRoot(),
   ],
   providers: [NgbCarouselConfig, MessageService],
   bootstrap: [AppComponent],
