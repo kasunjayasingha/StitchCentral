@@ -11,7 +11,9 @@ export class AppointmentsDTO {
   client_sample: ClientSampleDTO;
   customer: CustomerDTO;
 
-  constructor(id: number, customer_Id: number, appointment_date: Date, type: string, status: string, description: string, client_sample: ClientSampleDTO, customer: CustomerDTO) {
+
+  constructor(id: number, customer_Id: number, appointment_date: Date, type: string,
+              status: string, description: string, client_sample: ClientSampleDTO, customer: CustomerDTO) {
     this.id = id;
     this.customer_Id = customer_Id;
     this.appointment_date = appointment_date;

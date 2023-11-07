@@ -215,18 +215,43 @@
     <div class="order-detail position-relative p-5">
       <div class="row g-5 mb-5 justify-content-center">
         <h2 class="mb-3">02. Appoinment Information</h2>
-        <form>
+        <form (ngSubmit)="onAppoinmentSubmit()" [formGroup]="appoinmentform">
 
           <!--Inquiry-->
 
-          <div class="form-outline mb-4">
-            <label class="form-label" for="form6Example3">Appoinment Type</label>
-            <input class="form-control" id="form6Example3" type="text"/>
+          <div class="row mb-4">
+            <div class="col">
+              <div class="form-outline">
+                <label class="form-label" for="form6Example3">Appoinment Type</label>
+                <input [(ngModel)]="appointmentInfo.type" class="form-control p-2" formControlName="type"
+                       id="form6Example3"
+                       type="text"/>
+                <div *ngIf="submittedAppoinment && f2.type.errors" class="mt-1">
+                  <div *ngIf="f2.type.errors['required']" class="alert alert-danger  p-2">
+                    Appoinment Type is Required.
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="col">
+
+              <label class="form-label" for="form6Example3">Appoinment Date </label>
+              <p-calendar [(ngModel)]="appointmentInfo.appointment_date" [showIcon]="true"
+                          formControlName="appointment_date"></p-calendar>
+
+              <div *ngIf="submittedAppoinment && f2.appointment_date.errors" class="mt-1">
+                <div *ngIf="f2.appointment_date.errors['required']" class="alert alert-danger  p-2">
+                  Appoinment date is Required.
+                </div>
+              </div>
+
+            </div>
           </div>
+
           <!-- Date time danna code ekk -->
           <div class="form-outline mb-4">
-            <label class="form-label" for="form6Example3">Appoinment Date </label>
-            <input class="form-control" id="form6Example3" type="text"/>
+
           </div>
 
           <!-- Message input -->
@@ -234,14 +259,21 @@
           <div class="form-group">
             <label for="exampleFormControlTextarea1">Description</label>
             <textarea
+              [(ngModel)]="appointmentInfo.description"
               class="form-control"
-              id="exampleFormControlTextarea1"
-              rows="3"
+              formControlName="description"
+              id="exampleFormControlTextarea1" rows="3"
             ></textarea>
+            <div *ngIf="submittedAppoinment && f2.description.errors" class="mt-1">
+              <div *ngIf="f2.description.errors['required']" class="alert alert-danger  p-2">
+                Description is Required.
+              </div>
+            </div>
           </div>
           <div class="form-group mb-3">
-            <label for="exampleFormControlFile1">Example file input</label>
+            <label for="exampleFormControlFile1">Sample file input</label>
             <input
+              [(ngModel)]="appointmentInfo.client_sample"
               class="form-control-file"
               id="exampleFormControlFile1"
               type="file"
@@ -249,12 +281,23 @@
           </div>
           <!-- Submit button -->
           <button
-            class="button"
+            (click)="onCustomerBack()"
             class="btn btn-primary btn-block mb-4"
-            type="submit"
+            class="button"
+            type="button"
           >
-            Submit
+            Previous
           </button>
+
+          <div class="w-btn-wrapper d-flex justify-content-end">
+            <button
+              class="button p-3"
+              class="btn btn-primary btn-block mb-4"
+              type="submit"
+            >
+              Submit
+            </button>
+          </div>
         </form>
       </div>
     </div>

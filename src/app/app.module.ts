@@ -4,6 +4,7 @@ import {MdbCollapseModule} from 'mdb-angular-ui-kit/collapse';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ToastModule} from 'primeng/toast';
 import {MessageService} from 'primeng/api';
+import {CalendarModule} from 'primeng/calendar';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -61,6 +62,7 @@ import {SignUpComponent} from './pages/sign-up/sign-up.component';
     FormsModule,
     ReactiveFormsModule,
     SweetAlert2Module.forRoot(),
+    CalendarModule,
   ],
   providers: [NgbCarouselConfig, MessageService],
   bootstrap: [AppComponent],

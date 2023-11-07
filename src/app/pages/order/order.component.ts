@@ -7,6 +7,9 @@ import {CustomerDTO} from "../../DTO/customerDTO";
 import {CustomerService} from 'src/app/service/customer.service';
 import {MessageService} from "primeng/api";
 import {Toast} from 'primeng/toast';
+import {AppointmentsDTO} from "../../DTO/AppointmentsDTO";
+import {ClientSampleDTO} from 'src/app/DTO/clientSampleDTO';
+import {AppoinmentService} from "../../service/appoinment.service";
 
 
 @Component({
@@ -18,8 +21,16 @@ export class OrderComponent implements OnInit {
 
   // customerform: FormGroup;
   submittedCustomer = false;
+  submittedAppoinment = false;
   displayAppointment: boolean = false;
+  date: Date | undefined
 
+  appoinmentform = this.formBuilder.group({
+    type: [null, Validators.required],
+    description: [null, Validators.required],
+    appointment_date: [null, Validators.required],
+    // client_sample: [null, Validators.required],
+  });
 
   customerform = this.formBuilder.group({
     first_name: [null, Validators.required],
@@ -34,7 +45,33 @@ export class OrderComponent implements OnInit {
     email: [null, [Validators.required, Validators.pattern(this.validationHandlerService.emailValidation())]],
 
   });
-  customerInfo = new CustomerDTO(0, '', '', '', '', 0, '', '', '', '', 0, '', '', new Date(), new Date());
+
+
+  customerInfo = new CustomerDTO(0,
+    '',
+    '',
+    '',
+    '',
+    0,
+    '',
+    '',
+    '',
+    '',
+    0,
+    '',
+    '',
+    new Date(),
+    new Date());
+
+
+  appointmentInfo = new AppointmentsDTO(0,
+    0,
+    new Date(),
+    '',
+    '',
+    '',
+    new ClientSampleDTO(0, '', '', '', '', 0, new Date(), new Date()),
+    new CustomerDTO(0, '', '', '', '', 0, '', '', '', '', 0, '', '', new Date(), new Date()));
 
   constructor(
     private formBuilder: FormBuilder,
@@ -42,6 +79,7 @@ export class OrderComponent implements OnInit {
     private authService: AuthService,
     private customerService: CustomerService,
     private messageService: MessageService,
+    private appoinmentService: AppoinmentService
   ) {
     // this.customerform = this.formBuilder.group({
     //   first_name: [''],
@@ -73,6 +111,10 @@ export class OrderComponent implements OnInit {
     return this.customerform.controls;
   }
 
+  get f2() {
+    return this.appoinmentform.controls;
+  }
+
   ngOnInit(): void {
     // this.customerInfo = new CustomerDTO(0, '', '', '', '', 0, '', '', '', '', 0, '', new Date(), new Date());
     this.reactiveForm();
@@ -95,28 +137,86 @@ export class OrderComponent implements OnInit {
         this.EMAIL_REJECTED();
         return;
       } else {
-        if (!sessionStorage.getItem('CUSTOMER_TYPE')) {
-          this.customerInfo.customer_type = 'GUEST';
-          this.customerService.SAVE_CUSTOMER(this.customerInfo).subscribe((data) => {
-
-            if (data.scusess == true) {
-              this.displayAppointment = true;
-            } else {
-
-              this.messageService.add({
-                severity: 'error',
-                summary: 'Error',
-                detail: 'Customer Registration Failed',
-              });
-            }
-          });
-        }
         this.displayAppointment = true;
         this.submittedCustomer = false;
         console.log("success");
       }
     }
 
+  }
+
+  // TODO
+  onAppoinmentSubmit() {
+    this.submittedAppoinment = true;
+    console.log(this.appoinmentform.value);
+    if (this.appoinmentform.invalid) {
+      console.log("invalid");
+      return;
+    } else {
+      if (!sessionStorage.getItem('CUSTOMER_TYPE')) {
+        this.customerInfo.customer_type = 'GUEST';
+        this.customerService.SAVE_CUSTOMER(this.customerInfo).subscribe((data) => {
+
+          if (data.scusess == true) {
+            this.appointmentInfo.customer.email = this.customerInfo.email;
+            console.log("Appoinment----" + JSON.stringify(this.appointmentInfo));
+
+
+            this.appoinmentService.SAVE_APPOINMENT(this.appointmentInfo).subscribe((data) => {
+              if (data.scusess == true) {
+                this.messageService.add({severity: 'success', summary: 'Success', detail: 'Appointment Created'});
+                this.submittedAppoinment = false;
+                this.customerform.reset();
+                this.appoinmentform.reset();
+                this.customerInfo = new CustomerDTO(0, '', '', '', '', 0, '', '', '', '', 0, '', '', new Date(), new Date());
+                this.appointmentInfo = new AppointmentsDTO(0, 0, new Date(), '', '', '', new ClientSampleDTO(0, '', '', '', '', 0, new Date(), new Date()), new CustomerDTO(0, '', '', '', '', 0, '', '', '', '', 0, '', '', new Date(), new Date()));
+                this.messageService.add({severity: 'success', summary: 'Success', detail: 'Appointment Created'});
+              } else {
+                this.messageService.add({
+                  severity: 'error',
+                  summary: 'Error',
+                  detail: 'Appointment Creation Failed',
+                });
+              }
+            });
+          } else {
+
+            this.messageService.add({
+              severity: 'error',
+              summary: 'Error',
+              detail: 'Customer Registration Failed',
+            });
+          }
+        });
+      } else {
+        this.appointmentInfo.customer.email = this.customerInfo.email;
+        console.log("Appoinment----" + JSON.stringify(this.appointmentInfo));
+
+        this.appoinmentService.SAVE_APPOINMENT(this.appointmentInfo).subscribe((data) => {
+          if (data.scusess == true) {
+            this.submittedAppoinment = false;
+            this.customerform.reset();
+            this.appoinmentform.reset();
+            this.customerInfo = new CustomerDTO(0, '', '', '', '', 0, '', '', '', '', 0, '', '', new Date(), new Date());
+            this.appointmentInfo = new AppointmentsDTO(0, 0, new Date(), '', '', '', new ClientSampleDTO(0, '', '', '', '', 0, new Date(), new Date()), new CustomerDTO(0, '', '', '', '', 0, '', '', '', '', 0, '', '', new Date(), new Date()));
+            this.messageService.add({severity: 'success', summary: 'Success', detail: 'Appointment Created'});
+          } else {
+            this.messageService.add({
+              severity: 'error',
+              summary: 'Error',
+              detail: 'Appointment Creation Failed',
+            });
+          }
+        });
+      }
+
+
+    }
+
+  }
+
+  onCustomerBack() {
+    this.displayAppointment = !this.displayAppointment;
   }
 
 
