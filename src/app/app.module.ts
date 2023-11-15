@@ -42,8 +42,9 @@ import {EditprofileComponent} from './pages/editprofile/editprofile.component';
 import {SignUpComponent} from './pages/sign-up/sign-up.component';
 
 
+
 @NgModule({
-  declarations: [AppComponent, NavBarComponent, HomeComponent, FooterComponent, AboutUsComponent, ContactUsComponent, MakeOrderComponent, ClientLoginComponent, ProjectsComponent, UniversityTShirtsComponent, ProfileViewComponent, EditprofileComponent, OrderComponent, ServicesComponent, ServicesFabricComponent, ServiceWeavingComponent, SignUpComponent],
+  declarations: [AppComponent, NavBarComponent, HomeComponent, FooterComponent, AboutUsComponent, ContactUsComponent, MakeOrderComponent, ClientLoginComponent, ProjectsComponent, UniversityTShirtsComponent, ProfileViewComponent, EditprofileComponent, OrderComponent, ServicesComponent, ServicesFabricComponent, ServiceWeavingComponent, SignUpComponent,],
   imports: [
     BrowserModule,
     AppRoutingModule,

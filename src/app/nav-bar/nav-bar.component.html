@@ -119,7 +119,7 @@
         </li>
       </ul>
       <ul class="navbar-nav mb-2 mb-lg-0">
-        <li class="nav-item dropdown" ngbDropdown>
+        <li *ngIf="isUserLogin" class="nav-item dropdown" ngbDropdown>
           <a
             aria-expanded="false"
             class="nav-link dropdown-toggle nav-list-items login-icon-dropdown"
@@ -138,6 +138,20 @@
               <a class="dropdown-item" routerLink="Project-Details">Logout</a>
             </li>
           </ul>
+        </li>
+
+        <li *ngIf="!isUserLogin" class="nav-item dropdown" ngbDropdown>
+          <a
+            aria-expanded="false"
+            class="nav-link dropdown-toggle nav-list-items login-icon-dropdown"
+            data-bs-toggle="dropdown"
+            ngbDropdownToggle
+            role="button"
+            routerLink="/signup"
+          >
+            <fa-icon [icon]="faUser" class="Login-icon"></fa-icon>
+          </a>
+        
         </li>
       </ul>
       <button class="btn-outline nav-list-items">

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
@@ -12,7 +12,7 @@ import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.css'],
 })
-export class NavBarComponent {
+export class NavBarComponent implements OnInit {
   faBars = faBars;
   faUser = faUser;
   faEnvelope = faEnvelope;
@@ -20,4 +20,14 @@ export class NavBarComponent {
   faLocationDot = faLocationDot;
   faFacebook = faFacebookF;
   faWhatsapp = faWhatsapp;
+  isUserLogin: boolean = true;
+
+  ngOnInit(): void {
+      if(!sessionStorage.getItem('CUSTOMER_TYPE')){
+
+        this.isUserLogin = false;
+
+      }
+  }
+
 }

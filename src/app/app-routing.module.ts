@@ -13,6 +13,7 @@ import { EditprofileComponent } from './pages/editprofile/editprofile.component'
 import { OrderComponent } from './pages/order/order.component';
 import { ServicesComponent } from './pages/services/services.component';
 import { ServicesFabricComponent } from './pages/services-fabric/services-fabric.component';
+import { SignUpComponent } from './pages/sign-up/sign-up.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'order', component: OrderComponent },
   { path: 'services', component: ServicesComponent },
   { path: 'services-fabric', component: ServicesFabricComponent },
+  {path:'signup',component:SignUpComponent}
 ];
 
 @NgModule({

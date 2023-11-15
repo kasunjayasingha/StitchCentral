@@ -1,1 +1,105 @@
-<p>sign-up works!</p>
+<!-- signup.component.html -->
+
+<div class="container-fluid page-header py-5">
+  <div class="container text-center py-5">
+    <h1 class="display-2 text-white mb-4 animated slideInDown">
+      Sign Up
+    </h1>
+  </div>
+  <div class="center-container">
+    <form >
+      <!-- Full Name and Last Name -->
+      <div class="row mb-4">
+        <div class="col">
+          <div class="form-outline">
+            <label class="form-label" for="fullName">Full Name *</label>
+            <input formControlName="fullName" id="fullName" type="text" class="form-control p-2" />
+            <!-- <div *ngIf="submitted && signupForm.controls.fullName.errors?.required" class="alert alert-danger p-2">
+              Full Name is required.
+            </div> -->
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-outline">
+            <label class="form-label" for="lastName">Last Name *</label>
+            <input formControlName="lastName" id="lastName" type="text" class="form-control p-2" />
+            <!-- <div *ngIf="submitted && signupForm.controls.lastName.errors?.required" class="alert alert-danger p-2">
+              Last Name is required.
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="row mb-4">
+        <div class="col">
+          <div class="form-outline">
+            <label class="form-label" for="email">Email *</label>
+            <input formControlName="email" id="email" type="email" class="form-control p-2" />
+            <!-- <div *ngIf="submitted && signupForm.controls.email.errors?.required" class="alert alert-danger p-2">
+              Email is required.
+            </div> -->
+            <!-- <div *ngIf="submitted && signupForm.controls.email.errors?.pattern" class="alert alert-danger p-2">
+              Invalid email format.
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Address, Company/University/School, City -->
+      <div class="row mb-4">
+        <div class="col">
+          <div class="form-outline">
+            <label class="form-label" for="address">Address *</label>
+            <input formControlName="address" id="address" type="text" class="form-control p-2" />
+            <!-- <div *ngIf="submitted && signupForm.controls.address.errors?.required" class="alert alert-danger p-2">
+              Address is required.
+            </div> -->
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-outline">
+            <label class="form-label" for="company">Company/University/School</label>
+            <input formControlName="company" id="company" type="text" class="form-control p-2" />
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-outline">
+            <label class="form-label" for="city">City *</label>
+            <input formControlName="city" id="city" type="text" class="form-control p-2" />
+            <!-- <div *ngIf="submitted && signupForm.controls.city.errors?.required" class="alert alert-danger p-2">
+              City is required.
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Username and Password -->
+      <div class="row mb-4">
+        <div class="col">
+          <div class="form-outline">
+            <label class="form-label" for="username">Username *</label>
+            <input formControlName="username" id="username" type="text" class="form-control p-2" />
+            <!-- <div *ngIf="submitted && signupForm.controls.username.errors?.required" class="alert alert-danger p-2">
+              Username is required.
+            </div> -->
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-outline">
+            <label class="form-label" for="password">Password *</label>
+            <input formControlName="password" id="password" type="password" class="form-control p-2" />
+            <!-- <div *ngIf="submitted && signupForm.controls.password.errors?.required" class="alert alert-danger p-2">
+              Password is required.
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Submit button -->
+      <div class="w-btn-wrapper d-flex justify-content-end">
+        <button class="button p-3" type="submit">Sign Up</button>
+      </div>
+    </form>
+  </div>
+</div>
