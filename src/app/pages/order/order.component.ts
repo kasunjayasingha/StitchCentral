@@ -145,7 +145,6 @@ export class OrderComponent implements OnInit {
 
   }
 
-  // TODO
   onAppoinmentSubmit() {
     this.submittedAppoinment = true;
     console.log(this.appoinmentform.value);
@@ -215,14 +214,7 @@ export class OrderComponent implements OnInit {
         this.appoinmentform.reset();
         this.customerInfo = new CustomerDTO(0, '', '', '', '', 0, '', '', '', '', 0, '', '', new Date(), new Date());
         this.appointmentInfo = new AppointmentsDTO(0, 0, new Date(), '', '', '', new ClientSampleDTO(0, '', '', '', '', 0, new Date(), new Date()), new CustomerDTO(0, '', '', '', '', 0, '', '', '', '', 0, '', '', new Date(), new Date()));
-        // this.messageService.add({severity: 'success', summary: 'Success', detail: 'Appointment Created'});
       } else {
-        // this.messageService.add({
-        //   severity: 'error',
-        //   summary: 'Error',
-        //   detail: 'Appointment Creation Failed',
-        // });
-
         Swal.fire({
           icon: 'error',
           title: 'Oops...',
