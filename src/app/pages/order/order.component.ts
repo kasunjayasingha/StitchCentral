@@ -145,7 +145,6 @@ export class OrderComponent implements OnInit {
 
   }
 
-  // TODO
   onAppoinmentSubmit() {
     this.submittedAppoinment = true;
     console.log(this.appoinmentform.value);
@@ -153,33 +152,31 @@ export class OrderComponent implements OnInit {
       console.log("invalid");
       return;
     } else {
-      if (!sessionStorage.getItem('CUSTOMER_TYPE')) {
+      if (!(sessionStorage.getItem('CUSTOMER_TYPE'))) {
+        console.log("1");
         this.customerInfo.customer_type = 'GUEST';
         this.customerService.SAVE_CUSTOMER(this.customerInfo).subscribe((data) => {
+          console.log("2");
+          this.appointmentInfo.customer.customer_type = 'GUEST';
 
-          if (data.scusess == true) {
+          if (data.success == false) {
+            console.log("3");
+            const dataMessageArray = data.message.split(' ');
+            if (dataMessageArray.includes('Customer') && dataMessageArray.includes('already')
+              && dataMessageArray.includes('exists')) {
+              console.log("4");
+              console.log("Customer already exists");
+              this.appointmentInfo.customer.email = dataMessageArray[3];
+              this.appoinmentAPI();
+            }
+          } else if (data.success == true) {
+            console.log("5");
             this.appointmentInfo.customer.email = this.customerInfo.email;
-            console.log("Appoinment----" + JSON.stringify(this.appointmentInfo));
+            console.log("New GUEST Customer saved");
+            this.appoinmentAPI();
 
-
-            this.appoinmentService.SAVE_APPOINMENT(this.appointmentInfo).subscribe((data) => {
-              if (data.scusess == true) {
-                this.messageService.add({severity: 'success', summary: 'Success', detail: 'Appointment Created'});
-                this.submittedAppoinment = false;
-                this.customerform.reset();
-                this.appoinmentform.reset();
-                this.customerInfo = new CustomerDTO(0, '', '', '', '', 0, '', '', '', '', 0, '', '', new Date(), new Date());
-                this.appointmentInfo = new AppointmentsDTO(0, 0, new Date(), '', '', '', new ClientSampleDTO(0, '', '', '', '', 0, new Date(), new Date()), new CustomerDTO(0, '', '', '', '', 0, '', '', '', '', 0, '', '', new Date(), new Date()));
-                this.messageService.add({severity: 'success', summary: 'Success', detail: 'Appointment Created'});
-              } else {
-                this.messageService.add({
-                  severity: 'error',
-                  summary: 'Error',
-                  detail: 'Appointment Creation Failed',
-                });
-              }
-            });
           } else {
+            console.log("6");
 
             this.messageService.add({
               severity: 'error',
@@ -189,30 +186,42 @@ export class OrderComponent implements OnInit {
           }
         });
       } else {
+        console.log("7");
         this.appointmentInfo.customer.email = this.customerInfo.email;
-        console.log("Appoinment----" + JSON.stringify(this.appointmentInfo));
-
-        this.appoinmentService.SAVE_APPOINMENT(this.appointmentInfo).subscribe((data) => {
-          if (data.scusess == true) {
-            this.submittedAppoinment = false;
-            this.customerform.reset();
-            this.appoinmentform.reset();
-            this.customerInfo = new CustomerDTO(0, '', '', '', '', 0, '', '', '', '', 0, '', '', new Date(), new Date());
-            this.appointmentInfo = new AppointmentsDTO(0, 0, new Date(), '', '', '', new ClientSampleDTO(0, '', '', '', '', 0, new Date(), new Date()), new CustomerDTO(0, '', '', '', '', 0, '', '', '', '', 0, '', '', new Date(), new Date()));
-            this.messageService.add({severity: 'success', summary: 'Success', detail: 'Appointment Created'});
-          } else {
-            this.messageService.add({
-              severity: 'error',
-              summary: 'Error',
-              detail: 'Appointment Creation Failed',
-            });
-          }
-        });
+        this.appoinmentAPI();
       }
 
 
     }
 
+  }
+
+  appoinmentAPI() {
+    console.log("Appoinment----" + JSON.stringify(this.appointmentInfo));
+    this.appointmentInfo.status = 'PENDING';
+
+    this.appoinmentService.SAVE_APPOINMENT(this.appointmentInfo).subscribe((data) => {
+      if (data.success == true) {
+        Swal.fire({
+          icon: 'success',
+          title: 'Success',
+          text: 'Appointment Created',
+        });
+        // this.messageService.add({severity: 'success', summary: 'Success', detail: 'Appointment Created'});
+        this.submittedAppoinment = false;
+        this.displayAppointment = false;
+        this.customerform.reset();
+        this.appoinmentform.reset();
+        this.customerInfo = new CustomerDTO(0, '', '', '', '', 0, '', '', '', '', 0, '', '', new Date(), new Date());
+        this.appointmentInfo = new AppointmentsDTO(0, 0, new Date(), '', '', '', new ClientSampleDTO(0, '', '', '', '', 0, new Date(), new Date()), new CustomerDTO(0, '', '', '', '', 0, '', '', '', '', 0, '', '', new Date(), new Date()));
+      } else {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Appointment Creation Failed',
+        });
+      }
+    });
   }
 
   onCustomerBack() {
