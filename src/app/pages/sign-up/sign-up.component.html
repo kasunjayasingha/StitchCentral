@@ -12,8 +12,8 @@
       <div class="row mb-4">
         <div class="col">
           <div class="form-outline">
-            <label class="form-label" for="fullName">Full Name *</label>
-            <input class="form-control p-2" formControlName="fullName" id="fullName" type="text"/>
+            <label class="form-label" for="fullName">First name  *</label>
+            <input class="form-control p-2" formControlName="First_name" id="First_name " type="text"/>
             <!-- <div *ngIf="submitted && signupForm.controls.fullName.errors?.required" class="alert alert-danger p-2">
               Full Name is required.
             </div> -->
@@ -46,34 +46,44 @@
           </div>
         </div>
       </div>
-
-      <!-- Address, Company/University/School, City -->
-      <div class="row mb-4">
-        <div class="col">
-          <div class="form-outline">
-            <label class="form-label" for="address">Address *</label>
-            <input class="form-control p-2" formControlName="address" id="address" type="text"/>
-            <!-- <div *ngIf="submitted && signupForm.controls.address.errors?.required" class="alert alert-danger p-2">
-              Address is required.
-            </div> -->
-          </div>
-        </div>
-        <div class="col">
-          <div class="form-outline">
-            <label class="form-label" for="company">Company/University/School</label>
-            <input class="form-control p-2" formControlName="company" id="company" type="text"/>
-          </div>
-        </div>
-        <div class="col">
-          <div class="form-outline">
-            <label class="form-label" for="city">City *</label>
-            <input class="form-control p-2" formControlName="city" id="city" type="text"/>
-            <!-- <div *ngIf="submitted && signupForm.controls.city.errors?.required" class="alert alert-danger p-2">
-              City is required.
-            </div> -->
-          </div>
+      <div class="col">
+        <div class="form-outline">
+          <label class="form-label" for="city">City *</label>
+          <input class="form-control p-2" formControlName="city" id="city" type="text"/>
         </div>
       </div>
+      <div class="col">
+        <div class="form-outline">
+          <label class="form-label" for="address">Address *</label>
+          <input class="form-control p-2" formControlName="address" id="address" type="text"/>
+        </div>
+      </div>
+
+     <!-- Address, Company/University/School, City -->
+<div class="row mb-4">
+ 
+  <div class="col">
+    <div class="form-outline">
+      <label class="form-label" for="company">Company</label>
+      <input class="form-control p-2" formControlName="company" id="company" type="text"/>
+    </div>
+  </div>
+  <div class="col">
+    <div class="form-outline">
+      <label class="form-label" for="University">University</label>
+      <input class="form-control p-2" formControlName="University" id="University" type="text"/>
+    </div>
+  </div>
+  <div class="col">
+    <div class="form-outline">
+      <label class="form-label" for="School">School</label>
+      <input class="form-control p-2" formControlName="School" id="School" type="text"/>
+    </div>
+  </div>
+  
+</div>
+
+      
 
       <!-- Username and Password -->
       <div class="row mb-4">

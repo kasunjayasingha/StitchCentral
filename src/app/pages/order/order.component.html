@@ -219,22 +219,33 @@
         <form (ngSubmit)="onAppoinmentSubmit()" [formGroup]="appoinmentform">
 
           <!--Inquiry-->
-
           <div class="row mb-4">
             <div class="col">
               <div class="form-outline">
-                <label class="form-label" for="form6Example3">Appoinment Type</label>
-                <input [(ngModel)]="appointmentInfo.type" class="form-control p-2" formControlName="type"
-                       id="form6Example3"
-                       type="text"/>
+                <label class="form-label" for="appointmentType">Appointment Type *</label>
+                <select
+                  [(ngModel)]="appointmentInfo.type"
+                  [ngClass]="{ 'is-invalid': submittedAppoinment && f2.type.errors }"
+                  class="form-control p-2"
+                  formControlName="type"
+                  id="appointmentType"
+                >
+                  <option value="" disabled>Select Appointment Type</option>
+                  <option value="ONLINE">Online</option>
+                  <option value="IN_PERSON">In Person</option>
+                </select>
                 <div *ngIf="submittedAppoinment && f2.type.errors" class="mt-1">
                   <div *ngIf="f2.type.errors['required']" class="alert alert-danger  p-2">
-                    Appoinment Type is Required.
+                    Appointment Type is Required.
                   </div>
                 </div>
               </div>
-
             </div>
+   
+          </div>
+          
+          
+          
             <div class="col">
 
               <label class="form-label" for="form6Example3">Appoinment Date </label>
@@ -248,7 +259,7 @@
               </div>
 
             </div>
-          </div>
+          
 
           <!-- Date time danna code ekk -->
           <div class="form-outline mb-4">

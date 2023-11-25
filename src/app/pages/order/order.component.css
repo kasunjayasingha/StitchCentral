@@ -59,3 +59,22 @@
   align-items: center;
   height: 10vh;
 }
+
+/* Add some styling for the select element */
+.form-outline select {
+  color: #000; /* Adjust the color */
+  padding: 0.375rem 0.75rem; /* Adjust the padding */
+  font-size: 1rem; /* Adjust the font size */
+}
+
+/* Adjust the styling for the dropdown arrow */
+.form-outline select:after {
+  border-color: #000; /* Adjust the color */
+}
+
+/* Adjust the styling for the error message */
+.alert-danger {
+  color: #721c24; /* Adjust the color */
+  background-color: #f8d7da; /* Adjust the background color */
+  border-color: #f5c6cb; /* Adjust the border color */
+}

@@ -21,7 +21,7 @@ export class OrderComponent implements OnInit {
 
   // customerform: FormGroup;
   submittedCustomer = false;
-  submittedAppoinment = false;
+  submittedAppoinment: boolean= false;
   displayAppointment: boolean = false;
   date: Date | undefined
 
