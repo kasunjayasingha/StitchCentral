@@ -10,6 +10,8 @@ import {Toast} from 'primeng/toast';
 import {AppointmentsDTO} from "../../DTO/AppointmentsDTO";
 import {ClientSampleDTO} from 'src/app/DTO/clientSampleDTO';
 import {AppoinmentService} from "../../service/appoinment.service";
+import {FileHandleModel} from "../../DTO/file.handle.model";
+import {DomSanitizer} from '@angular/platform-browser';
 
 
 @Component({
@@ -63,6 +65,12 @@ export class OrderComponent implements OnInit {
     new Date(),
     new Date());
 
+  fileHandle: FileHandleModel = {
+    file: new File([], ''),
+    url: this.sanitizer.bypassSecurityTrustResourceUrl(
+      window.URL.createObjectURL(new File([], ''))
+    ),
+  }
 
   appointmentInfo = new AppointmentsDTO(0,
     0,
@@ -71,7 +79,10 @@ export class OrderComponent implements OnInit {
     '',
     '',
     new ClientSampleDTO(0, '', '', '', '', 0, new Date(), new Date()),
-    new CustomerDTO(0, '', '', '', '', 0, '', '', '', '', 0, '', '', new Date(), new Date()));
+    new CustomerDTO(0, '', '', '', '', 0, '', '', '', '', 0, '', '', new Date(), new Date()),
+    this.fileHandle
+  );
+  appoinmentId = 0;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -79,7 +90,8 @@ export class OrderComponent implements OnInit {
     private authService: AuthService,
     private customerService: CustomerService,
     private messageService: MessageService,
-    private appoinmentService: AppoinmentService
+    private appoinmentService: AppoinmentService,
+    private sanitizer: DomSanitizer,
   ) {
     // this.customerform = this.formBuilder.group({
     //   first_name: [''],
@@ -207,13 +219,43 @@ export class OrderComponent implements OnInit {
           title: 'Success',
           text: 'Appointment Created',
         });
+
+        const dataMessageArray = data.message.split(' ');
+        this.appoinmentId = dataMessageArray[1];
+
+        this.appoinmentService.SAVE_APPONMENT_SAMPLE(this.prepareFormData(this.appointmentInfo)).subscribe((data) => {
+          if (data.success == true) {
+            Swal.fire({
+              icon: 'success',
+              title: 'Success',
+              text: 'Appointment Created',
+            });
+            // this.messageService.add({severity: 'success', summary: 'Success', detail: 'Appointment Created'});
+            this.submittedAppoinment = false;
+            this.displayAppointment = false;
+            this.customerform.reset();
+            this.appoinmentform.reset();
+            this.customerInfo = new CustomerDTO(0, '', '', '', '', 0, '', '', '', '', 0, '', '', new Date(), new Date());
+            this.appointmentInfo = new AppointmentsDTO(0, 0, new Date(), '', '', '', new ClientSampleDTO(0, '', '', '', '', 0, new Date(), new Date()), new CustomerDTO(0, '', '', '', '', 0, '', '', '', '', 0, '', '', new Date(), new Date()),
+              this.fileHandle
+            );
+          } else {
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Appointment Creation Failed',
+            });
+          }
+        });
         // this.messageService.add({severity: 'success', summary: 'Success', detail: 'Appointment Created'});
         this.submittedAppoinment = false;
         this.displayAppointment = false;
         this.customerform.reset();
         this.appoinmentform.reset();
         this.customerInfo = new CustomerDTO(0, '', '', '', '', 0, '', '', '', '', 0, '', '', new Date(), new Date());
-        this.appointmentInfo = new AppointmentsDTO(0, 0, new Date(), '', '', '', new ClientSampleDTO(0, '', '', '', '', 0, new Date(), new Date()), new CustomerDTO(0, '', '', '', '', 0, '', '', '', '', 0, '', '', new Date(), new Date()));
+        this.appointmentInfo = new AppointmentsDTO(0, 0, new Date(), '', '', '', new ClientSampleDTO(0, '', '', '', '', 0, new Date(), new Date()), new CustomerDTO(0, '', '', '', '', 0, '', '', '', '', 0, '', '', new Date(), new Date()),
+          this.fileHandle
+        );
       } else {
         Swal.fire({
           icon: 'error',
@@ -222,10 +264,42 @@ export class OrderComponent implements OnInit {
         });
       }
     });
+
+
   }
 
   onCustomerBack() {
     this.displayAppointment = !this.displayAppointment;
+  }
+
+  prepareFormData(appointmentInfo: AppointmentsDTO) {
+    const formData = new FormData();
+    formData.append(
+      'file',
+      appointmentInfo.file.file,
+      appointmentInfo.file.file.name
+    );
+    // formData.append('appointmentId', appointmentInfo.id.toString());
+    // const jsonBlob = new Blob([JSON.stringify(appointmentInfo)], {type: 'application/json'});
+    // formData.append('appointmentInfo', jsonBlob, 'appointmentInfo.json');
+    console.log("form data " + JSON.stringify(formData));
+    return formData;
+  }
+
+  onSelectedChange(event: any) {
+    console.log("dd-------- " + event.data);
+    if (event.target.files.length > 0) {
+      const file = event.target.files[0];
+
+      const fileHandle: FileHandleModel = {
+        file: file,
+        url: this.sanitizer.bypassSecurityTrustResourceUrl(
+          window.URL.createObjectURL(file)
+        ),
+      }
+      this.appointmentInfo.file = fileHandle;
+    }
+
   }
 
 

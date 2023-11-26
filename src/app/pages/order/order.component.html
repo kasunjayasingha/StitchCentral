@@ -285,7 +285,7 @@
           <div class="form-group mb-3">
             <label for="exampleFormControlFile1">Sample file input</label>
             <input
-              [(ngModel)]="appointmentInfo.client_sample"
+              (change)="onSelectedChange($event)"
               class="form-control-file"
               id="exampleFormControlFile1"
               type="file"

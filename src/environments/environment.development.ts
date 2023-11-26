@@ -24,5 +24,6 @@ export const environment = {
     GETAPPOINMENT: `${API_BASE_URL_APPOINTMENT}/getAppoinment/`,
     UPDATEAPPOINMENT: `${API_BASE_URL_APPOINTMENT}/updateAppoinment`,
     DELETEAPPOINMENT: `${API_BASE_URL_APPOINTMENT}/deleteAppoinment/`,
+    ADDAPPOINMENT_WITH_SAMPLE: `${API_BASE_URL_APPOINTMENT}/uploadFile`,
   },
 };
