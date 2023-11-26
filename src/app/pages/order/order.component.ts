@@ -21,7 +21,7 @@ export class OrderComponent implements OnInit {
 
   // customerform: FormGroup;
   submittedCustomer = false;
-  submittedAppoinment: boolean= false;
+  submittedAppoinment: boolean = false;
   displayAppointment: boolean = false;
   date: Date | undefined
 
@@ -41,6 +41,7 @@ export class OrderComponent implements OnInit {
     university: [''],
     company: [''],
     club: [''],
+
     phone_number: [null, [Validators.required, Validators.pattern(this.validationHandlerService.mobileNumberWithCountryCodeValidation())]],
     email: [null, [Validators.required, Validators.pattern(this.validationHandlerService.emailValidation())]],
 
