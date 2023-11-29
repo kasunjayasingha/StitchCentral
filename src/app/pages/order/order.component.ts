@@ -20,6 +20,7 @@ import {DomSanitizer} from '@angular/platform-browser';
   styleUrls: ['./order.component.css']
 })
 export class OrderComponent implements OnInit {
+  isDisabled = false;
 
   // customerform: FormGroup;
   submittedCustomer = false;
@@ -35,14 +36,14 @@ export class OrderComponent implements OnInit {
   });
 
   customerform = this.formBuilder.group({
-    first_name: [null, Validators.required],
-    last_name: [null, Validators.required],
-    address: [null, Validators.required],
-    city: [null, Validators.required],
+    first_name: [{value: '', disabled: this.isDisabled}, Validators.required],
+    last_name: [{value: '', disabled: this.isDisabled}, Validators.required],
+    address: [{value: '', disabled: this.isDisabled}, Validators.required],
+    city: [{value: '', disabled: this.isDisabled}, Validators.required],
     // postal_code: [null, Validators.required],
-    university: [''],
-    company: [''],
-    club: [''],
+    university: [{value: '', disabled: this.isDisabled}],
+    company: [{value: '', disabled: this.isDisabled}],
+    club: [{value: '', disabled: this.isDisabled}],
     phone_number: [null, [Validators.required, Validators.pattern(this.validationHandlerService.mobileNumberWithCountryCodeValidation())]],
     email: [null, [Validators.required, Validators.pattern(this.validationHandlerService.emailValidation())]],
 
@@ -84,6 +85,7 @@ export class OrderComponent implements OnInit {
   );
   appoinmentId = 0;
   isfileSelected = false;
+
 
   constructor(
     private formBuilder: FormBuilder,
@@ -130,6 +132,10 @@ export class OrderComponent implements OnInit {
 
   ngOnInit(): void {
     // this.customerInfo = new CustomerDTO(0, '', '', '', '', 0, '', '', '', '', 0, '', new Date(), new Date());
+    if (sessionStorage.getItem('USER')) {
+      this.customerInfo = JSON.parse(sessionStorage.getItem('USER')!);
+      this.isDisabled = true;
+    }
     this.reactiveForm();
   }
 
@@ -201,6 +207,7 @@ export class OrderComponent implements OnInit {
       } else {
         console.log("7");
         this.appointmentInfo.customer.email = this.customerInfo.email;
+        this.appointmentInfo.customer.customer_type = 'REGULAR';
         this.appoinmentAPI();
       }
 

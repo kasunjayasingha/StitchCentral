@@ -101,6 +101,7 @@ export class ConfigService {
       confirmButtonText: 'Ok',
     });
     // this.reloadPage();
+    this.router.navigate(['']);
     this.isLogout = true;
   }
 }

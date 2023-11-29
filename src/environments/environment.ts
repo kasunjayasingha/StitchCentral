@@ -20,6 +20,7 @@ export const environment = {
   REGISTRATION_STEP_NEW_USER_URL: {
     REGISTER: `${API_BASE_URL_COUSTOMER}/saveCustomer`,
     GET_CUSTOMER: `${API_BASE_URL_COUSTOMER}/getCustomer/`,
+    UPDATE_CUSTOMER: `${API_BASE_URL_COUSTOMER}/updateCustomer`,
   },
   APPOINMENT_STEP_URL: {
     ADDAPPOINMENT: `${API_BASE_URL_APPOINTMENT}/saveAppoinment`,
