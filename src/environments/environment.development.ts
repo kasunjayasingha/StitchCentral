@@ -14,6 +14,9 @@ export const environment = {
     CHEACK_EMAIL: {
       EMAIL: `${API_BASE_URL_AUTHENTICATION}/checkEmailIsPresent/`,
     },
+    LOGIN: {
+      LOGIN: `${API_BASE_URL_AUTHENTICATION}/login`,
+    },
   },
   REGISTRATION_STEP_NEW_USER_URL: {
     REGISTER: `${API_BASE_URL_COUSTOMER}/saveCustomer`,

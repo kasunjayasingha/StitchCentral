@@ -23,7 +23,7 @@ export class OrderComponent implements OnInit {
 
   // customerform: FormGroup;
   submittedCustomer = false;
-  submittedAppoinment: boolean= false;
+  submittedAppoinment: boolean = false;
   displayAppointment: boolean = false;
   date: Date | undefined
 
@@ -67,10 +67,10 @@ export class OrderComponent implements OnInit {
 
   fileHandle: FileHandleModel = {
     file: new File([], ''),
-    url: this.sanitizer.bypassSecurityTrustResourceUrl(
-      window.URL.createObjectURL(new File([], ''))
-    ),
+    appointment_id: 0
   }
+
+  formData: FormData = new FormData();
 
   appointmentInfo = new AppointmentsDTO(0,
     0,
@@ -80,9 +80,10 @@ export class OrderComponent implements OnInit {
     '',
     new ClientSampleDTO(0, '', '', '', '', 0, new Date(), new Date()),
     new CustomerDTO(0, '', '', '', '', 0, '', '', '', '', 0, '', '', new Date(), new Date()),
-    this.fileHandle
+    this.formData
   );
   appoinmentId = 0;
+  isfileSelected = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -164,7 +165,7 @@ export class OrderComponent implements OnInit {
       console.log("invalid");
       return;
     } else {
-      if (!(sessionStorage.getItem('CUSTOMER_TYPE'))) {
+      if (!(sessionStorage.getItem('USER'))) {
         console.log("1");
         this.customerInfo.customer_type = 'GUEST';
         this.customerService.SAVE_CUSTOMER(this.customerInfo).subscribe((data) => {
@@ -220,33 +221,39 @@ export class OrderComponent implements OnInit {
           text: 'Appointment Created',
         });
 
-        const dataMessageArray = data.message.split(' ');
-        this.appoinmentId = dataMessageArray[1];
+        if (this.appointmentInfo.file != null || this.appointmentInfo.file != undefined) {
+          console.log("form data " + JSON.stringify(this.appointmentInfo.file));
+          console.log("file selected");
+          const dataMessageArray = data.message.split(' ');
+          this.appoinmentId = dataMessageArray[1];
+          console.log("appoinmentId " + this.appoinmentId);
 
-        this.appoinmentService.SAVE_APPONMENT_SAMPLE(this.prepareFormData(this.appointmentInfo)).subscribe((data) => {
-          if (data.success == true) {
-            Swal.fire({
-              icon: 'success',
-              title: 'Success',
-              text: 'Appointment Created',
-            });
-            // this.messageService.add({severity: 'success', summary: 'Success', detail: 'Appointment Created'});
-            this.submittedAppoinment = false;
-            this.displayAppointment = false;
-            this.customerform.reset();
-            this.appoinmentform.reset();
-            this.customerInfo = new CustomerDTO(0, '', '', '', '', 0, '', '', '', '', 0, '', '', new Date(), new Date());
-            this.appointmentInfo = new AppointmentsDTO(0, 0, new Date(), '', '', '', new ClientSampleDTO(0, '', '', '', '', 0, new Date(), new Date()), new CustomerDTO(0, '', '', '', '', 0, '', '', '', '', 0, '', '', new Date(), new Date()),
-              this.fileHandle
-            );
-          } else {
-            Swal.fire({
-              icon: 'error',
-              title: 'Oops...',
-              text: 'Appointment Creation Failed',
-            });
-          }
-        });
+          this.appoinmentService.SAVE_APPONMENT_SAMPLE(this.appointmentInfo).subscribe((data) => {
+            if (data.success == true) {
+              Swal.fire({
+                icon: 'success',
+                title: 'Success',
+                text: 'Appointment Created',
+              });
+              // this.messageService.add({severity: 'success', summary: 'Success', detail: 'Appointment Created'});
+              this.submittedAppoinment = false;
+              this.displayAppointment = false;
+              this.customerform.reset();
+              this.appoinmentform.reset();
+              this.customerInfo = new CustomerDTO(0, '', '', '', '', 0, '', '', '', '', 0, '', '', new Date(), new Date());
+              this.appointmentInfo = new AppointmentsDTO(0, 0, new Date(), '', '', '', new ClientSampleDTO(0, '', '', '', '', 0, new Date(), new Date()), new CustomerDTO(0, '', '', '', '', 0, '', '', '', '', 0, '', '', new Date(), new Date()),
+                this.formData
+              );
+            } else {
+              Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Appointment Creation Failed',
+              });
+            }
+          });
+        }
+
         // this.messageService.add({severity: 'success', summary: 'Success', detail: 'Appointment Created'});
         this.submittedAppoinment = false;
         this.displayAppointment = false;
@@ -254,7 +261,7 @@ export class OrderComponent implements OnInit {
         this.appoinmentform.reset();
         this.customerInfo = new CustomerDTO(0, '', '', '', '', 0, '', '', '', '', 0, '', '', new Date(), new Date());
         this.appointmentInfo = new AppointmentsDTO(0, 0, new Date(), '', '', '', new ClientSampleDTO(0, '', '', '', '', 0, new Date(), new Date()), new CustomerDTO(0, '', '', '', '', 0, '', '', '', '', 0, '', '', new Date(), new Date()),
-          this.fileHandle
+          this.formData
         );
       } else {
         Swal.fire({
@@ -272,34 +279,38 @@ export class OrderComponent implements OnInit {
     this.displayAppointment = !this.displayAppointment;
   }
 
-  prepareFormData(appointmentInfo: AppointmentsDTO) {
-    const formData = new FormData();
-    formData.append(
-      'file',
-      appointmentInfo.file.file,
-      appointmentInfo.file.file.name
-    );
-    // formData.append('appointmentId', appointmentInfo.id.toString());
-    // const jsonBlob = new Blob([JSON.stringify(appointmentInfo)], {type: 'application/json'});
-    // formData.append('appointmentInfo', jsonBlob, 'appointmentInfo.json');
-    console.log("form data " + JSON.stringify(formData));
-    return formData;
-  }
+  // prepareFormData(appointmentInfo: AppointmentsDTO) {
+  //   const formData = new FormData();
+  //   formData.append(
+  //     'file',
+  //     appointmentInfo.file.file,
+  //
+  //     // appointmentInfo.file.file.name
+  //   );
+  //   formData.append('appointmentId', appointmentInfo.file.appointment_id.toString());
+  //   // formData.append('appointmentId', appointmentInfo.id.toString());
+  //   // const jsonBlob = new Blob([JSON.stringify(appointmentInfo)], {type: 'application/json'});
+  //   // formData.append('appointmentInfo', jsonBlob, 'appointmentInfo.json');
+  //   console.log("form data " + JSON.stringify(formData));
+  //   return formData;
+  // }
 
   onSelectedChange(event: any) {
     console.log("dd-------- " + event.data);
-    if (event.target.files.length > 0) {
+    if (event.target.files[0]) {
+      console.log("dd-------- " + event.target.files[0].name);
+      this.isfileSelected = true;
+
       const file = event.target.files[0];
 
-      const fileHandle: FileHandleModel = {
-        file: file,
-        url: this.sanitizer.bypassSecurityTrustResourceUrl(
-          window.URL.createObjectURL(file)
-        ),
-      }
-      this.appointmentInfo.file = fileHandle;
-    }
+      const formData = new FormData();
+      formData.append("appointmentId", this.customerInfo.email);
+      formData.append("file", file);
 
+
+      // Assuming appointmentInfo is an instance of AppointmentsDTO
+      this.appointmentInfo.file = formData;
+    }
   }
 
 

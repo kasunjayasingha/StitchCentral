@@ -11,11 +11,11 @@ export class AppointmentsDTO {
   description: string;
   client_sample: ClientSampleDTO;
   customer: CustomerDTO;
-  file: FileHandleModel;
+  file: FormData;
 
 
   constructor(id: number, customer_Id: number, appointment_date: Date, type: string,
-              status: string, description: string, client_sample: ClientSampleDTO, customer: CustomerDTO, file: FileHandleModel) {
+              status: string, description: string, client_sample: ClientSampleDTO, customer: CustomerDTO, file: FormData) {
     this.id = id;
     this.customer_Id = customer_Id;
     this.appointment_date = appointment_date;

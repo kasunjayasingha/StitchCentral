@@ -3,11 +3,14 @@ import {Router} from "@angular/router";
 import {throwError} from "rxjs";
 import {HttpErrorResponse, HttpHeaders} from "@angular/common/http";
 import {MessageService} from "primeng/api";
+import Swal from "sweetalert2";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ConfigService {
+
+  isLogout: boolean = false;
 
   constructor(
     private router: Router,
@@ -62,16 +65,42 @@ export class ConfigService {
 
   }
 
+  getHeadersForMultiPart(): HttpHeaders {
+    const boundary = Math.random().toString().substr(2);
+    return new HttpHeaders({
+      'Content-Type': `multipart/form-data; boundary=${boundary}`,
+      'Accept': 'application/json',
+      'Access-Control-Allow-Headers': 'Content-Type',
+      'Access-Control-Allow-Origin': '*',
+      'Set-Cookie': 'HttpOnly;Secure;SameSite=Strict'
+    });
+
+
+  }
+
+  reloadPage() {
+
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    this.router.onSameUrlNavigation = 'reload';
+    this.router.navigate(['/reload']);
+    this.router.navigate(['']);
+  }
+
+  isLogoutTrue(): boolean {
+    return this.isLogout;
+  }
+
   logOut() {
     sessionStorage.clear();
     localStorage.clear();
 
-    this.messageService.add({
-      severity: 'success',
-      summary: 'Success',
-      detail: 'Successfully Logged Out',
+    Swal.fire({
+      icon: 'info',
+      title: 'Logout',
+      text: 'You are logout successfully!',
+      confirmButtonText: 'Ok',
     });
-
-    this.router.navigate([''])
+    // this.reloadPage();
+    this.isLogout = true;
   }
 }

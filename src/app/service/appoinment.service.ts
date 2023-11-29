@@ -20,8 +20,8 @@ export class AppoinmentService {
     return this.http.post<any>(APPIONMENT_URL_API.ADDAPPOINMENT, appoinment, {headers: this.ConfigService.getHeaders()});
   }
 
-  SAVE_APPONMENT_SAMPLE(appoinment: FormData) {
-    return this.http.post<any>(APPIONMENT_URL_API.ADDAPPOINMENT_WITH_SAMPLE, appoinment, {headers: this.ConfigService.getHeaders()});
+  SAVE_APPONMENT_SAMPLE(appoinment: AppointmentsDTO) {
+    return this.http.post<any>(APPIONMENT_URL_API.ADDAPPOINMENT_WITH_SAMPLE, appoinment.file);
   }
 
   GET_APPOINMENT(email: string) {

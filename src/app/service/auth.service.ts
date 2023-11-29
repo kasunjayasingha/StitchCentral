@@ -1,6 +1,9 @@
 import {Injectable} from '@angular/core';
 import {AUTENTICATION_URL_API} from "../API_URL.const";
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
+import {LoginReqestDTO} from "../DTO/LoginReqestDTO";
+import {ConfigService} from "./config.service";
+
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +12,7 @@ export class AuthService {
 
   constructor(
     private http: HttpClient,
+    private configService: ConfigService
   ) {
   }
 
@@ -29,4 +33,10 @@ export class AuthService {
       });
     });
   }
+
+  LOGIN(loginReqestDTO: LoginReqestDTO) {
+    return this.http.post<any>(AUTENTICATION_URL_API.LOGIN.LOGIN, loginReqestDTO, {headers: this.configService.getHeaders()});
+  }
+
+
 }

@@ -113,7 +113,6 @@
                   </div>
                 </div>
               </div>
-
             </div>
 
           </div>
@@ -230,7 +229,7 @@
                   formControlName="type"
                   id="appointmentType"
                 >
-                  <option value="" disabled>Select Appointment Type</option>
+                  <option disabled value="">Select Appointment Type</option>
                   <option value="ONLINE">Online</option>
                   <option value="IN_PERSON">In Person</option>
                 </select>
@@ -241,25 +240,24 @@
                 </div>
               </div>
             </div>
-   
+
           </div>
-          
-          
-          
-            <div class="col">
 
-              <label class="form-label" for="form6Example3">Appoinment Date </label>
-              <p-calendar [(ngModel)]="appointmentInfo.appointment_date" [showIcon]="true"
-                          formControlName="appointment_date"></p-calendar>
 
-              <div *ngIf="submittedAppoinment && f2.appointment_date.errors" class="mt-1">
-                <div *ngIf="f2.appointment_date.errors['required']" class="alert alert-danger  p-2">
-                  Appoinment date is Required.
-                </div>
+          <div class="col">
+
+            <label class="form-label" for="form6Example3">Appoinment Date </label>
+            <p-calendar [(ngModel)]="appointmentInfo.appointment_date" [showIcon]="true"
+                        formControlName="appointment_date"></p-calendar>
+
+            <div *ngIf="submittedAppoinment && f2.appointment_date.errors" class="mt-1">
+              <div *ngIf="f2.appointment_date.errors['required']" class="alert alert-danger  p-2">
+                Appoinment date is Required.
               </div>
-
             </div>
-          
+
+          </div>
+
 
           <!-- Date time danna code ekk -->
           <div class="form-outline mb-4">
