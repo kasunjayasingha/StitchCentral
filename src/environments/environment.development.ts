@@ -13,6 +13,7 @@ export const environment = {
   AUTENTICATION_URL: {
     CHEACK_EMAIL: {
       EMAIL: `${API_BASE_URL_AUTHENTICATION}/checkEmailIsPresent/`,
+      ONLY_EMAIL: `${API_BASE_URL_AUTHENTICATION}/checkOnlyEmailIPresent/`,
     },
     LOGIN: {
       LOGIN: `${API_BASE_URL_AUTHENTICATION}/login`,

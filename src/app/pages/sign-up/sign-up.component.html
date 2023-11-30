@@ -7,7 +7,7 @@
     </h1>
   </div>
   <div class="center-container">
-    <form (ngSubmit)="onSignUp()" [formGroup]="signUpForm">
+    <form [formGroup]="signUpForm">
       <!-- Full Name and Last Name -->
       <div class="row ">
         <div class="col">
@@ -205,7 +205,7 @@
 
       <!-- Submit button -->
       <div class="w-btn-wrapper d-flex justify-content-end">
-        <button class="button p-3" type="submit">Sign Up</button>
+        <button (click)="onSignUp()" class="button p-3" type="button">Sign Up</button>
       </div>
     </form>
   </div>

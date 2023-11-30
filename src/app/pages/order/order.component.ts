@@ -310,6 +310,7 @@ export class OrderComponent implements OnInit {
 
       const file = event.target.files[0];
 
+      
       const formData = new FormData();
       formData.append("appointmentId", this.customerInfo.email);
       formData.append("file", file);

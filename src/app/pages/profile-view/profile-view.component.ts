@@ -49,7 +49,7 @@ export class ProfileViewComponent implements OnInit {
     last_name: ['', Validators.required],
     address: ['', Validators.required],
     phone_number: ['', [Validators.required, Validators.pattern(this.validationHandlerService.mobileNumberWithCountryCodeValidation())]],
-    email: ['', [Validators.required, Validators.pattern(this.validationHandlerService.emailValidation())]],
+    // email: ['', [Validators.required, Validators.pattern(this.validationHandlerService.emailValidation())]],
     password: ['', [Validators.minLength(6)]],
   });
 

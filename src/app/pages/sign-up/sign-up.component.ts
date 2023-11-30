@@ -66,7 +66,7 @@ export class SignUpComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSignUp() {
+  async onSignUp() {
     this.submittedSignUp = true;
     if (this.signUpForm.invalid) {
 
@@ -77,58 +77,71 @@ export class SignUpComponent implements OnInit {
       });
       return;
     } else {
-      this.customerInfo.customer_type = 'REGULAR';
-      this.customerService.SAVE_CUSTOMER(this.customerInfo).subscribe(response => {
-        if (response.success === true) {
-          Swal.fire({
-            icon: 'success',
-            title: 'Success',
-            text: 'Successfully Registered',
-            confirmButtonText: 'OK',
-            allowOutsideClick: false,
-
-          });
-          this.route.navigate(['login']);
-        } else if (response.success === false && response.message === 'Customer already exists ' + this.customerInfo.email) {
-          Swal.fire({
-            icon: 'success',
-            title: 'Success',
-            text: 'Customer details update successfully',
-            // confirmButtonText: 'OK',
-            // allowOutsideClick: false,
-          });
-          this.route.navigate(['login']);
-
-        } else {
-          Swal.fire({
-            icon: 'error',
-            title: 'Error',
-            text: 'Something went wrong',
-
-          });
-        }
-
-        this.signUpForm.reset();
-        this.submittedSignUp = false;
-        this.customerInfo = new CustomerDTO(0, '', '', '', '', 0, '', '', '', '', 0, '', '', new Date(), new Date());
-      });
+      console.log("Customer----" + JSON.stringify(this.customerInfo));
+      let result_email = await this.authService.checkOnlyEmailExists(this.customerInfo.email);
+      if (result_email == true) {
+        this.EMAIL_REJECTED();
+        return;
+      } else {
+        this.onSignUpValid();
+        console.log("success");
+      }
     }
 
   }
 
-  MustMatch(controlName: string, matchingControlName: string) {
-    return (formGroup: FormGroup) => {
-      const control = formGroup.controls[controlName];
-      const matchingControl = formGroup.controls[matchingControlName];
-      if (matchingControl.errors && !matchingControl.errors['mustMatch']) {
-        return;
-      }
-      if (control.value !== matchingControl.value) {
-        matchingControl.setErrors({mustMatch: true});
+  onSignUpValid() {
+    this.customerInfo.customer_type = 'REGULAR';
+    this.customerService.SAVE_CUSTOMER(this.customerInfo).subscribe(response => {
+      if (response.success === true) {
+        Swal.fire({
+          icon: 'success',
+          title: 'Success',
+          text: 'Successfully Registered',
+          confirmButtonText: 'OK',
+          allowOutsideClick: false,
+
+        });
+        this.route.navigate(['login']);
+      } else if (response.success === false && response.message === 'Customer already exists ' + this.customerInfo.email) {
+        Swal.fire({
+          icon: 'success',
+          title: 'Success',
+          text: 'Customer details update successfully',
+          // confirmButtonText: 'OK',
+          // allowOutsideClick: false,
+        });
+        this.route.navigate(['login']);
+
       } else {
-        matchingControl.setErrors(null);
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: 'Something went wrong',
+
+        });
       }
-    };
+
+      this.signUpForm.reset();
+      this.submittedSignUp = false;
+      this.customerInfo = new CustomerDTO(0, '', '', '', '', 0, '', '', '', '', 0, '', '', new Date(), new Date());
+    });
+
+
   }
+
+  EMAIL_REJECTED() {
+    Swal.fire({
+      icon: 'warning',
+      title: 'Already Registered with this Email',
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+      }
+    })
+  }
+
 
 }
