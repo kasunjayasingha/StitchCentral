@@ -7,104 +7,200 @@
     </h1>
   </div>
   <div class="center-container">
-    <form>
+    <form (ngSubmit)="onSignUp()" [formGroup]="signUpForm">
       <!-- Full Name and Last Name -->
-      <div class="row mb-4">
+      <div class="row ">
         <div class="col">
           <div class="form-outline">
-            <label class="form-label" for="fullName">First name  *</label>
-            <input class="form-control p-2" formControlName="First_name" id="First_name " type="text"/>
-            <!-- <div *ngIf="submitted && signupForm.controls.fullName.errors?.required" class="alert alert-danger p-2">
-              Full Name is required.
-            </div> -->
+            <label class="form-label" for="form3Example1">First name *</label>
+            <input [(ngModel)]="customerInfo.first_name"
+                   [ngClass]="{ 'is-invalid': submittedSignUp && f1.first_name.errors }"
+                   class="form-control p-2" formControlName="first_name"
+                   id="form3Example1"
+                   type="text"
+            />
+            <!--            <div *ngIf="submittedSignUp && f1.first_name.errors" class="mt-1">-->
+            <!--              <div *ngIf="f1.first_name.errors['required']" class="alert alert-danger  p-2">-->
+            <!--                First name is Required.-->
+            <!--              </div>-->
+            <!--            </div>-->
           </div>
         </div>
         <div class="col">
           <div class="form-outline">
-            <label class="form-label" for="lastName">Last Name *</label>
-            <input class="form-control p-2" formControlName="lastName" id="lastName" type="text"/>
-            <!-- <div *ngIf="submitted && signupForm.controls.lastName.errors?.required" class="alert alert-danger p-2">
-              Last Name is required.
-            </div> -->
+            <label class="form-label" for="form3Example2"
+            >Last name *</label
+            >
+            <input [(ngModel)]="customerInfo.last_name"
+                   [ngClass]="{ 'is-invalid': submittedSignUp && f1.last_name.errors }"
+                   class="form-control p-2" formControlName="last_name"
+                   id="form3Example"
+                   type="text"
+            />
+            <!--            <div *ngIf="submittedSignUp && f1.last_name.errors" class="mt-1">-->
+            <!--              <div *ngIf="f1.last_name.errors['required']" class="alert alert-danger  p-2">-->
+            <!--                Last name is Required.-->
+            <!--              </div>-->
+            <!--            </div>-->
           </div>
         </div>
       </div>
+
+      <p-toast></p-toast>
 
       <!-- Email -->
       <div class="row mb-4">
         <div class="col">
           <div class="form-outline">
-            <label class="form-label" for="email">Email *</label>
-            <input class="form-control p-2" formControlName="email" id="email" type="email"/>
-
-            <!-- <div *ngIf="submitted && signupForm.controls.email.errors?.required" class="alert alert-danger p-2">
-              Email is required.
-            </div> -->
-            <!-- <div *ngIf="submitted && signupForm.controls.email.errors?.pattern" class="alert alert-danger p-2">
-              Invalid email format.
-            </div> -->
+            <label class="form-label" for="form3Example3">Email *</label>
+            <input [(ngModel)]="customerInfo.email"
+                   [ngClass]="{ 'is-invalid': submittedSignUp && f1.email.errors }"
+                   class="form-control p-2" formControlName="email"
+                   id="form3Example3"
+                   type="email"
+            />
+            <!--            <div *ngIf="submittedSignUp && f1.email.errors" class="mt-1">-->
+            <!--              <div *ngIf="f1.email.errors['required']" class="alert alert-danger  p-2">-->
+            <!--                Email is Required.-->
+            <!--              </div>-->
+            <!--              <div *ngIf="f1.email.errors['pattern']" class="alert alert-danger  p-2">-->
+            <!--                Email is Invalid.-->
+            <!--              </div>-->
+            <!--            </div>-->
           </div>
         </div>
       </div>
-      <div class="col">
-        <div class="form-outline">
-          <label class="form-label" for="city">City *</label>
-          <input class="form-control p-2" formControlName="city" id="city" type="text"/>
-        </div>
+      <div class="form-outline">
+        <label class="form-label" for="form3Example3">Address *</label>
+        <input [(ngModel)]="customerInfo.address"
+               [ngClass]="{ 'is-invalid': submittedSignUp && f1.address.errors }"
+               class="form-control p-2" formControlName="address"
+               id="form3Example3"
+               type="text"
+        />
+        <!--        <div *ngIf="submittedSignUp && f1.address.errors" class="mt-1">-->
+        <!--          <div *ngIf="f1.address.errors['required']" class="alert alert-danger  p-2">-->
+        <!--            Address is Required.-->
+        <!--          </div>-->
+        <!--        </div>-->
       </div>
-      <div class="col">
-        <div class="form-outline">
-          <label class="form-label" for="address">Address *</label>
-          <input class="form-control p-2" formControlName="address" id="address" type="text"/>
+
+
+      <div class="row mb-6">
+        <div class="col">
+          <div class="form-outline">
+            <label class="form-label" for="form3Example1">city *</label>
+            <input [(ngModel)]="customerInfo.city" [ngClass]="{ 'is-invalid': submittedSignUp && f1.city.errors }"
+                   class="form-control p-2" formControlName="city"
+                   id="form3Example1"
+                   type="text"
+            />
+            <!--            <div *ngIf="submittedSignUp && f1.city.errors" class="mt-1">-->
+            <!--              <div *ngIf="f1.city.errors['required']" class="alert alert-danger  p-2">-->
+            <!--                City is Required.-->
+            <!--              </div>-->
+            <!--            </div>-->
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="form-outline">
+            <label class="form-label" for="form3Example2"
+            >Telephone Number *</label
+            >
+            <input [(ngModel)]="customerInfo.phone_no"
+                   [ngClass]="{ 'is-invalid': submittedSignUp&& f1.phone_number.errors }"
+                   class="form-control p-2" formControlName="phone_number"
+                   id="form3Example2"
+                   type="text"
+            />
+            <!--            <div *ngIf="submittedSignUp && f1.phone_number.errors" class="mt-1">-->
+            <!--              <div *ngIf="f1.phone_number.errors['required']" class="alert alert-danger  p-2">-->
+            <!--                Phone Number is Required.-->
+            <!--              </div>-->
+            <!--              <div *ngIf="f1.phone_number.errors['pattern']" class="alert alert-danger  p-2">-->
+            <!--                Phone Number is Invalid.-->
+            <!--              </div>-->
+            <!--            </div>-->
+          </div>
         </div>
       </div>
 
-     <!-- Address, Company/University/School, City -->
-<div class="row mb-4">
- 
-  <div class="col">
-    <div class="form-outline">
-      <label class="form-label" for="company">Company</label>
-      <input class="form-control p-2" formControlName="company" id="company" type="text"/>
-    </div>
-  </div>
-  <div class="col">
-    <div class="form-outline">
-      <label class="form-label" for="University">University</label>
-      <input class="form-control p-2" formControlName="University" id="University" type="text"/>
-    </div>
-  </div>
-  <div class="col">
-    <div class="form-outline">
-      <label class="form-label" for="School">School</label>
-      <input class="form-control p-2" formControlName="School" id="School" type="text"/>
-    </div>
-  </div>
-  
-</div>
 
-      
+      <!-- Address, Company/University/School, City -->
+      <div class="row mb-4">
+
+        <div class="col">
+          <div class="form-outline">
+            <label class="form-label" for="form3Example3">Company</label>
+            <input [(ngModel)]="customerInfo.company" class="form-control p-2" formControlName="company"
+                   id="form3Example3"
+                   type="text"
+            />
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-outline">
+            <label class="form-label" for="form3Example1">University</label>
+            <input [(ngModel)]="customerInfo.university" class="form-control p-2" formControlName="university"
+                   id="form3Example1"
+                   type="text"
+            />
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-outline">
+            <label class="form-label" for="form3Example1">club</label>
+            <input [(ngModel)]="customerInfo.club" class="form-control p-2" formControlName="club"
+                   id="form3Example1"
+                   type="text"
+            />
+          </div>
+        </div>
+
+      </div>
+
 
       <!-- Username and Password -->
       <div class="row mb-4">
         <div class="col">
           <div class="form-outline">
-            <label class="form-label" for="username">Username *</label>
-            <input class="form-control p-2" formControlName="username" id="username" type="text"/>
-            <!-- <div *ngIf="submitted && signupForm.controls.username.errors?.required" class="alert alert-danger p-2">
-              Username is required.
-            </div> -->
-          </div>
-        </div>
-        <div class="col">
-          <div class="form-outline">
             <label class="form-label" for="password">Password *</label>
-            <input class="form-control p-2" formControlName="password" id="password" type="password"/>
-            <!-- <div *ngIf="submitted && signupForm.controls.password.errors?.required" class="alert alert-danger p-2">
-              Password is required.
-            </div> -->
+
+            <input [(ngModel)]="customerInfo.password"
+                   [ngClass]="{ 'is-invalid': submittedSignUp && f1.password.errors }"
+                   class="form-control p-2" formControlName="password"
+                   id="password"
+                   type="text"
+            />
+            <!--            <div *ngIf="submittedSignUp && f1.password.errors" class="mt-1">-->
+            <!--              <div *ngIf="f1.password.errors['required']" class="alert alert-danger  p-2">-->
+            <!--                Password is Required.-->
+            <!--              </div>-->
+            <!--            </div>-->
+
           </div>
         </div>
+        <!--        <div class="col">-->
+        <!--          <div class="form-outline">-->
+        <!--            <label class="form-label" for="confirmPassword">Confirm Password *</label>-->
+
+        <!--            <input [(ngModel)]="confirmPasswords"-->
+        <!--                   [ngClass]="{ 'is-invalid': submittedSignUp && f1.confirmPassword.errors }"-->
+        <!--                   class="form-control p-2" formControlName="confirmPassword"-->
+        <!--                   id="confirmPassword"-->
+        <!--                   type="password"-->
+        <!--            />-->
+        <!--            <div *ngIf="submittedSignUp && f1.confirmPassword.errors" class="mt-1">-->
+        <!--              <div *ngIf="f1.confirmPassword.errors['required']" class="alert alert-danger  p-2">-->
+        <!--                Confirm Password is Required.-->
+        <!--              </div>-->
+        <!--            </div>-->
+        <!--            <div *ngIf="isPasswordsMatch" class="alert alert-danger  p-2">-->
+        <!--              Passwords do not match.-->
+        <!--            </div>-->
+        <!--          </div>-->
+        <!--        </div>-->
       </div>
 
       <!-- Submit button -->

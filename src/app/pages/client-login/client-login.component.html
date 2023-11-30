@@ -3,40 +3,52 @@
     <div class="container mt-5">
       <div class="row justify-content-center">
         <div class="col-12 col-md-6">
-          <div class="bg-pink rounded-xl p-4">
-            <div class="form-group mb-4">
-              <label class="font-weight-bold text-stone-400 mb-2" for="username"
-              >Username</label
-              >
-              <input class="form-control bg-stone-400" id="username" type="text"/>
-            </div>
-            <div class="form-group mb-4">
-              <label class="font-weight-bold text-stone-400 mb-2" for="password"
+          <form (ngSubmit)="onLogin()" [formGroup]="loginForm">
+            <div class="bg-pink rounded-xl p-4">
+              <div class="form-group mb-4">
+                <label class="font-weight-bold text-stone-400 mb-2" for="username"
+                >Username</label
+                >
+                <input [(ngModel)]="LoginReqestDTO.email"
+                       [ngClass]="{ 'is-invalid': submittedLogin && f1.email.errors }"
+                       class="form-control bg-stone-400" formControlName="email"
+                       id="username"
+                       type="email"
+                />
+              </div>
+              <div class="form-group mb-4">
+                <label class="font-weight-bold text-stone-400 mb-2" for="password"
 
-              >Password</label
-              >
-              <input
-                class="form-control bg-stone-400"
-                id="password"
-                type="password"
-              />
+                >Password</label
+                >
+                <input [(ngModel)]="LoginReqestDTO.password"
+                       [ngClass]="{ 'is-invalid': submittedLogin && f1.password.errors }"
+                       class="form-control bg-stone-400" formControlName="password"
+                       id="password"
+                       type="password"
+                />
+              </div>
+              <!--            <div class="form-group mb-4">-->
+              <!--              <label-->
+              <!--                class="font-weight-bold text-stone-400 mb-2"-->
+              <!--                for="confirmPassword"-->
+              <!--              >Confirm Password</label-->
+              <!--              >-->
+              <!--              <input-->
+              <!--                class="form-control bg-stone-400"-->
+              <!--                id="confirmPassword"-->
+              <!--                type="password"-->
+              <!--              />-->
+              <!--            </div>-->
+              <button (click)="onLogin()" class="btn btn-primary btn-block bg-zinc-600" type="submit">
+                Submit
+              </button>
+              <span class="d-block text-center my-4">
+                Register <a routerLink="/signup">here</a>
+              </span>
             </div>
-            <div class="form-group mb-4">
-              <label
-                class="font-weight-bold text-stone-400 mb-2"
-                for="confirmPassword"
-              >Confirm Password</label
-              >
-              <input
-                class="form-control bg-stone-400"
-                id="confirmPassword"
-                type="password"
-              />
-            </div>
-            <button class="btn btn-primary btn-block bg-zinc-600" type="button">
-              Submit
-            </button>
-          </div>
+          </form>
+
         </div>
       </div>
     </div>
