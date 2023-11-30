@@ -50,15 +50,10 @@ export class ClientLoginComponent implements OnInit {
     }
     this.authService.LOGIN(this.LoginReqestDTO).subscribe((res) => {
       if (res != null) {
-        console.log(JSON.stringify(res));
-        sessionStorage.setItem('USER', JSON.stringify(res));
-        this.config.reloadPage();
-
-        Swal.fire({
-          icon: 'success',
-          title: 'Success',
-          text: 'Login Successfully!',
-        });
+        // console.log(JSON.stringify(res));
+        // sessionStorage.setItem('USER', JSON.stringify(res));
+        // this.config.reloadPage();
+        this.getCustomer();
       } else {
         Swal.fire({
           icon: 'error',
@@ -69,6 +64,28 @@ export class ClientLoginComponent implements OnInit {
       }
     });
 
+  }
+
+  getCustomer() {
+    this.customerService.GET_CUSTOMER(this.LoginReqestDTO.email).subscribe((res) => {
+      if (res != null) {
+        console.log(JSON.stringify(res));
+        sessionStorage.setItem('USER', JSON.stringify(res));
+        this.config.reloadPage();
+        Swal.fire({
+          icon: 'success',
+          title: 'Welcome',
+          html: 'Login Successfully as' + '<br>' + '<b>' + res[0].first_name + ' ' + res[0].last_name + '</b>',
+        });
+      } else {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Invalid Credentials!',
+        })
+        this.loginForm.reset();
+      }
+    });
   }
 
 

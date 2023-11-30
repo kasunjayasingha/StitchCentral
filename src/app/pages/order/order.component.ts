@@ -133,7 +133,7 @@ export class OrderComponent implements OnInit {
   ngOnInit(): void {
     // this.customerInfo = new CustomerDTO(0, '', '', '', '', 0, '', '', '', '', 0, '', new Date(), new Date());
     if (sessionStorage.getItem('USER')) {
-      this.customerInfo = JSON.parse(sessionStorage.getItem('USER')!);
+      this.customerInfo = JSON.parse(sessionStorage.getItem('USER')!)[0] ?? JSON.parse(sessionStorage.getItem('USER')!);
       this.isDisabled = true;
     }
     this.reactiveForm();

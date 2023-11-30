@@ -70,7 +70,7 @@ export class ProfileViewComponent implements OnInit {
 
   ngOnInit(): void {
     if (sessionStorage.getItem('USER')) {
-      this.customerInfo = JSON.parse(sessionStorage.getItem('USER')!);
+      this.customerInfo = JSON.parse(sessionStorage.getItem('USER')!)[0] ?? JSON.parse(sessionStorage.getItem('USER')!);
     }
 
   }
@@ -81,7 +81,7 @@ export class ProfileViewComponent implements OnInit {
 
   canEdit() {
     this.notEditable = !this.notEditable;
-    this.customerInfo = JSON.parse(sessionStorage.getItem('USER')!);
+    this.customerInfo = JSON.parse(sessionStorage.getItem('USER')!)[0] ?? JSON.parse(sessionStorage.getItem('USER')!);
     this.customerInfo.password = '';
     // this.reactiveForm();
   }
@@ -99,7 +99,7 @@ export class ProfileViewComponent implements OnInit {
       this.customerService.UPDATE_CUSTOMER(this.customerInfo).subscribe((res) => {
         if (res.success == true) {
           console.log(JSON.stringify(res));
-          if (this.customerInfo.password != '') {
+          if (this.customerInfo.password != '' || this.customerInfo.password != null) {
             this.configService.logOut();
           }
           this.customerInfo.password = '';
