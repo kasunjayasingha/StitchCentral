@@ -28,4 +28,8 @@ export class CustomerService {
   GET_CUSTOMER(email: string) {
     return this.http.get<any>(NEW_USER_REGISTRATSION_URL_API.GET_CUSTOMER + email, {headers: this.ConfigService.getHeaders()});
   }
+
+  UPDATE_CUSTOMER(client: CustomerDTO) {
+    return this.http.post<any>(NEW_USER_REGISTRATSION_URL_API.UPDATE_CUSTOMER, client, {headers: this.ConfigService.getHeaders()});
+  }
 }

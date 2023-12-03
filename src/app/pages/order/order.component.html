@@ -40,9 +40,9 @@
               <div class="form-outline">
                 <label class="form-label" for="form3Example1">First name *</label>
                 <input [(ngModel)]="customerInfo.first_name"
-                       [ngClass]="{ 'is-invalid': submittedCustomer && f1.first_name.errors }"
-                       class="form-control p-2" formControlName="first_name"
-                       id="form3Example1"
+                       [disabled]="isDisabled"
+                       [ngClass]="{ 'is-invalid': submittedCustomer && f1.first_name.errors }" class="form-control p-2"
+                       formControlName="first_name" id="form3Example1"
                        type="text"
                 />
                 <div *ngIf="submittedCustomer && f1.first_name.errors" class="mt-1">
@@ -58,9 +58,9 @@
                 >Last name *</label
                 >
                 <input [(ngModel)]="customerInfo.last_name"
-                       [ngClass]="{ 'is-invalid': submittedCustomer && f1.last_name.errors }"
-                       class="form-control p-2" formControlName="last_name"
-                       id="form3Example2"
+                       [disabled]="isDisabled"
+                       [ngClass]="{ 'is-invalid': submittedCustomer && f1.last_name.errors }" class="form-control p-2"
+                       formControlName="last_name" id="form3Example2"
                        type="text"
                 />
                 <div *ngIf="submittedCustomer && f1.last_name.errors" class="mt-1">
@@ -77,9 +77,9 @@
               <div class="form-outline">
                 <label class="form-label" for="form3Example3">Email *</label>
                 <input [(ngModel)]="customerInfo.email"
-                       [ngClass]="{ 'is-invalid': submittedCustomer && f1.email.errors }"
-                       class="form-control p-2" formControlName="email"
-                       id="form3Example3"
+                       [disabled]="isDisabled"
+                       [ngClass]="{ 'is-invalid': submittedCustomer && f1.email.errors }" class="form-control p-2"
+                       formControlName="email" id="form3Example3"
                        type="email"
                 />
                 <div *ngIf="submittedCustomer && f1.email.errors" class="mt-1">
@@ -99,9 +99,10 @@
                 >Telephone Number *</label
                 >
                 <input [(ngModel)]="customerInfo.phone_no"
+                       [disabled]="isDisabled"
                        [ngClass]="{ 'is-invalid': submittedCustomer && f1.phone_number.errors }"
-                       class="form-control p-2" formControlName="phone_number"
-                       id="form3Example2"
+                       class="form-control p-2"
+                       formControlName="phone_number" id="form3Example2"
                        type="text"
                 />
                 <div *ngIf="submittedCustomer && f1.phone_number.errors" class="mt-1">
@@ -113,7 +114,6 @@
                   </div>
                 </div>
               </div>
-
             </div>
 
           </div>
@@ -125,9 +125,9 @@
               <div class="form-outline">
                 <label class="form-label" for="form3Example3">Address *</label>
                 <input [(ngModel)]="customerInfo.address"
-                       [ngClass]="{ 'is-invalid': submittedCustomer && f1.address.errors }"
-                       class="form-control p-2" formControlName="address"
-                       id="form3Example3"
+                       [disabled]="isDisabled"
+                       [ngClass]="{ 'is-invalid': submittedCustomer && f1.address.errors }" class="form-control p-2"
+                       formControlName="address" id="form3Example3"
                        type="text"
                 />
                 <div *ngIf="submittedCustomer && f1.address.errors" class="mt-1">
@@ -140,9 +140,9 @@
             <div class="col">
               <div class="form-outline">
                 <label class="form-label" for="form3Example1">city *</label>
-                <input [(ngModel)]="customerInfo.city" [ngClass]="{ 'is-invalid': submittedCustomer && f1.city.errors }"
-                       class="form-control p-2" formControlName="city"
-                       id="form3Example1"
+                <input [(ngModel)]="customerInfo.city" [disabled]="isDisabled"
+                       [ngClass]="{ 'is-invalid': submittedCustomer && f1.city.errors }" class="form-control p-2"
+                       formControlName="city" id="form3Example1"
                        type="text"
                 />
                 <div *ngIf="submittedCustomer && f1.city.errors" class="mt-1">
@@ -158,8 +158,8 @@
             <div class="col">
               <div class="form-outline">
                 <label class="form-label" for="form3Example3">Company</label>
-                <input [(ngModel)]="customerInfo.company" class="form-control p-2" formControlName="company"
-                       id="form3Example3"
+                <input [(ngModel)]="customerInfo.company" [disabled]="isDisabled" class="form-control p-2"
+                       formControlName="company" id="form3Example3"
                        type="text"
                 />
               </div>
@@ -167,8 +167,8 @@
             <div class="col">
               <div class="form-outline">
                 <label class="form-label" for="form3Example1">University</label>
-                <input [(ngModel)]="customerInfo.university" class="form-control p-2" formControlName="university"
-                       id="form3Example1"
+                <input [(ngModel)]="customerInfo.university" [disabled]="isDisabled" class="form-control p-2"
+                       formControlName="university" id="form3Example1"
                        type="text"
                 />
               </div>
@@ -176,8 +176,8 @@
             <div class="col">
               <div class="form-outline">
                 <label class="form-label" for="form3Example1">club</label>
-                <input [(ngModel)]="customerInfo.club" class="form-control p-2" formControlName="club"
-                       id="form3Example1"
+                <input [(ngModel)]="customerInfo.club" [disabled]="true" class="form-control p-2"
+                       formControlName="club" id="form3Example1"
                        type="text"
                 />
               </div>
@@ -230,7 +230,7 @@
                   formControlName="type"
                   id="appointmentType"
                 >
-                  <option value="" disabled>Select Appointment Type</option>
+                  <option disabled value="">Select Appointment Type</option>
                   <option value="ONLINE">Online</option>
                   <option value="IN_PERSON">In Person</option>
                 </select>
@@ -241,25 +241,24 @@
                 </div>
               </div>
             </div>
-   
+
           </div>
-          
-          
-          
-            <div class="col">
 
-              <label class="form-label" for="form6Example3">Appoinment Date </label>
-              <p-calendar [(ngModel)]="appointmentInfo.appointment_date" [showIcon]="true"
-                          formControlName="appointment_date"></p-calendar>
 
-              <div *ngIf="submittedAppoinment && f2.appointment_date.errors" class="mt-1">
-                <div *ngIf="f2.appointment_date.errors['required']" class="alert alert-danger  p-2">
-                  Appoinment date is Required.
-                </div>
+          <div class="col">
+
+            <label class="form-label" for="form6Example3">Appoinment Date </label>
+            <p-calendar [(ngModel)]="appointmentInfo.appointment_date" [showIcon]="true"
+                        formControlName="appointment_date"></p-calendar>
+
+            <div *ngIf="submittedAppoinment && f2.appointment_date.errors" class="mt-1">
+              <div *ngIf="f2.appointment_date.errors['required']" class="alert alert-danger  p-2">
+                Appoinment date is Required.
               </div>
-
             </div>
-          
+
+          </div>
+
 
           <!-- Date time danna code ekk -->
           <div class="form-outline mb-4">
@@ -285,7 +284,7 @@
           <div class="form-group mb-3">
             <label for="exampleFormControlFile1">Sample file input</label>
             <input
-              [(ngModel)]="appointmentInfo.client_sample"
+              (change)="onSelectedChange($event)"
               class="form-control-file"
               id="exampleFormControlFile1"
               type="file"

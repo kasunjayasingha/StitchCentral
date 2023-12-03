@@ -12,16 +12,22 @@ export const environment = {
   AUTENTICATION_URL: {
     CHEACK_EMAIL: {
       EMAIL: `${API_BASE_URL_AUTHENTICATION}/checkEmailIsPresent/`,
+      ONLY_EMAIL: `${API_BASE_URL_AUTHENTICATION}/checkOnlyEmailIPresent/`,
+    },
+    LOGIN: {
+      LOGIN: `${API_BASE_URL_AUTHENTICATION}/login`,
     },
   },
   REGISTRATION_STEP_NEW_USER_URL: {
     REGISTER: `${API_BASE_URL_COUSTOMER}/saveCustomer`,
     GET_CUSTOMER: `${API_BASE_URL_COUSTOMER}/getCustomer/`,
+    UPDATE_CUSTOMER: `${API_BASE_URL_COUSTOMER}/updateCustomer`,
   },
   APPOINMENT_STEP_URL: {
     ADDAPPOINMENT: `${API_BASE_URL_APPOINTMENT}/saveAppoinment`,
     GETAPPOINMENT: `${API_BASE_URL_APPOINTMENT}/getAppoinment/`,
     UPDATEAPPOINMENT: `${API_BASE_URL_APPOINTMENT}/updateAppoinment`,
     DELETEAPPOINMENT: `${API_BASE_URL_APPOINTMENT}/deleteAppoinment/`,
+    ADDAPPOINMENT_WITH_SAMPLE: `${API_BASE_URL_APPOINTMENT}/uploadFile`,
   },
 };

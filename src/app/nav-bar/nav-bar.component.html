@@ -78,7 +78,9 @@
           </a>
           <ul class="dropdown-menu nav-list-items" ngbDropdownMenu>
             <li>
-              <a class="dropdown-item" routerLink="/services">Our Services</a>
+              <a class="dropdown-item" routerLink="/services"
+              >Our Services</a
+              >
             </li>
             <li>
               <a class="dropdown-item" routerLink="Service-Detail"
@@ -99,7 +101,9 @@
           </a>
           <ul class="dropdown-menu nav-list-items" ngbDropdownMenu>
             <li>
-              <a class="dropdown-item" routerLink="/projects">Our Projects</a>
+              <a class="dropdown-item" routerLink="/projects"
+              >Our Projects</a
+              >
             </li>
             <li>
               <a class="dropdown-item" routerLink="Project-Details"
@@ -117,12 +121,12 @@
       <ul class="navbar-nav mb-2 mb-lg-0">
         <li *ngIf="isUserLogin" class="nav-item dropdown" ngbDropdown>
           <a
+            (click)="checkSession()"
             aria-expanded="false"
             class="nav-link dropdown-toggle nav-list-items login-icon-dropdown"
             data-bs-toggle="dropdown"
             ngbDropdownToggle
             role="button"
-            routerLink="/client-login"
           >
             <fa-icon [icon]="faUser" class="Login-icon"></fa-icon>
           </a>
@@ -131,22 +135,24 @@
               <a class="dropdown-item" routerLink="/profile-view">My Profile</a>
             </li>
             <li>
-              <a class="dropdown-item" routerLink="Project-Details">Logout</a>
+              <a (click)="logout()" class="dropdown-item">Logout</a>
             </li>
           </ul>
         </li>
 
         <li *ngIf="!isUserLogin" class="nav-item dropdown" ngbDropdown>
           <a
+            (click)="checkSession()"
             aria-expanded="false"
             class="nav-link dropdown-toggle nav-list-items login-icon-dropdown"
             data-bs-toggle="dropdown"
             ngbDropdownToggle
             role="button"
-            routerLink="/signup"
+
           >
             <fa-icon [icon]="faUser" class="Login-icon"></fa-icon>
           </a>
+
         </li>
       </ul>
       <button class="btn-outline nav-list-items">

@@ -10,6 +10,8 @@ import {Toast} from 'primeng/toast';
 import {AppointmentsDTO} from "../../DTO/AppointmentsDTO";
 import {ClientSampleDTO} from 'src/app/DTO/clientSampleDTO';
 import {AppoinmentService} from "../../service/appoinment.service";
+import {FileHandleModel} from "../../DTO/file.handle.model";
+import {DomSanitizer} from '@angular/platform-browser';
 
 
 @Component({
@@ -18,6 +20,7 @@ import {AppoinmentService} from "../../service/appoinment.service";
   styleUrls: ['./order.component.css']
 })
 export class OrderComponent implements OnInit {
+  isDisabled = false;
 
   // customerform: FormGroup;
   submittedCustomer = false;
@@ -33,15 +36,14 @@ export class OrderComponent implements OnInit {
   });
 
   customerform = this.formBuilder.group({
-    first_name: [null, Validators.required],
-    last_name: [null, Validators.required],
-    address: [null, Validators.required],
-    city: [null, Validators.required],
+    first_name: [{value: '', disabled: this.isDisabled}, Validators.required],
+    last_name: [{value: '', disabled: this.isDisabled}, Validators.required],
+    address: [{value: '', disabled: this.isDisabled}, Validators.required],
+    city: [{value: '', disabled: this.isDisabled}, Validators.required],
     // postal_code: [null, Validators.required],
-    university: [''],
-    company: [''],
-    club: [''],
-
+    university: [{value: '', disabled: this.isDisabled}],
+    company: [{value: '', disabled: this.isDisabled}],
+    club: [{value: '', disabled: this.isDisabled}],
     phone_number: [null, [Validators.required, Validators.pattern(this.validationHandlerService.mobileNumberWithCountryCodeValidation())]],
     email: [null, [Validators.required, Validators.pattern(this.validationHandlerService.emailValidation())]],
 
@@ -64,6 +66,12 @@ export class OrderComponent implements OnInit {
     new Date(),
     new Date());
 
+  fileHandle: FileHandleModel = {
+    file: new File([], ''),
+    appointment_id: 0
+  }
+
+  formData: FormData = new FormData();
 
   appointmentInfo = new AppointmentsDTO(0,
     0,
@@ -72,7 +80,12 @@ export class OrderComponent implements OnInit {
     '',
     '',
     new ClientSampleDTO(0, '', '', '', '', 0, new Date(), new Date()),
-    new CustomerDTO(0, '', '', '', '', 0, '', '', '', '', 0, '', '', new Date(), new Date()));
+    new CustomerDTO(0, '', '', '', '', 0, '', '', '', '', 0, '', '', new Date(), new Date()),
+    this.formData
+  );
+  appoinmentId = 0;
+  isfileSelected = false;
+
 
   constructor(
     private formBuilder: FormBuilder,
@@ -80,7 +93,8 @@ export class OrderComponent implements OnInit {
     private authService: AuthService,
     private customerService: CustomerService,
     private messageService: MessageService,
-    private appoinmentService: AppoinmentService
+    private appoinmentService: AppoinmentService,
+    private sanitizer: DomSanitizer,
   ) {
     // this.customerform = this.formBuilder.group({
     //   first_name: [''],
@@ -118,6 +132,10 @@ export class OrderComponent implements OnInit {
 
   ngOnInit(): void {
     // this.customerInfo = new CustomerDTO(0, '', '', '', '', 0, '', '', '', '', 0, '', new Date(), new Date());
+    if (sessionStorage.getItem('USER')) {
+      this.customerInfo = JSON.parse(sessionStorage.getItem('USER')!)[0] ?? JSON.parse(sessionStorage.getItem('USER')!);
+      this.isDisabled = true;
+    }
     this.reactiveForm();
   }
 
@@ -153,7 +171,7 @@ export class OrderComponent implements OnInit {
       console.log("invalid");
       return;
     } else {
-      if (!(sessionStorage.getItem('CUSTOMER_TYPE'))) {
+      if (!(sessionStorage.getItem('USER'))) {
         console.log("1");
         this.customerInfo.customer_type = 'GUEST';
         this.customerService.SAVE_CUSTOMER(this.customerInfo).subscribe((data) => {
@@ -189,6 +207,7 @@ export class OrderComponent implements OnInit {
       } else {
         console.log("7");
         this.appointmentInfo.customer.email = this.customerInfo.email;
+        this.appointmentInfo.customer.customer_type = 'REGULAR';
         this.appoinmentAPI();
       }
 
@@ -208,13 +227,49 @@ export class OrderComponent implements OnInit {
           title: 'Success',
           text: 'Appointment Created',
         });
+
+        if (this.appointmentInfo.file != null || this.appointmentInfo.file != undefined) {
+          console.log("form data " + JSON.stringify(this.appointmentInfo.file));
+          console.log("file selected");
+          const dataMessageArray = data.message.split(' ');
+          this.appoinmentId = dataMessageArray[1];
+          console.log("appoinmentId " + this.appoinmentId);
+
+          this.appoinmentService.SAVE_APPONMENT_SAMPLE(this.appointmentInfo).subscribe((data) => {
+            if (data.success == true) {
+              Swal.fire({
+                icon: 'success',
+                title: 'Success',
+                text: 'Appointment Created',
+              });
+              // this.messageService.add({severity: 'success', summary: 'Success', detail: 'Appointment Created'});
+              this.submittedAppoinment = false;
+              this.displayAppointment = false;
+              this.customerform.reset();
+              this.appoinmentform.reset();
+              this.customerInfo = new CustomerDTO(0, '', '', '', '', 0, '', '', '', '', 0, '', '', new Date(), new Date());
+              this.appointmentInfo = new AppointmentsDTO(0, 0, new Date(), '', '', '', new ClientSampleDTO(0, '', '', '', '', 0, new Date(), new Date()), new CustomerDTO(0, '', '', '', '', 0, '', '', '', '', 0, '', '', new Date(), new Date()),
+                this.formData
+              );
+            } else {
+              Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Appointment Creation Failed',
+              });
+            }
+          });
+        }
+
         // this.messageService.add({severity: 'success', summary: 'Success', detail: 'Appointment Created'});
         this.submittedAppoinment = false;
         this.displayAppointment = false;
         this.customerform.reset();
         this.appoinmentform.reset();
         this.customerInfo = new CustomerDTO(0, '', '', '', '', 0, '', '', '', '', 0, '', '', new Date(), new Date());
-        this.appointmentInfo = new AppointmentsDTO(0, 0, new Date(), '', '', '', new ClientSampleDTO(0, '', '', '', '', 0, new Date(), new Date()), new CustomerDTO(0, '', '', '', '', 0, '', '', '', '', 0, '', '', new Date(), new Date()));
+        this.appointmentInfo = new AppointmentsDTO(0, 0, new Date(), '', '', '', new ClientSampleDTO(0, '', '', '', '', 0, new Date(), new Date()), new CustomerDTO(0, '', '', '', '', 0, '', '', '', '', 0, '', '', new Date(), new Date()),
+          this.formData
+        );
       } else {
         Swal.fire({
           icon: 'error',
@@ -223,10 +278,47 @@ export class OrderComponent implements OnInit {
         });
       }
     });
+
+
   }
 
   onCustomerBack() {
     this.displayAppointment = !this.displayAppointment;
+  }
+
+  // prepareFormData(appointmentInfo: AppointmentsDTO) {
+  //   const formData = new FormData();
+  //   formData.append(
+  //     'file',
+  //     appointmentInfo.file.file,
+  //
+  //     // appointmentInfo.file.file.name
+  //   );
+  //   formData.append('appointmentId', appointmentInfo.file.appointment_id.toString());
+  //   // formData.append('appointmentId', appointmentInfo.id.toString());
+  //   // const jsonBlob = new Blob([JSON.stringify(appointmentInfo)], {type: 'application/json'});
+  //   // formData.append('appointmentInfo', jsonBlob, 'appointmentInfo.json');
+  //   console.log("form data " + JSON.stringify(formData));
+  //   return formData;
+  // }
+
+  onSelectedChange(event: any) {
+    console.log("dd-------- " + event.data);
+    if (event.target.files[0]) {
+      console.log("dd-------- " + event.target.files[0].name);
+      this.isfileSelected = true;
+
+      const file = event.target.files[0];
+
+      
+      const formData = new FormData();
+      formData.append("appointmentId", this.customerInfo.email);
+      formData.append("file", file);
+
+
+      // Assuming appointmentInfo is an instance of AppointmentsDTO
+      this.appointmentInfo.file = formData;
+    }
   }
 
 
