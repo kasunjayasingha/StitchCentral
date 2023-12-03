@@ -14,6 +14,7 @@ import { OrderComponent } from './pages/order/order.component';
 import { ServicesComponent } from './pages/services/services.component';
 import { ServicesFabricComponent } from './pages/services-fabric/services-fabric.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
+import { ServiceViewComponent } from './pages/service-view/service-view.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -21,14 +22,15 @@ const routes: Routes = [
   { path: 'contact-us', component: ContactUsComponent },
   { path: 'make-order', component: MakeOrderComponent },
   { path: 'client-login', component: ClientLoginComponent },
-  { path: 'projects', component: ProjectsComponent},
-  {path: 'university', component: UniversityTShirtsComponent},
-  {path:'profile-view',component:ProfileViewComponent},
-  {path:'editprofile',component:EditprofileComponent},
+  { path: 'projects', component: ProjectsComponent },
+  { path: 'university', component: UniversityTShirtsComponent },
+  { path: 'profile-view', component: ProfileViewComponent },
+  { path: 'editprofile', component: EditprofileComponent },
   { path: 'order', component: OrderComponent },
   { path: 'services', component: ServicesComponent },
   { path: 'services-fabric', component: ServicesFabricComponent },
-  {path:'signup',component:SignUpComponent}
+  { path: 'signup', component: SignUpComponent },
+  { path: 'service-view', component: ServiceViewComponent },
 ];
 
 @NgModule({
