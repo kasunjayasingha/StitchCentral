@@ -32,7 +32,7 @@ export class OrderComponent implements OnInit {
     type: [null, Validators.required],
     description: [null, Validators.required],
     appointment_date: [null, Validators.required],
-    // client_sample: [null, Validators.required],
+    client_sample: [null],
   });
 
   customerform = this.formBuilder.group({
@@ -303,21 +303,40 @@ export class OrderComponent implements OnInit {
   // }
 
   onSelectedChange(event: any) {
-    console.log("dd-------- " + event.data);
     if (event.target.files[0]) {
-      console.log("dd-------- " + event.target.files[0].name);
-      this.isfileSelected = true;
+      const allowedExtensions = ['jpg', 'jpeg', 'png', 'psd'];
+      const fileName = event.target.files[0].name;
+      const fileExtension = fileName.split('.').pop()?.toLowerCase();
 
-      const file = event.target.files[0];
+      // Check if the file extension is allowed
+      if (allowedExtensions.includes(fileExtension)) {
+        if (event.target.files[0].size <= 20000000) {
+          this.isfileSelected = true;
 
-      
-      const formData = new FormData();
-      formData.append("appointmentId", this.customerInfo.email);
-      formData.append("file", file);
+          const file = event.target.files[0];
 
+          const formData = new FormData();
+          formData.append("appointmentId", this.customerInfo.email);
+          formData.append("file", file);
 
-      // Assuming appointmentInfo is an instance of AppointmentsDTO
-      this.appointmentInfo.file = formData;
+          // Assuming appointmentInfo is an instance of AppointmentsDTO
+          this.appointmentInfo.file = formData;
+        } else {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'File size is greater than 20mb',
+          });
+          this.appoinmentform.get('client_sample')?.reset();
+        }
+      } else {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'File type is not supported',
+        });
+        this.appoinmentform.get('client_sample')?.reset();
+      }
     }
   }
 

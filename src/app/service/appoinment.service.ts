@@ -1,9 +1,10 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {ConfigService} from "./config.service";
 import {CustomerDTO} from "../DTO/customerDTO";
 import {APPIONMENT_URL_API, NEW_USER_REGISTRATSION_URL_API} from "../API_URL.const";
 import {AppointmentsDTO} from "../DTO/AppointmentsDTO";
+import {MessageService} from 'primeng/api';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,8 @@ export class AppoinmentService {
 
   constructor(
     private http: HttpClient,
-    private ConfigService: ConfigService
+    private ConfigService: ConfigService,
+    private messageService: MessageService,
   ) {
   }
 
@@ -35,5 +37,6 @@ export class AppoinmentService {
   DELETE_APPOINMENT(email: string) {
     return this.http.delete<any>(APPIONMENT_URL_API.DELETEAPPOINMENT + email, {headers: this.ConfigService.getHeaders()});
   }
+
 
 }
