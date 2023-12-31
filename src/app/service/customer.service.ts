@@ -32,4 +32,8 @@ export class CustomerService {
   UPDATE_CUSTOMER(client: CustomerDTO) {
     return this.http.post<any>(NEW_USER_REGISTRATSION_URL_API.UPDATE_CUSTOMER, client, {headers: this.ConfigService.getHeaders()});
   }
+
+  SAVE_CONTACTUS(contactUs: FormData) {
+    return this.http.post<any>(NEW_USER_REGISTRATSION_URL_API.SAVE_CONTACTUS, contactUs);
+  }
 }

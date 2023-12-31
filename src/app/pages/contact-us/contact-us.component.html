@@ -1,10 +1,10 @@
 <!-- Page Header Start -->
 <div class="container-fluid page-header py-5">
-  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+  <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
   <div class="container text-center py-5">
     <h1 class="display-2 text-white mb-4 animated slideInDown">Contact Us</h1>
   </div>
-  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+  <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 </div>
 <!-- Page Header End -->
 <!-- Contact Start -->
@@ -22,21 +22,28 @@
     <div class="contact-detail position-relative p-5">
       <div class="row g-5 mb-5 justify-content-center">
         <h2 class="mb-3">01. Your Information</h2>
-        <form>
+        <form [formGroup]="contactUsForm">
           <!-- 2 column grid layout with text inputs for the first and last names -->
           <div class="row mb-4">
             <div class="col">
               <div class="form-outline">
                 <label class="form-label" for="form3Example1">First name</label>
-                <input type="text" id="form3Example1" class="form-control" />
+                <input class="form-control" formControlName="firstName" id="form3Example5"
+                       type="text"/>
+              </div>
+              <div *ngIf="submitted && f1.firstName.errors" class="mt-1">
+                <div *ngIf="f1.firstName.errors['required']" class="alert alert-danger  p-2">
+                  First Name is required.
+                </div>
               </div>
             </div>
             <div class="col">
               <div class="form-outline">
                 <label class="form-label" for="form3Example2"
-                  >Last name *</label
+                >Last name *</label
                 >
-                <input type="text" id="form3Example2" class="form-control" />
+                <input class="form-control" formControlName="lastName" id="form3Example2"
+                       type="text"/>
               </div>
             </div>
           </div>
@@ -44,7 +51,16 @@
           <!-- Email input -->
           <div class="form-outline mb-4">
             <label class="form-label" for="form3Example3">Email address</label>
-            <input type="email" id="form3Example3" class="form-control" />
+            <input class="form-control" formControlName="email" id="form3Example3"
+                   type="email"/>
+          </div>
+          <div *ngIf="submitted && f1.email.errors" class="mt-1">
+            <div *ngIf="f1.email.errors['required']" class="alert alert-danger  p-2">
+              Email is required.
+            </div>
+            <div *ngIf="f1.email.errors['pattern']" class="alert alert-danger  p-2">
+              Email is Invalid.
+            </div>
           </div>
 
           <!--Country and teephone number-->
@@ -52,20 +68,20 @@
             <div class="col">
               <div class="form-outline">
                 <label class="form-label" for="form3Example1">Country *</label>
-                <input type="text" id="form3Example1" class="form-control" />
+                <input class="form-control" id="form3Example1" type="text"/>
               </div>
             </div>
             <div class="col">
               <div class="form-outline">
                 <label class="form-label" for="form3Example2"
-                  >Telephone Number *</label
+                >Telephone Number *</label
                 >
-                <input type="number" id="form3Example2" class="form-control" />
+                <input class="form-control" id="form3Example2" type="number"/>
               </div>
             </div>
           </div>
           <!--need t change hr color-->
-          <hr />
+          <hr/>
           <h2 class="mb-3">01. Company Information</h2>
 
           <!-- 2 column grid layout with text inputs  -->
@@ -73,17 +89,17 @@
             <div class="col">
               <div class="form-outline">
                 <label class="form-label" for="form3Example1"
-                  >Designation</label
+                >Designation</label
                 >
-                <input type="text" id="form3Example1" class="form-control" />
+                <input class="form-control" id="form3Example1" type="text"/>
               </div>
             </div>
             <div class="col">
               <div class="form-outline">
                 <label class="form-label" for="form3Example2"
-                  >Company Name</label
+                >Company Name</label
                 >
-                <input type="text" id="form3Example2" class="form-control" />
+                <input class="form-control" id="form3Example2" type="text"/>
               </div>
             </div>
           </div>
@@ -91,25 +107,25 @@
             <div class="col">
               <div class="form-outline">
                 <label class="form-label" for="form3Example1"
-                  >Organization Type</label
+                >Organization Type</label
                 >
-                <input type="text" id="form3Example1" class="form-control" />
+                <input class="form-control" id="form3Example1" type="text"/>
               </div>
             </div>
           </div>
-          <hr />
+          <hr/>
           <!--Inquiry-->
 
           <h2 class="mb-3">03. Inquiry</h2>
           <div class="form-outline mb-4">
             <label class="form-label" for="form6Example3">Type</label>
-            <input type="text" id="form6Example3" class="form-control" />
+            <input class="form-control" id="form6Example3" type="text"/>
           </div>
           <div class="form-outline mb-4">
             <label class="form-label" for="form6Example3"
-              >Product Category *</label
+            >Product Category *</label
             >
-            <input type="text" id="form6Example3" class="form-control" />
+            <input class="form-control" id="form6Example3" type="text"/>
           </div>
 
           <!-- Message input -->
@@ -117,16 +133,23 @@
             <label class="form-label" for="form6Example7">Inquiry</label>
             <textarea
               class="form-control"
+              formControlName="message"
               id="form6Example7"
               rows="4"
             ></textarea>
           </div>
+          <div *ngIf="submitted && f1.message.errors" class="mt-1">
+            <div *ngIf="f1.message.errors['required']" class="alert alert-danger  p-2">
+              Message is required.
+            </div>
+          </div>
 
           <!-- Submit button -->
           <button
+            (click)="onSubmit()"
             class="button"
-            type="submit"
             class="btn btn-primary btn-block mb-4"
+            type="submit"
           >
             Submit
           </button>

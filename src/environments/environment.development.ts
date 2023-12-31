@@ -23,6 +23,7 @@ export const environment = {
     REGISTER: `${API_BASE_URL_COUSTOMER}/saveCustomer`,
     GET_CUSTOMER: `${API_BASE_URL_COUSTOMER}/getCustomer/`,
     UPDATE_CUSTOMER: `${API_BASE_URL_COUSTOMER}/updateCustomer`,
+    SAVE_CONTACTUS: `${API_BASE_URL_COUSTOMER}/saveContactUs`,
   },
   APPOINMENT_STEP_URL: {
     ADDAPPOINMENT: `${API_BASE_URL_APPOINTMENT}/saveAppoinment`,
