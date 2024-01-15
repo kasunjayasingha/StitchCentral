@@ -16,26 +16,28 @@ import {ServicesFabricComponent} from './pages/services-fabric/services-fabric.c
 import {SignUpComponent} from './pages/sign-up/sign-up.component';
 import {ServiceViewComponent} from './pages/service-view/service-view.component';
 import {AppComponent} from "./app.component";
-import { OurServiceComponent } from './pages/service/our-service/our-service.component';
+import {OurServiceComponent} from './pages/service/our-service/our-service.component';
+import {SublimationPrintingComponent} from "./pages/service/sublimation-printing/sublimation-printing.component";
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'reload', component: AppComponent },
-  { path: 'about-us', component: AboutUsComponent },
-  { path: 'contact-us', component: ContactUsComponent },
-  { path: 'make-order', component: MakeOrderComponent },
-  { path: 'client-login', component: ClientLoginComponent },
-  { path: 'projects', component: ProjectsComponent },
-  { path: 'university', component: UniversityTShirtsComponent },
-  { path: 'profile-view', component: ProfileViewComponent },
-  { path: 'editprofile', component: EditprofileComponent },
-  { path: 'order', component: OrderComponent },
-  { path: 'services', component: ServicesComponent },
-  { path: 'services-fabric', component: ServicesFabricComponent },
-  { path: 'signup', component: SignUpComponent },
-  { path: 'service-view', component: ServiceViewComponent },
-  { path: 'login', component: ClientLoginComponent },
-  { path: 'our-service',component:OurServiceComponent },
+  {path: '', component: HomeComponent},
+  {path: 'reload', component: AppComponent},
+  {path: 'about-us', component: AboutUsComponent},
+  {path: 'contact-us', component: ContactUsComponent},
+  {path: 'make-order', component: MakeOrderComponent},
+  {path: 'client-login', component: ClientLoginComponent},
+  {path: 'projects', component: ProjectsComponent},
+  {path: 'university', component: UniversityTShirtsComponent},
+  {path: 'profile-view', component: ProfileViewComponent},
+  {path: 'editprofile', component: EditprofileComponent},
+  {path: 'order', component: OrderComponent},
+  {path: 'services', component: ServicesComponent},
+  {path: 'services-fabric', component: ServicesFabricComponent},
+  {path: 'signup', component: SignUpComponent},
+  {path: 'service-view', component: ServiceViewComponent},
+  {path: 'login', component: ClientLoginComponent},
+  {path: 'our-service', component: OurServiceComponent},
+  {path: 'submit-print', component: SublimationPrintingComponent},
 ];
 
 @NgModule({
