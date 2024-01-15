@@ -41,11 +41,13 @@ import {ProfileViewComponent} from './pages/profile-view/profile-view.component'
 import {EditprofileComponent} from './pages/editprofile/editprofile.component';
 import {SignUpComponent} from './pages/sign-up/sign-up.component';
 import { ServiceViewComponent } from './pages/service-view/service-view.component';
+import { OurServiceComponent } from './pages/service/our-service/our-service.component';
+import { SublimationPrintingComponent } from './pages/service/sublimation-printing/sublimation-printing.component';
 
 
 
 @NgModule({
-  declarations: [AppComponent, NavBarComponent, HomeComponent, FooterComponent, AboutUsComponent, ContactUsComponent, MakeOrderComponent, ClientLoginComponent, ProjectsComponent, UniversityTShirtsComponent, ProfileViewComponent, EditprofileComponent, OrderComponent, ServicesComponent, ServicesFabricComponent, ServiceWeavingComponent, SignUpComponent, ServiceViewComponent,],
+  declarations: [AppComponent, NavBarComponent, HomeComponent, FooterComponent, AboutUsComponent, ContactUsComponent, MakeOrderComponent, ClientLoginComponent, ProjectsComponent, UniversityTShirtsComponent, ProfileViewComponent, EditprofileComponent, OrderComponent, ServicesComponent, ServicesFabricComponent, ServiceWeavingComponent, SignUpComponent, ServiceViewComponent, OurServiceComponent, SublimationPrintingComponent,],
   imports: [
     BrowserModule,
     AppRoutingModule,
