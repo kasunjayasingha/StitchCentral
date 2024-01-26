@@ -18,6 +18,9 @@ import {ServiceViewComponent} from './pages/service-view/service-view.component'
 import {AppComponent} from "./app.component";
 import {OurServiceComponent} from './pages/service/our-service/our-service.component';
 import {SublimationPrintingComponent} from "./pages/service/sublimation-printing/sublimation-printing.component";
+import { FabricPrintingComponent } from './pages/service/fabric-printing/fabric-printing.component';
+import { WeavingTieComponent } from './pages/service/weaving-tie/weaving-tie.component';
+import { GarmentStitchingComponent } from './pages/service/garment-stitching/garment-stitching.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -38,6 +41,9 @@ const routes: Routes = [
   {path: 'login', component: ClientLoginComponent},
   {path: 'our-service', component: OurServiceComponent},
   {path: 'submit-print', component: SublimationPrintingComponent},
+  {path: 'fabric-print', component:FabricPrintingComponent},
+  {path:'weaving-tie',component:WeavingTieComponent},
+  {path:'garment-stitching',component:GarmentStitchingComponent}
 ];
 
 @NgModule({

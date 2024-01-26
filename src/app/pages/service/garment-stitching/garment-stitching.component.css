@@ -55,8 +55,14 @@
 
 .service-icon {
   overflow: hidden;
-  
+
   margin-bottom: 1rem;
+}
+
+.fixed-size-image {
+  width: 600px;
+  height: 400px;
+  object-fit: cover;
 }
 
 /*.service-icon img {

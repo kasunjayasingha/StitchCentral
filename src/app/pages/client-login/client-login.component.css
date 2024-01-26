@@ -1,7 +1,49 @@
-.contact-map {
+.page-header {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+  url(/assets/imgs/order.jpg) center center no-repeat;
+  background-size: cover;
+}
+.display-2 {
+  color: #fff;
+  font-size: 8rem;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 0;
+}
+/*.contact-map {
   background: var(--color-secondary);
+}*/
+
+.container-fluid {
+  padding: 20px; /* Adjust as needed */
+}
+/*Form styling*/
+.form-outline {
+  margin-bottom: 1rem;
 }
 
-.contact-form {
-  background: var(--color-secondary);
+.form-label {
+  color: #fff;
+}
+
+.form-control {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.button {
+  color: #0a91ab;
+  background-color: #fff; /* Add your preferred background color */
+  padding: 10px 20px; /* Adjust as needed */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Center Container */
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 58vh; /* Adjust as needed */
 }
