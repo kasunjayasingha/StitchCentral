@@ -46,11 +46,13 @@ import { SublimationPrintingComponent } from './pages/service/sublimation-printi
 import { FabricPrintingComponent } from './pages/service/fabric-printing/fabric-printing.component';
 import { WeavingTieComponent } from './pages/service/weaving-tie/weaving-tie.component';
 import { GarmentStitchingComponent } from './pages/service/garment-stitching/garment-stitching.component';
+import { ApparelDesignComponent } from './pages/service/apparel-design/apparel-design.component';
+import { CustomApparelComponent } from './pages/service/custom-apparel/custom-apparel.component';
 
 
 
 @NgModule({
-  declarations: [AppComponent, NavBarComponent, HomeComponent, FooterComponent, AboutUsComponent, ContactUsComponent, MakeOrderComponent, ClientLoginComponent, ProjectsComponent, UniversityTShirtsComponent, ProfileViewComponent, EditprofileComponent, OrderComponent, ServicesComponent, ServicesFabricComponent, ServiceWeavingComponent, SignUpComponent, ServiceViewComponent, OurServiceComponent, SublimationPrintingComponent, FabricPrintingComponent, WeavingTieComponent, GarmentStitchingComponent,],
+  declarations: [AppComponent, NavBarComponent, HomeComponent, FooterComponent, AboutUsComponent, ContactUsComponent, MakeOrderComponent, ClientLoginComponent, ProjectsComponent, UniversityTShirtsComponent, ProfileViewComponent, EditprofileComponent, OrderComponent, ServicesComponent, ServicesFabricComponent, ServiceWeavingComponent, SignUpComponent, ServiceViewComponent, OurServiceComponent, SublimationPrintingComponent, FabricPrintingComponent, WeavingTieComponent, GarmentStitchingComponent, ApparelDesignComponent, CustomApparelComponent,],
   imports: [
     BrowserModule,
     AppRoutingModule,
