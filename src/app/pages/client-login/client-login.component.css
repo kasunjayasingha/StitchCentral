@@ -3,6 +3,7 @@
   url(/assets/imgs/order.jpg) center center no-repeat;
   background-size: cover;
 }
+
 .display-2 {
   color: #fff;
   font-size: 8rem;
@@ -10,6 +11,7 @@
   text-align: center;
   margin-top: 0;
 }
+
 /*.contact-map {
   background: var(--color-secondary);
 }*/
@@ -17,6 +19,7 @@
 .container-fluid {
   padding: 20px; /* Adjust as needed */
 }
+
 /*Form styling*/
 .form-outline {
   margin-bottom: 1rem;
@@ -46,4 +49,8 @@
   justify-content: center;
   align-items: center;
   height: 58vh; /* Adjust as needed */
+}
+
+.fontColor {
+  color: #fff;
 }
